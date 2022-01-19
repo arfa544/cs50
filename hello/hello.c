@@ -2,6 +2,6 @@
 #include<stdio.h>
 int main(void)
 {
-    name=get_string("Enter your name:");
+    string name=get_string("Enter your name:");
     printf("Hello %s \n,name");
 }
