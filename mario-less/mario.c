@@ -7,8 +7,7 @@ int main(void)
     int n;
     do
     {
-        n = get_int("Enter height of pyramid: \n");
-        printf("Height: %i \n",n);
+        n = get_int("Height: ");
     }
     while (n <= 0 || n >= 9);
 
