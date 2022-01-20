@@ -17,7 +17,6 @@ int main(void)
     {
         for (int j = 0; j < i + 1; j++) // For printing #.
         {
-            printf(".");
             printf("#");
         }
         printf("\n");
