@@ -6,9 +6,9 @@ int main(void)
     do
     {
         n=get_int("Enter a number in range 1 to 8: \n");
-        for (int i=0;i<=n;i++)
+        for (int i=0;i<n;i++)
         {
-            for (int j=0;j<=n;j++)
+            for (int j=0;j<n;j++)
             {
                 printf("#");
             }
