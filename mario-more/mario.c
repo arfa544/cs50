@@ -18,12 +18,15 @@ int main(void)
         {
             printf(" ");
         }
-        for (int j = 0; j < i + 1; j++) // For printing #.
+        for (int j = 0; j < i + 1; j++) // For printing left #.
         {
             printf("#");
         }
         printf("  ");
-        
+        for (int j = 0; j < i + 1; j++) // For printing right #.
+        {
+            printf("#");
+        }
         printf("\n");
     }
 }
