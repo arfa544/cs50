@@ -65,18 +65,51 @@ int calculate_quarters(int cents)
 
 int calculate_dimes(int cents)
 {
-    // TODO
-    return 0;
+    int dimes=0;
+    for (int i = 0; i <= cents; i++)
+    {
+        if (cents >= 10*i)
+        {
+            dimes++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
-    // TODO
-    return 0;
+    int nickels=0;
+    for (int i = 0; i <= cents; i++)
+    {
+        if (cents >= 5*i)
+        {
+            nickels++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    return nickels;
 }
 
 int calculate_pennies(int cents)
 {
-    // TODO
-    return 0;
+        int pennies=0;
+    for (int i = 0; i <= cents; i++)
+    {
+        if (cents >= 1*i)
+        {
+            pennies++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    return pennies;
 }
