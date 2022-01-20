@@ -10,8 +10,9 @@ int main(void)
         {
             for (int j=0;j<=n;j++)
             {
-                printf("# \n");
+                printf("#");
             }
+            printf("\n");
         }
     }while(n>0 && n>9);
 }
