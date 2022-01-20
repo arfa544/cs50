@@ -10,7 +10,7 @@ int main(void)
         {
             for (int j=0;j<n;j++)
             {
-                printf("#");
+                printf(j+1 "#");
             }
             printf("\n");
         }
