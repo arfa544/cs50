@@ -12,9 +12,9 @@ int main(void)
     while (n <= 0 || n >= 9);
 
     // Printing mario.
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // For printing new line.
     {
-        for (int j = 0; j < i + 1; j++)
+        for (int j = 0; j < i + 1; j++) // For printing #.
         {
             printf("#");
         }
