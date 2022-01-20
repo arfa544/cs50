@@ -15,7 +15,6 @@ int main(void)
     // Printing mario.
     for (int i = 0; i < n; i++) // For printing new line.
     {
-        printf(" ");
         for (int j = 0; j < i + 1; j++) // For printing #.
         {
             printf("#");
