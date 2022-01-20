@@ -50,6 +50,10 @@ int calculate_quarters(int cents)
 {
     int quarters=0;
     
+    while(cash>0)
+    {
+
+    }
     return quarters;
 }
 
