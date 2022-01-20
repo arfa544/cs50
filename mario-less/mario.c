@@ -14,5 +14,6 @@ int main(void)
             }
             printf("\n");
         }
-    }while(n>0 && n>9);
+    }while(n>0 && n<9);
+    get_int("Enter a nunber in range 1 to 8: \n");
 }
