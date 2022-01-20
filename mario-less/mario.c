@@ -1,15 +1,18 @@
 #include<cs50.h>
 #include<stdio.h>
-int n;
-do
+int main(void)
 {
-    n=get_int("Enter a number in range 1 to 8: \n");
-}
-while(n>0 && n<9);
-for (int i=0;i<=n;i++)
-{
-    for (int j=0;j<=n;j++)
+    int n;
+    do
     {
-        printf("# \n");
+        n=get_int("Enter a number in range 1 to 8: \n");
+    }
+    while(n>0 && n<9);
+    for (int i=0;i<=n;i++)
+    {
+        for (int j=0;j<=n;j++)
+        {
+            printf("# \n");
+        }
     }
 }
