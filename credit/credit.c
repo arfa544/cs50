@@ -4,7 +4,8 @@ int main(void)
 {
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
-    
+
+    int digits(int)
     int count=0;
     while (n != 0)
     {
