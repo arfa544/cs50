@@ -8,7 +8,7 @@ int main(void)
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
     digits(n);
-    
+
 }
 
 int digits(int n)
