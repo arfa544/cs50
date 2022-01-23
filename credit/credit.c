@@ -18,7 +18,7 @@ int main(void)
 
 }
 
-int digits(int n);
+int digits(int n)
 {
     int count=0;
     while (n != 0)
