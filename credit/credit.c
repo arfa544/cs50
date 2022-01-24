@@ -15,8 +15,15 @@ int main(void)
     luhn_val = luhn(n);
     if (luhn_val == 0)
     {
-        if ( )
-        printf("AMEX\n");
+        x = digits(n);
+        if (x == 15)
+        {
+            printf("AMEX\n");
+        }
+        elseif (x == 16)
+        {
+            printf()
+        }
     }
     else
     {
