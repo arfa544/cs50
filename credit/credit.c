@@ -15,11 +15,11 @@ int main(void)
     luhn_val = luhn(n);
     if (luhn_val == 0)
     {
-        printf("AMEX");
+        printf("AMEX\n");
     }
     else
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 }
 
