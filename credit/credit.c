@@ -22,7 +22,11 @@ int main(void)
         }
         elseif (x == 16)
         {
-            printf()
+            printf(" ");
+        }
+        elseif (x == 13)
+        {
+            printf("VISA");
         }
     }
     else
