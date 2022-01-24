@@ -5,10 +5,11 @@ int digits(int n);
 
 int main(void)
 {
+    int x;
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
-    digits(n);
-    printf("%i",)
+    x = digits(n);
+    printf("%i", x);
 
 }
 
