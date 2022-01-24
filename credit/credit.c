@@ -2,7 +2,7 @@
 #include<stdio.h>
 
 int digits(int n);
-int 
+int luhn(int n);
 
 int main(void)
 {
@@ -16,8 +16,6 @@ int main(void)
     {
         printf("AMEX")
     }
-
-
 }
 
 int digits(int n)
@@ -29,5 +27,10 @@ int digits(int n)
         count++;
     }
     return count;
+}
+
+int luhn(int n)
+{
+    
 }
 
