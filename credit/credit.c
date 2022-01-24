@@ -32,7 +32,7 @@ int digits(int n)
 
 int luhn(int n)
 {
-    int rem;
+    int rem, sum = 0;
     int sum1 = 0;
     int sum2 = 0;
 
@@ -48,14 +48,12 @@ int luhn(int n)
         rem = convert_to_single(rem);
         sum2 += rem;
         n = n / 10;
-
     }
-    
 
+    sum = sum1 + sum2;
+    rem = sum % 10;
 
-
-
-
+    return rem;
 }
 
 int convert_to_single(int num)
