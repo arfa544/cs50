@@ -9,7 +9,7 @@ int main(void)
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
     x = digits(n);
-    printf("%i", x);
+    printf("%i \n", x);
 
 }
 
