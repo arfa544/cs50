@@ -108,7 +108,7 @@ int luhn(long n)
     return rem;
 }
 
-
+// To find sum of individual 
 int convert_to_single(int num)
 {
     int sum = 0;
