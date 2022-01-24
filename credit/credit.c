@@ -122,7 +122,7 @@ int convert_to_single(int num)
     return sum;
 }
 
-
+// To get first digits for verification 
 int get_first_digits(int no_of_digits, int no_of_places, long n)
 {
     for (int i = 0; i < no_of_digits - no_of_places; i++)
