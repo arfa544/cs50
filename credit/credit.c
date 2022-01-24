@@ -88,5 +88,8 @@ int convert_to_single(int num)
 
 int get_first_digits(int x, int no_of_places, int n)
 {
-    for (int i = 0; i)
+    for (int i = 0; i < x- no_of_places; i++)
+    {
+        
+    }
 }
