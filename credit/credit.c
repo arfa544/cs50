@@ -31,6 +31,14 @@ int digits(int n)
 
 int luhn(int n)
 {
-    int rem,
+    int rem;
+    int sum1 = 0;
+    int sum2 = 0;
+
+    rem = n % 10;
+    sum1 += rem;
+    n = n / 10;
+    rem = (n % 10) * 2;
+    
 }
 
