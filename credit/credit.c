@@ -3,6 +3,7 @@
 
 int digits(int n);
 int luhn(int n);
+int convert_to_single(int num);
 
 int main(void)
 {
@@ -39,6 +40,11 @@ int luhn(int n)
     sum1 += rem;
     n = n / 10;
     rem = (n % 10) * 2;
-    
+
+
 }
 
+int convert_to_single(int num)
+{
+    
+}
