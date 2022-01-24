@@ -54,6 +54,10 @@ int main(void)
             {
                 printf("VISA");
             }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
     }
     else
