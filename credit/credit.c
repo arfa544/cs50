@@ -36,10 +36,17 @@ int luhn(int n)
     int sum1 = 0;
     int sum2 = 0;
 
+    while (n)
     rem = n % 10;
     sum1 += rem;
     n = n / 10;
     rem = (n % 10) * 2;
+    rem = convert_to_single(rem);
+    sum2 += rem;
+
+
+
+
 
 
 }
