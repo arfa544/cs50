@@ -10,7 +10,7 @@ int main(void)
 {
     int no_of_digits, luhn_val, starting_digits;
     // Taking input from user.
-    long n =  4003600000000014;//get_long("Enter credit card number: ");
+    long n = get_long("Enter credit card number: ");
     //no_of_digits = digits(n);
     //printf("%i \n", no_of_digits);
     luhn_val = luhn(n);
