@@ -92,4 +92,5 @@ int get_first_digits(int x, int no_of_places, int n)
     {
         n /= 10;
     }
+    return n;
 }
