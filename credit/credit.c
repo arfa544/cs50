@@ -4,29 +4,29 @@
 int digits(int n);
 int luhn(int n);
 int convert_to_single(int num);
-int get_first_digits(int x, int no_of_places, int n)
+int get_first_digits(int no_of_digits, int no_of_places, int n)
 
 int main(void)
 {
-    int x, luhn_val;
+    int no_of_digits, luhn_val;
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
-    //x = digits(n);
-    //printf("%i \n", x);
+    //no_of_digits = digits(n);
+    //printf("%i \n", no_of_digits);
     luhn_val = luhn(n);
     if (luhn_val == 0)
     {
-        x = digits(n);
+        no_of_digits = digits(n);
         if (no_of_digits == 15)
         {
-
+            
             printf("AMEX\n");
         }
-        elseif (x == 16)
+        elseif (no_of_digits == 16)
         {
             printf(" ");
         }
-        elseif (x == 13)
+        elseif (no_of_digits == 13)
         {
             printf("VISA");
         }
@@ -87,9 +87,9 @@ int convert_to_single(int num)
     return sum;
 }
 
-int get_first_digits(int x, int no_of_places, int n)
+int get_first_digits(int no_of_digits, int no_of_places, int n)
 {
-    for (int i = 0; i < x - no_of_places; i++)
+    for (int i = 0; i < no_of_digits - no_of_places; i++)
     {
         n /= 10;
     }
