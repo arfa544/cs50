@@ -12,7 +12,7 @@ int main(void)
     long n = get_long("Enter credit card number: ");
     x = digits(n);
     printf("%i \n", x);
-
+    int luhn(n)
     if (x == 15)
     {
         printf("AMEX")
