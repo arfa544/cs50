@@ -17,9 +17,9 @@ int main(void)
     if (luhn_val == 0)
     {
         x = digits(n);
-        if (x == 15)
+        if (no_of_digits == 15)
         {
-            
+
             printf("AMEX\n");
         }
         elseif (x == 16)
