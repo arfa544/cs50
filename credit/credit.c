@@ -37,12 +37,23 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-            elseif
-            printf(" ");
+            elseif (starting_digits /10 == 4)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
+
         elseif (no_of_digits == 13)
         {
-            printf("VISA");
+            starting_digits = get_first_digits(no_of_digits, 1, n);
+            if (starting_digits == 4)
+            {
+                printf("VISA");
+            }
         }
     }
     else
