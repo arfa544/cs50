@@ -70,7 +70,7 @@ int main(void)
     }
 }
 
-int digits(int n)
+int digits(long n)
 {
     int count=0;
     while (n != 0)
@@ -81,7 +81,7 @@ int digits(int n)
     return count;
 }
 
-int luhn(int n)
+int luhn(long n)
 {
     int rem, sum = 0;
     int sum1 = 0;
@@ -120,7 +120,7 @@ int convert_to_single(int num)
     return sum;
 }
 
-int get_first_digits(int no_of_digits, int no_of_places, int n)
+int get_first_digits(int no_of_digits, int no_of_places, long n)
 {
     for (int i = 0; i < no_of_digits - no_of_places; i++)
     {
