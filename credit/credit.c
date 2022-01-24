@@ -2,6 +2,7 @@
 #include<stdio.h>
 
 int digits(int n);
+int 
 
 int main(void)
 {
