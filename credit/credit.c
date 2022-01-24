@@ -38,14 +38,17 @@ int luhn(int n)
 
     while (n != 0)
     {
+        // Handling Unit's Digit
         rem = n % 10;
         sum1 += rem;
         n = n / 10;
+
+        // Handling ten's Digit
         rem = (n % 10) * 2;
         rem = convert_to_single(rem);
         sum2 += rem;
     }
-    
+
 
 
 
