@@ -20,6 +20,7 @@ int main(void)
         no_of_digits = digits(n);
         if (no_of_digits == 15)
         {
+            // Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n);
             if (starting_digits == 34 || starting_digits == 37)
             {
@@ -33,6 +34,7 @@ int main(void)
 
         else if (no_of_digits == 16)
         {
+            // Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n);
             if (starting_digits == 51 || starting_digits == 52 || starting_digits == 53 || starting_digits == 54 || starting_digits == 55)
             {
@@ -50,6 +52,7 @@ int main(void)
 
         else if (no_of_digits == 13)
         {
+            // Calling the function to find the starting one digit.
             starting_digits = get_first_digits(no_of_digits, 1, n);
             if (starting_digits == 4)
             {
