@@ -1,16 +1,16 @@
 #include<cs50.h>
 #include<stdio.h>
 
-int digits(int n);
-int luhn(int n);
+int digits(long n);
+int luhn(long n);
 int convert_to_single(int num);
-int get_first_digits(int no_of_digits, int no_of_places, int n);
+int get_first_digits(int no_of_digits, int no_of_places, long n);
 
 int main(void)
 {
     int no_of_digits, luhn_val, starting_digits;
     // Taking input from user.
-    long n = get_long("Enter credit card number: ");
+    long n =  4003600000000014 //get_long("Enter credit card number: ");
     //no_of_digits = digits(n);
     //printf("%i \n", no_of_digits);
     luhn_val = luhn(n);
