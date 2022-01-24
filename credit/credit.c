@@ -31,6 +31,6 @@ int digits(int n)
 
 int luhn(int n)
 {
-    
+    int rem,
 }
 
