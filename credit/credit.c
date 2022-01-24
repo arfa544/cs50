@@ -17,7 +17,10 @@ int main(void)
     // To check all conditions required.
     if (luhn_val == 0)
     {
+        // Finding number of digits in credit card.
         no_of_digits = digits(n);
+
+        // To check the condition of AMEX card.
         if (no_of_digits == 15)
         {
             // Calling the function to find the starting two digits.
@@ -32,6 +35,7 @@ int main(void)
             }
         }
 
+        // To check the condition of MASTERCARD card or VISA card.
         else if (no_of_digits == 16)
         {
             // Calling the function to find the starting two digits.
@@ -50,6 +54,7 @@ int main(void)
             }
         }
 
+        // To check the condition of VISA card.
         else if (no_of_digits == 13)
         {
             // Calling the function to find the starting one digit.
@@ -68,6 +73,8 @@ int main(void)
             printf("INVALID\n");
         }
     }
+
+    // Defaults to INVALID.
     else
     {
         printf("INVALID\n");
