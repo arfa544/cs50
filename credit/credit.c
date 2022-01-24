@@ -11,7 +11,7 @@ int main(void)
     int no_of_digits, luhn_val, starting_digits;
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
-    
+
     luhn_val = luhn(n);
     if (luhn_val == 0)
     {
@@ -51,7 +51,7 @@ int main(void)
             starting_digits = get_first_digits(no_of_digits, 1, n);
             if (starting_digits == 4)
             {
-                printf("VISA");
+                printf("VISA\n");
             }
             else
             {
