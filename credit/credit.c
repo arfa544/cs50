@@ -108,7 +108,7 @@ int luhn(long n)
     return rem;
 }
 
-// To find sum of individual 
+// To find sum of individual digits after multiplying with two.
 int convert_to_single(int num)
 {
     int sum = 0;
@@ -121,6 +121,7 @@ int convert_to_single(int num)
     }
     return sum;
 }
+
 
 int get_first_digits(int no_of_digits, int no_of_places, long n)
 {
