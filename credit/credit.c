@@ -30,14 +30,14 @@ int main(void)
             }
         }
 
-        elseif (no_of_digits == 16)
+        else if (no_of_digits == 16)
         {
             starting_digits = get_first_digits(no_of_digits, 2, n);
             if (starting_digits == 51 || starting_digits == 52 || starting_digits == 53 || starting_digits == 54 || starting_digits == 55)
             {
                 printf("MASTERCARD\n");
             }
-            elseif (starting_digits /10 == 4)
+            else if (starting_digits /10 == 4)
             {
                 printf("VISA\n");
             }
@@ -47,7 +47,7 @@ int main(void)
             }
         }
 
-        elseif (no_of_digits == 13)
+        else if (no_of_digits == 13)
         {
             starting_digits = get_first_digits(no_of_digits, 1, n);
             if (starting_digits == 4)
