@@ -13,6 +13,8 @@ int main(void)
     long n = get_long("Enter credit card number: ");
 
     luhn_val = luhn(n);
+
+    // To check all conditions required.
     if (luhn_val == 0)
     {
         no_of_digits = digits(n);
@@ -122,7 +124,7 @@ int convert_to_single(int num)
     return sum;
 }
 
-// To get first digits for verification 
+// To get first digits for verification of credit card numbers.
 int get_first_digits(int no_of_digits, int no_of_places, long n)
 {
     for (int i = 0; i < no_of_digits - no_of_places; i++)
