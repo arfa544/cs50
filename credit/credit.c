@@ -7,15 +7,19 @@ int convert_to_single(int num);
 
 int main(void)
 {
-    int x;
+    int x, luhn_val;
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
-    x = digits(n);
-    printf("%i \n", x);
-    lluhn(n)
-    if (x == 15)
+    //x = digits(n);
+    //printf("%i \n", x);
+    luhn_val = luhn(n);
+    if (luhn_val == 0)
     {
-        printf("AMEX")
+        printf("AMEX");
+    }
+    else
+    {
+        printf("INVALID");
     }
 }
 
