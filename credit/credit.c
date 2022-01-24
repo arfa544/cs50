@@ -69,6 +69,7 @@ int main(void)
     }
 }
 
+// To find number of digits in credit card number.
 int digits(long n)
 {
     int count = 0;
@@ -80,6 +81,7 @@ int digits(long n)
     return count;
 }
 
+// To give the last digit of sum.
 int luhn(long n)
 {
     int rem, sum = 0;
@@ -105,6 +107,7 @@ int luhn(long n)
 
     return rem;
 }
+
 
 int convert_to_single(int num)
 {
