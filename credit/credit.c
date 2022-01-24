@@ -32,7 +32,11 @@ int main(void)
 
         elseif (no_of_digits == 16)
         {
-            
+            starting_digits = get_first_digits(no_of_digits, 2, n);
+            if (starting_digits == 51 || starting_digits == 52 || starting_digits == 53 || starting_digits == 54 || starting_digits == 55)
+            {
+                printf("MAS)
+            }
             printf(" ");
         }
         elseif (no_of_digits == 13)
