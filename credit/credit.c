@@ -19,6 +19,7 @@ int main(void)
         x = digits(n);
         if (x == 15)
         {
+            
             printf("AMEX\n");
         }
         elseif (x == 16)
