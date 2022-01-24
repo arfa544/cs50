@@ -8,7 +8,7 @@ int get_first_digits(int no_of_digits, int no_of_places, int n)
 
 int main(void)
 {
-    int no_of_digits, luhn_val;
+    int no_of_digits, luhn_val, starting_digits;
     // Taking input from user.
     long n = get_long("Enter credit card number: ");
     //no_of_digits = digits(n);
@@ -19,11 +19,20 @@ int main(void)
         no_of_digits = digits(n);
         if (no_of_digits == 15)
         {
-            get_first_digits(no_of_digits, 2, n);
-            printf("AMEX\n");
+            starting_digits = get_first_digits(no_of_digits, 2, n);
+            if (starting_digits == 34 || starting_digits == 37)
+            {
+                printf("AMEX\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
+
         elseif (no_of_digits == 16)
         {
+            
             printf(" ");
         }
         elseif (no_of_digits == 13)
