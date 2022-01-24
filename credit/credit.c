@@ -19,7 +19,7 @@ int main(void)
         no_of_digits = digits(n);
         if (no_of_digits == 15)
         {
-            
+            get_first_digits()
             printf("AMEX\n");
         }
         elseif (no_of_digits == 16)
