@@ -4,7 +4,7 @@
 int digits(int n);
 int luhn(int n);
 int convert_to_single(int num);
-int get_first_digits(int x, int )
+int get_first_digits(int x, int no_of_places, int n)
 
 int main(void)
 {
@@ -84,4 +84,9 @@ int convert_to_single(int num)
         num /= 10;
     }
     return sum;
+}
+
+int get_first_digits(int x, int no_of_places, int n)
+{
+    
 }
