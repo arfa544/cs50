@@ -47,6 +47,8 @@ int luhn(int n)
         rem = (n % 10) * 2;
         rem = convert_to_single(rem);
         sum2 += rem;
+        n = n / 10;
+        
     }
 
 
