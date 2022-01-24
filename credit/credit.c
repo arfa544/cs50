@@ -15,6 +15,7 @@ int main(void)
     luhn_val = luhn(n);
     if (luhn_val == 0)
     {
+        if ( )
         printf("AMEX\n");
     }
     else
