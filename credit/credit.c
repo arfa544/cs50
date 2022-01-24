@@ -36,7 +36,7 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-            else if (starting_digits /10 == 4)
+            else if (starting_digits / 10 == 4)
             {
                 printf("VISA\n");
             }
@@ -71,10 +71,10 @@ int main(void)
 
 int digits(long n)
 {
-    int count=0;
+    int count = 0;
     while (n != 0)
     {
-        n=n/10;
+        n = n / 10;
         count++;
     }
     return count;
