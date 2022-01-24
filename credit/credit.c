@@ -4,6 +4,7 @@
 int digits(int n);
 int luhn(int n);
 int convert_to_single(int num);
+int get_first_digits(int x, int )
 
 int main(void)
 {
