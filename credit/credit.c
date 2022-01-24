@@ -47,5 +47,5 @@ int luhn(int n)
 int convert_to_single(int num)
 {
     int sum = 0;
-    rem1
+    rem1 =  % 10
 }
