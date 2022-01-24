@@ -11,6 +11,12 @@ int main(void)
     x = digits(n);
     printf("%i \n", x);
 
+    if (x == 15)
+    {
+        printf("AMEX")
+    }
+
+
 }
 
 int digits(int n)
