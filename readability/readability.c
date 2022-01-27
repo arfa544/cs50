@@ -21,5 +21,6 @@ int count_letters(string text)
              letters++;
          }
     }
+    printf("%i",letters);
     return letters;
 }
