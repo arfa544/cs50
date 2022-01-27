@@ -14,12 +14,12 @@ int main(void)
 int count_letters(string text)
 {
     int letters = 0;
-    for(int i = 0; text != 0; i++)
+    for(int i = 0; text[i] != 0; i++)
     {
          if(isalpha(text) != 0)
          {
              letters++;
          }
     }
-
+    return letters;
 }
