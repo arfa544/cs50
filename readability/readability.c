@@ -13,5 +13,13 @@ int main(void)
 
 int count_letters(string text)
 {
-    if(text ==)
+    int letters = 0;
+    for( i = 0; text != 0; i++)
+    {
+         if(isalpha(text) != 0)
+         {
+             letters++;
+         }
+    }
+
 }
