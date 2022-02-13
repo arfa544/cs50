@@ -38,10 +38,10 @@ int count_letters(string text)
     int letters = 0;
     for (int i = 0; text[i] != '\0';  i++)
     {
-         if (isalpha(text[i]))
-         {
-             letters++;
-         }
+        if (isalpha(text[i]))
+        {
+            letters++;
+        }
     }
     return letters;
 }
@@ -51,10 +51,10 @@ int count_words(string text)
     int words = 1;
     for (int i = 0; text[i] != '\0';  i++)
     {
-         if (text[i] == ' ')
-         {
-             words++;
-         }
+        if (text[i] == ' ')
+        {
+            words++;
+        }
     }
     return words;
 }
@@ -64,10 +64,10 @@ int count_sentences(string text)
     int sentences = 0;
     for (int i = 0; text[i] != '\0';  i++)
     {
-         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
-         {
-             sentences++;
-         }
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            sentences++;
+        }
     }
     return sentences;
 }
