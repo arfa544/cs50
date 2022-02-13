@@ -20,7 +20,9 @@ int main(void)
     sentences = count_sentences(text);
     printf("%i\n",sentences);
     L = letters / words * 100;
+    printf("%f\n", L);
     S = sentences / words * 100;
+    printf("%f", S);
     index = 0.0588 * L - 0.296 * S - 15.8;
     if(index > 16)
     {
