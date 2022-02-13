@@ -9,8 +9,8 @@ int count_sentences(string text);
 
 int main(void)
 {
-    int letters, words, sentences, index;
-    float L,S;
+    int letters, words, sentences;
+    float index, L, S;
     string text = get_string("Text: ");
     printf("%s\n", text);
     letters = count_letters(text);
@@ -32,7 +32,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %f\n", index);
     }
 }
 
