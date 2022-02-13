@@ -4,6 +4,7 @@
 #include<string.h>
 #include<math.h>
 
+//Funtion prototype.
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -13,9 +14,11 @@ int main(void)
     int letters, words, sentences;
     float index, L, S ;
     string text = get_string("Text: "); // Input the sentences from the user.
-    // To get 
+    // To get number of letters.
     letters = count_letters(text);
+    // To get number of words.
     words = count_words(text);
+    // To get number of sentences.
     sentences = count_sentences(text);
     L = (float)letters / words * 100;
     S = (float)sentences / words * 100;
@@ -34,6 +37,7 @@ int main(void)
     }
 }
 
+// To get number of letters.
 int count_letters(string text)
 {
     int letters = 0;
@@ -47,6 +51,7 @@ int count_letters(string text)
     return letters;
 }
 
+// To get number of words.
 int count_words(string text)
 {
     int words = 1;
@@ -60,6 +65,7 @@ int count_words(string text)
     return words;
 }
 
+// To get number of sentences.
 int count_sentences(string text)
 {
     int sentences = 0;
