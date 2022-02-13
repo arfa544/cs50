@@ -13,6 +13,7 @@ int main(void)
     int letters, words, sentences;
     float index, L, S ;
     string text = get_string("Text: "); // Input the sentences from the user.
+    // To get 
     letters = count_letters(text);
     words = count_words(text);
     sentences = count_sentences(text);
