@@ -12,7 +12,7 @@ int main(void)
 {
     int letters, words, sentences;
     float index, L, S ;
-    string text = get_string("Text: ");
+    string text = get_string("Text: "); // Input the sentences from the user.
     letters = count_letters(text);
     words = count_words(text);
     sentences = count_sentences(text);
