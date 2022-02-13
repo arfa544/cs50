@@ -19,9 +19,9 @@ int main(void)
     printf("%i\n",words);
     sentences = count_sentences(text);
     printf("%i\n",sentences);
-    L = (float)(letters / words * 100;
+    L = (float)letters / words * 100;
     printf("%f\n", L);
-    S = (float)(sentences / words) * 100;
+    S = ((float)sentences / words) * 100;
     printf("%f\n", S);
     index = 0.0588 * L - 0.296 * S - 15.8;
     if(index > 16)
