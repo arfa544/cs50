@@ -10,6 +10,7 @@ int count_sentences(string text);
 int main(void)
 {
     int letters, words, sentences;
+    int index,L
     int l = letters / words * 100;
     int s = sentences / words * 100;
     string text = get_string("Text: ");
