@@ -17,5 +17,12 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    if (s==)
+    if (s >= 0 && s <=9)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
