@@ -5,7 +5,7 @@ bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
-    string s = argv[];
+    string s;
     if (argc == 2)
     {
         if(s == argv[1])
