@@ -14,3 +14,8 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
     }
 }
+
+bool only_digits(string s)
+{
+    if (s==)
+}
