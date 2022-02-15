@@ -5,21 +5,28 @@ bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
+    string s = argv[];
     if (argc == 2)
     {
-        if(argv[1])
+        if(s == argv[1])
         {
             only_digits(s);
             if(false)
             {
-
+                printf("Usage: ./caesar key\n");
+                return 1;
+            }
+            else
+            {
+                return 0;
             }
         }
         return 0;
     }
     else
     {
-        c
+        printf("Usage: ./caesar key\n");
+        return 1;
     }
 }
 
