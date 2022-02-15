@@ -7,6 +7,10 @@ int main(int argc, string argv[])
 {
     if (argc == 2)
     {
+        if(argv[1])
+        {
+            only_digits(s);
+        }
         return 0;
     }
     else
