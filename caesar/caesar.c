@@ -10,12 +10,16 @@ int main(int argc, string argv[])
         if(argv[1])
         {
             only_digits(s);
+            if(false)
+            {
+
+            }
         }
         return 0;
     }
     else
     {
-        printf("Usage: ./caesar key\n");
+        c
     }
 }
 
