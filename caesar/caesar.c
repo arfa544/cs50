@@ -6,7 +6,7 @@
 int main(int argc, string argv[])
 {
     printf("%i", argc);
-    for(int i=0;i<argc-1;i++)
+    for(int i=0;i<argc;i++)
     {
         printf("%s", argv[i]);
     }
