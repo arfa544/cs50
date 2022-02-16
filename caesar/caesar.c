@@ -20,7 +20,7 @@ int main(int argc, string argv[])
     }
 
     // Check if key is digit belonging to 0 and 9 inclusive.
-    if (!true)
+    if (!only_digits(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
@@ -30,14 +30,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-// bool only_digits(string s)
-// {
-//     if (s >= 0 && s <=9)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
+bool only_digits(string s)
+{
+    printf("")
+}
