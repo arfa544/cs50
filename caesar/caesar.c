@@ -6,6 +6,7 @@
 int main(int argc, string argv[])
 {
     printf("%i", argc);
+    for (int i = 0; )
     string s;
     if (argc == 2)
     {
