@@ -8,19 +8,6 @@ int main(int argc, string argv[])
     string s;
     if (argc == 2)
     {
-        if(s == argv[1])
-        {
-            only_digits(s);
-            if(false)
-            {
-                printf("Usage: ./caesar key\n");
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
         return 0;
     }
     else
