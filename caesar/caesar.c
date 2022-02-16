@@ -5,11 +5,11 @@ bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
-    printf("%i", argc);
-    for(int i=0;i<argc;i++)
-    {
-        printf("%s", argv[i]);
-    }
+    // printf("%i", argc);
+    // for(int i=0;i<argc;i++)
+    // {
+    //     printf("%s", argv[i]);
+    // }
     string s;
 
     // Check if exactly 1 key is passed.
@@ -20,12 +20,12 @@ int main(int argc, string argv[])
     }
 
     // Check if key is digit belonging to 0 and 9 inclusive.
-    if only_digits(argv[1])
+    if (!true)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    
+
 
     return 0;
 }
