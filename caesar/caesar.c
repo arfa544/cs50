@@ -30,7 +30,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool only_digits(string s)
+bool only_digits(string key)
 {
-    printf("")
+    printf("%s", key);
 }
