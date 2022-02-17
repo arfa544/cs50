@@ -4,6 +4,7 @@
 #include<string.h>
 
 bool only_digits(string s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -27,7 +28,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    plaint
+    string plaintext = get_string("Plaintext:");
     return 0;
 }
 
