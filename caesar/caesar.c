@@ -32,6 +32,12 @@ int main(int argc, string argv[])
 
 bool only_digits(string key)
 {
-    if(key >= int('0') )
-    return true;
+    if(key >= (int)'0' && key <= (int)'9')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
