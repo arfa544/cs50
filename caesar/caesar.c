@@ -31,9 +31,9 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool only_digits(string key)
+bool only_digits(string *key)
 {
-    if(isdigit(key))
+    if(key == '1')
     {
         return true;
     }
