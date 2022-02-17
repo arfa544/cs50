@@ -32,12 +32,13 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    if(strlen(s) == 1)
-    {
-        if(isdigit(s))
-        {
-            return true;
-        }
-    }
+    
+    // if(strlen(s) == 1)
+    // {
+    //     if(isdigit(s))
+    //     {
+    //         return true;
+    //     }
+    // }
     return false;
 }
