@@ -31,7 +31,7 @@ int main(int argc, string argv[])
 
 bool only_digits(string key)
 {
-    if()
+    if(true)
     {
         return true;
     }
