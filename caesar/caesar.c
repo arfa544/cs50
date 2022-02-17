@@ -30,11 +30,11 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool only_digits(string key)
+bool only_digits(string s)
 {
-    if(strlen(key) == 1)
+    if(strlen(s) == 1)
     {
-        if(isdigit(key))
+        if(isdigit(s))
         {
             return true;
         }
