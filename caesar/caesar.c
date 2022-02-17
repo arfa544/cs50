@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include<ctype.h>
 
 bool only_digits(string s);
 
@@ -32,7 +33,7 @@ int main(int argc, string argv[])
 
 bool only_digits(string key)
 {
-    if(key == '0,1,2,3,4,5,6,7,8,9')
+    if(isdigit(key))
     {
         return true;
     }
