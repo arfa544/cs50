@@ -31,9 +31,12 @@ int main(int argc, string argv[])
 
 bool only_digits(string key)
 {
-    if(isdigit(key))
+    if(strlen(key) == 1)
     {
-        return true;
+        if(isdigit(key))
+        {
+            return true;
+        }
     }
     return false;
 }
