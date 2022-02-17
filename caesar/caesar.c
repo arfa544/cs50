@@ -32,13 +32,14 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    printf("%lu",strlen(s));
-    // if(strlen(s) == 1)
-    // {
-    //     if(isdigit(s))
-    //     {
-    //         return true;
-    //     }
-    // }
+    //printf("%lu",strlen(s));
+    if(strlen(s) == 1)
+    {
+        printf("strlen 1");
+        // if(isdigit(s))
+        // {
+        //     return true;
+        // }
+    }
     return false;
 }
