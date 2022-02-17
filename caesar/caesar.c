@@ -13,7 +13,7 @@ int main(int argc, string argv[])
     // {
     //     printf("%s", argv[i]);
     // }
-    string s;
+    //string s;
 
     // Check if exactly 1 key is passed.
     if (argc != 2)
