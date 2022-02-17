@@ -32,6 +32,6 @@ int main(int argc, string argv[])
 
 bool only_digits(string key)
 {
-    printf("%s", key);
+    if(key >= int('0') )
     return true;
 }
