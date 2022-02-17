@@ -36,7 +36,7 @@ bool only_digits(string s)
     if(strlen(s) == 1)
     {
         printf("strlen 1\n");
-        printf("%d\n", isdigit('2'));
+        printf("%d\n", isdigit(s[0]);
         // if(isdigit(s))
         // {
         //     return true;
