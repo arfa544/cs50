@@ -54,3 +54,5 @@ bool only_digits(string s)
     }
     return false;
 }
+
+char rotate(char c, int n)
