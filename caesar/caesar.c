@@ -10,6 +10,7 @@ char rotate(char c, int n);
 int main(int argc, string argv[])
 {
     int key;
+    string s;
     // printf("%i", argc);
     // for(int i=0;i<argc;i++)
     // {
@@ -32,8 +33,9 @@ int main(int argc, string argv[])
     }
 
     //coverting key into an integer.
-    key = atoi(argv[1]);
-    printf("%s",argv[1]);
+    s = argv[1];
+    key = atoi(s);
+    printf("%i", s);
 
 
     string plaintext = get_string("Plaintext:");
