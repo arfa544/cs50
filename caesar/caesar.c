@@ -29,6 +29,12 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
+    //coverting key into an integer.
+    int atoi(string argv[1]);
+    printf("%i",argv[1]);
+
+
     string plaintext = get_string("Plaintext:");
     return 0;
 }
