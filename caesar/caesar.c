@@ -59,7 +59,7 @@ char rotate(char c, int key)
 {
      for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if (s[i] >= 'a' && s[i] <= 'z')
+        if (c >= 'a' && c <= 'z')
         {
             printf("%c", s[i] - 32);
         }
