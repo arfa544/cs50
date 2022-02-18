@@ -31,7 +31,7 @@ int main(int argc, string argv[])
     }
 
     //coverting key into an integer.
-    int atoi(string argv[1]);
+    atoi("argv[1]");
     printf("%i",argv[1]);
 
 
