@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 bool only_digits(string s);
-char rotate(char c, int n);
+char rotate(char c, int key);
 
 int main(int argc, string argv[])
 {
@@ -55,7 +55,12 @@ bool only_digits(string s)
     return false;
 }
 
-char rotate(char c, int n)
+char rotate(char c, int key)
 {
-    
+     for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            printf("%c", s[i] - 32);
+        }
 }
