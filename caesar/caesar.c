@@ -61,7 +61,7 @@ char rotate(char c, int key)
 
     if (islower(c))
     {
-        
+        c = c- 97;
         printf("%c\n", c + key);
     }
 
