@@ -9,6 +9,7 @@ char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
+    int key;
     // printf("%i", argc);
     // for(int i=0;i<argc;i++)
     // {
@@ -31,7 +32,7 @@ int main(int argc, string argv[])
     }
 
     //coverting key into an integer.
-    atoi("argv[1]");
+    key = atoi(argv[1]);
     printf("%i",argv[1]);
 
 
