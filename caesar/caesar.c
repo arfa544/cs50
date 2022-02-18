@@ -33,7 +33,7 @@ int main(int argc, string argv[])
 
     //coverting key into an integer.
     key = atoi(argv[1]);
-    printf("%i",argv[1]);
+    printf("%s",argv[1]);
 
 
     string plaintext = get_string("Plaintext:");
