@@ -61,6 +61,7 @@ char rotate(char c, int key)
 
     if (c >= 'a' && c <= 'z')
     {
+        
         printf("%c\n", c + key);
     }
 
