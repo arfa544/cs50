@@ -37,7 +37,7 @@ int main(int argc, string argv[])
     key = atoi(argv[1]);
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
-    rotate('a',1);
+    rotate('a',27);
     return 0;
 }
 
@@ -58,12 +58,11 @@ bool only_digits(string s)
 
 char rotate(char c, int key)
 {
-     for (int i = 0, n = strlen(s); i < n; i++)
+
+    if (c >= 'a' && c <= 'z')
     {
-        if (c >= 'a' && c <= 'z')
-        {
-            printf("%c", c + key);
-        }
+        printf("%c\n", c + key);
     }
+
     return c;
 }
