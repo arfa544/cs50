@@ -4,7 +4,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-bool only_digits(string s);
+bool only_digits(string s); //Checks whether 
 char rotate(char c, int key);
 
 int main(int argc, string argv[])
@@ -29,7 +29,7 @@ int main(int argc, string argv[])
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
     printf("ciphertext:");
-    for (int i =0; i < strlen(plaintext); i++)
+    for (int i = 0; i < strlen(plaintext); i++)
     {
         rotate(plaintext[i], key);
     }
