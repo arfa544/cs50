@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 bool only_digits(string s);     //Conforms that the input key is only a digit.
-char rotate(char c, int key);   //
+char rotate(char c, int key);   //Converts plaintext into ciphertext.
 
 int main(int argc, string argv[])
 {
