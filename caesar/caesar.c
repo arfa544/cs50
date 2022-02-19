@@ -58,11 +58,9 @@ bool only_digits(string s)
 
 char rotate(char c, int key)
 {
-    int a;
     if (islower(c))
     {
-
-        printf("%c\n", ((int)c+key)%26);
+        printf("%c\n", (((c-97) + key) % 26) + 97);
     }
 
     return c;
