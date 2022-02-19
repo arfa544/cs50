@@ -44,7 +44,6 @@ bool only_digits(string s)
     {
         if (isdigit(s[i]))
         {
-            
             return true;
         }
     }
