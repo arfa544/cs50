@@ -42,7 +42,7 @@ int main(int argc, string argv[])
     {
 
         rotate(plaintext[i], key);
-
+        printf("\n")
     }
 
     return 0;
@@ -77,6 +77,6 @@ char rotate(char c, int key)
     {
         printf("%c",c);
     }
-    
+
     return c;
 }
