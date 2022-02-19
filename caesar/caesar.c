@@ -10,11 +10,6 @@ char rotate(char c, int key);
 int main(int argc, string argv[])
 {
     int key;
-    // printf("%i", argc);
-    // for(int i=0;i<argc;i++)
-    // {
-    //     printf("%s", argv[i]);
-
     // Check if exactly 1 key is passed.
     if (argc != 2)
     {
@@ -44,11 +39,8 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    //printf("%lu",strlen(s));
     for(int i = 0; i < strlen(s); i++)
     {
-        //printf("strlen 1\n");
-        //printf("%d\n", isdigit(s[0]));
         if(isdigit(s[i]))
         {
             return true;
