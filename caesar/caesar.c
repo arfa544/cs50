@@ -4,8 +4,8 @@
 #include<string.h>
 #include<stdlib.h>
 
-bool only_digits(string s); //Checks whether the input key is 
-char rotate(char c, int key);
+bool only_digits(string s);     //Conforms that the input key is only a digit.
+char rotate(char c, int key);   //
 
 int main(int argc, string argv[])
 {
@@ -37,6 +37,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
+//Conforms that the input key is only a digit.
 bool only_digits(string s)
 {
     for (int i = 0; i < strlen(s); i++)
