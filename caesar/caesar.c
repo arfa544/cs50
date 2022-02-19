@@ -62,6 +62,10 @@ char rotate(char c, int key)
     {
         printf("%c\n", (((c-97) + key) % 26) + 97);
     }
+     if (isupper(c))
+    {
+        printf("%c\n", (((c-) + key) % 26) + 97);
+    }
 
     return c;
 }
