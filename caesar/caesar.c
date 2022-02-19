@@ -38,7 +38,7 @@ int main(int argc, string argv[])
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
     printf("ciphertext:");
-    for(int i = 0, i < plaintext[i], i++)
+    for(int i =0; i < strlen(plaintext); i++)
     {
         char x;
         x=rotate('plaintext[i]', key);
