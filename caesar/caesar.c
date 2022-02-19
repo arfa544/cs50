@@ -44,11 +44,14 @@ bool only_digits(string s)
     {
         if (isdigit(s[i]))
         {
-            
+            i++;
         }
-        return true;
     }
-    return false;
+    return true;
+    else
+    {
+        return false;
+    }
 }
 
 //Converts plaintext into ciphertext.
