@@ -37,8 +37,8 @@ int main(int argc, string argv[])
     for(int i =0; i < strlen(plaintext); i++)
     {
         rotate(plaintext[i], key);
-        printf("\n");
     }
+    printf("\n");
     return 0;
 }
 
