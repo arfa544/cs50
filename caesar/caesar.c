@@ -38,8 +38,11 @@ int main(int argc, string argv[])
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
     printf("ciphertext:");
-    for(int i = 0, )
-    rotate('.',27);
+    for(int i = 0, i < plaintext[i], i++)
+    {
+        rotate('.',27);
+    }
+
     return 0;
 }
 
