@@ -44,6 +44,7 @@ bool only_digits(string s)
     {
         if (isdigit(s[i]))
         {
+            
             return true;
         }
     }
@@ -53,7 +54,7 @@ bool only_digits(string s)
 //Converts plaintext into ciphertext.
 char rotate(char c, int key)
 {
-    if (islower(c)) 
+    if (islower(c))
     {
         printf("%c", (((c - 97) + key) % 26) + 97);
     }
