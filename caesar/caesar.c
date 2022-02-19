@@ -4,7 +4,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-bool only_digits(string s); //Checks whether 
+bool only_digits(string s); //Checks whether the input key is 
 char rotate(char c, int key);
 
 int main(int argc, string argv[])
