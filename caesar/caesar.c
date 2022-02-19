@@ -37,6 +37,7 @@ int main(int argc, string argv[])
     key = atoi(argv[1]);
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
+    string 
     rotate('.',27);
     return 0;
 }
