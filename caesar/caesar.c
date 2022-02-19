@@ -42,7 +42,7 @@ int main(int argc, string argv[])
     {
         char x;
         x=rotate(plaintext[i], key);
-        printf("%c\n",x);
+        printf("%c",x);
     }
 
     return 0;
