@@ -29,7 +29,7 @@ int main(int argc, string argv[])
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
     printf("ciphertext:");
-    for(int i =0; i < strlen(plaintext); i++)
+    for (int i =0; i < strlen(plaintext); i++)
     {
         rotate(plaintext[i], key);
     }
@@ -39,9 +39,9 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    for(int i = 0; i < strlen(s); i++)
+    for (int i = 0; i < strlen(s); i++)
     {
-        if(isdigit(s[i]))
+        if (isdigit(s[i]))
         {
             return true;
         }
@@ -53,15 +53,15 @@ char rotate(char c, int key)
 {
     if (islower(c))
     {
-        printf("%c", (((c-97) + key) % 26) + 97);
+        printf("%c", (((c - 97) + key) % 26) + 97);
     }
     else if (isupper(c))
     {
-        printf("%c", (((c-65) + key) % 26) + 65);
+        printf("%c", (((c - 65) + key) % 26) + 65);
     }
     else
     {
-        printf("%c",c);
+        printf("%c", c);
     }
     return c;
 }
