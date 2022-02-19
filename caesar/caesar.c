@@ -65,5 +65,4 @@ char rotate(char c, int key)
     {
         return (c);
     }
-    // return c;
 }
