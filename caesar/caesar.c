@@ -31,7 +31,7 @@ int main(int argc, string argv[])
     printf("ciphertext:");
     for (int i = 0; i < strlen(plaintext); i++)
     {
-        rotate(plaintext[i], key);
+        printf("%c", rotate(plaintext[i], key));
     }
     printf("\n");
     return 0;
@@ -55,15 +55,15 @@ char rotate(char c, int key)
 {
     if (islower(c))
     {
-        printf("%c", (((c - 97) + key) % 26) + 97);
+        return ((((c - 97) + key) % 26) + 97);
     }
     else if (isupper(c))
     {
-        printf("%c", (((c - 65) + key) % 26) + 65);
+        return ((((c - 65) + key) % 26) + 65);
     }
     else
     {
-        printf("%c", c);
+        return (c);
     }
-    return c;
+    // return c;
 }
