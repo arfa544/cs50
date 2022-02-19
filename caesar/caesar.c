@@ -10,13 +10,10 @@ char rotate(char c, int key);
 int main(int argc, string argv[])
 {
     int key;
-
     // printf("%i", argc);
     // for(int i=0;i<argc;i++)
     // {
     //     printf("%s", argv[i]);
-    // }
-    //string s;
 
     // Check if exactly 1 key is passed.
     if (argc != 2)
@@ -33,18 +30,15 @@ int main(int argc, string argv[])
     }
 
     //coverting key into an integer.
-
     key = atoi(argv[1]);
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
     printf("ciphertext:");
     for(int i =0; i < strlen(plaintext); i++)
     {
-
         rotate(plaintext[i], key);
-        printf("\n")
+        printf("\n");
     }
-
     return 0;
 }
 
@@ -77,6 +71,5 @@ char rotate(char c, int key)
     {
         printf("%c",c);
     }
-
     return c;
 }
