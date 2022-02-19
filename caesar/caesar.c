@@ -41,8 +41,8 @@ int main(int argc, string argv[])
     for(int i =0; i < strlen(plaintext); i++)
     {
         char x;
-        x=rotate('plaintext[i]', key);
-        printf("%c",x)
+        x=rotate(plaintext[i], key);
+        printf("%c",x);
     }
 
     return 0;
