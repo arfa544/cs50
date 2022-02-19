@@ -40,7 +40,9 @@ int main(int argc, string argv[])
     printf("ciphertext:");
     for(int i = 0, i < plaintext[i], i++)
     {
-        rotate('plaintext[i]', key);
+        char x;
+        x=rotate('plaintext[i]', key);
+        printf("%c",x)
     }
 
     return 0;
