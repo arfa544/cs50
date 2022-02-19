@@ -37,7 +37,7 @@ int main(int argc, string argv[])
     key = atoi(argv[1]);
     //printf("%i", key);
     string plaintext = get_string("Plaintext:");
-    rotate('a',27);
+    rotate('.',27);
     return 0;
 }
 
@@ -62,10 +62,13 @@ char rotate(char c, int key)
     {
         printf("%c\n", (((c-97) + key) % 26) + 97);
     }
-     if (isupper(c))
+    else if (isupper(c))
     {
-        printf("%c\n", (((c-) + key) % 26) + 97);
+        printf("%c\n", (((c-65) + key) % 26) + 65);
     }
-
+    else
+    {
+        printf("%c\n",c);
+    }
     return c;
 }
