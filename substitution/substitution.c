@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     // Prints the usage if key is not an alphabet.
     if (!only_alphabets(argv[1]))
     {
-        printf("Usage: ./caesar key\n");
+        printf("Key must only cintain alphabetical characters.\n");
         return 1;
     }
 
