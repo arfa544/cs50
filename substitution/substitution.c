@@ -87,5 +87,4 @@ char rotate(char c, string key)
         //         return lower;
         //     }
     }
-    return c;
 }
