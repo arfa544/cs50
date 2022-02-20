@@ -13,3 +13,16 @@ int main(int argc, string argv[])
     }
 
 }
+
+//Conforms that the input key is only an alphabet.
+bool only_alphabets(string s)
+{
+    for (int i = 0; i < strlen(s); i++)
+    {
+        if (!isalpha(s[i]))
+        {
+            return false;
+        }
+    }
+    return true;
+}
