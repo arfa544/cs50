@@ -81,7 +81,7 @@ char rotate(char c, string key)
     {
         c = c - 65;
         s = (int)c;
-        if(isupper(key[s]))
+        if(islower(key[s]))
         {
             return key[s] - 32;
         }
