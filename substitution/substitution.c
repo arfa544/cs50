@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include<ctype.h>
+#include<string.h>
 
 bool only_alphabets(string s);     //Conforms that the input key is only an alphabet.
 
