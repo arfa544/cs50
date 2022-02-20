@@ -67,13 +67,13 @@ char rotate(char c, string key)
     {
         c = c - 97;
         s = (int)c;
-        if(isupper(k[s]))
+        if(isupper(key[s]))
         {
-            return k[s] - 32;
+            return key[s] - 32;
         }
         else
         {
-            return k[s];
+            return key[s];
         }
         // for (int i = 0; i < 27; i++)
         // {
