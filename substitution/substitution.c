@@ -13,6 +13,14 @@ int main(int argc, string argv[])
         return 1;
     }
 
+
+    // Prints the usage if key is not an alphabet.
+    if (!only_alphabets(argv[1]))
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+
 }
 
 //Conforms that the input key is only an alphabet.
