@@ -32,7 +32,7 @@ int main(int argc, string argv[])
     }
 
     //To check the non occarance of same characters.
-    
+    check_rep_char()
 
     //Getting input from user.
     string plaintext = get_string("Plaintext:");
