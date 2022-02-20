@@ -58,5 +58,8 @@ bool only_alphabets(string s)
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
 {
-
+    if (islower(c))
+    {
+        
+    }
 }
