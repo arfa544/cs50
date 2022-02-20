@@ -62,11 +62,7 @@ bool only_alphabets(string s)
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
 {
-    char text, lower;
-    for (int i = 0; i < 27; i++)
-    {
-       key[i] = text
-    }
+    ch
     // if (islower(c))
     // {
     //     text = c - 97;
