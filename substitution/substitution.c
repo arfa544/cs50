@@ -72,7 +72,8 @@ void check_rep_char(string key)
         {
             if(key[i] == key[j])
             {
-                printf("Key must not contain reapeated characters.");
+                //printf("Key must not contain reapeated characters.");
+                printf("i\n");
             }
         }
     }
