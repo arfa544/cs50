@@ -60,6 +60,6 @@ char rotate(char c, string key)
 {
     if (islower(c))
     {
-        
+        return(key[c-97]);
     }
 }
