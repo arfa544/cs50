@@ -63,6 +63,7 @@ bool only_alphabets(string s)
 char rotate(char c, string key)
 {
     int s = 0;
+    //Reservers the lower case.
     if (islower(c))
     {
         c = c - 97;
@@ -75,8 +76,9 @@ char rotate(char c, string key)
         {
             return key[s];
         }
-
     }
+
+    //Reserves the upper case.
     if (isupper(c))
     {
         c = c - 65;
