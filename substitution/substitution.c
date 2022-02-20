@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 bool only_alphabets(string s);     //Conforms that the input key is only an alphabet.
-
+char rotate(char c, char key);   //Converts plaintext into ciphertext.
 
 int main(int argc, string argv[])
 {
@@ -53,4 +53,10 @@ bool only_alphabets(string s)
         }
     }
     return true;
+}
+
+//Converts plaintext into ciphertext.
+char rotate(char c, char key)
+{
+    
 }
