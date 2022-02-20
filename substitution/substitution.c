@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include<ctype.h>
 #include<string.h>
+#include<stdlib.h>
 
 bool only_alphabets(string s);     //Conforms that the input key is only an alphabet.
 
@@ -35,6 +36,9 @@ int main(int argc, string argv[])
 
     //Printing output.
     printf("ciphertext:");
+
+    //Converting into ciphertext.
+    for (int i = 0; i < strlen(plaintext); i++)
 
 }
 
