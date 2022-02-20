@@ -36,7 +36,7 @@ int main(int argc, string argv[])
     string key = argv[1];
     for (int i = 0; i < strlen(key); i++)
     {
-        for (int j = i; j < strlen(key); j++)
+        for (int j = i + 1; j < strlen(key); j++)
         {
             if(key[i] == key[j])
             {
