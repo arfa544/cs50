@@ -63,21 +63,25 @@ bool only_alphabets(string s)
 char rotate(char c, string key)
 {
     char text, lower;
-    if (islower(c))
+    for (int i = 0; i < 27; i++)
     {
-        text = c - 97;
-        for (int i = 0; i < 27; i++)
-        {
-            key[i] = text
-        }
-        for (int i = 0; i < strlen(key); i++)
-        {
-            if(isupper(key[i]))
-            {
-                lower = key[i] - 32;
-                return lower;
-            }
-        }
+       key[i] = text
+    }
+    // if (islower(c))
+    // {
+    //     text = c - 97;
+    //     for (int i = 0; i < 27; i++)
+    //     {
+    //         key[i] = text
+    //     }
+    //     for (int i = 0; i < strlen(key); i++)
+    //     {
+    //         if(isupper(key[i]))
+    //         {
+    //             lower = key[i] - 32;
+    //             return lower;
+    //         }
+    //     }
     }
     return c;
 }
