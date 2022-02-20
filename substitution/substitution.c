@@ -69,7 +69,7 @@ char rotate(char c, string key)
         s = (int)c;
         if(isupper(key[s]))
         {
-            return key[s] + 32;
+            printf("%c", key[s] + 32);
         }
         else
         {
@@ -87,4 +87,5 @@ char rotate(char c, string key)
         //         return lower;
         //     }
     }
+    return key[s] + 32;
 }
