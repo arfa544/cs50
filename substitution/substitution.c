@@ -23,7 +23,10 @@ int main(int argc, string argv[])
     }
 
     //To check that the contains 26 characters.
-
+    if (strlen(argv[1]) < 26)
+    {
+        printf(")
+    }
 
 }
 
