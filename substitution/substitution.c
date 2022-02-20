@@ -70,7 +70,7 @@ void check_rep_char(string key)
     {
         for (int j = i; j < strlen(key); j++)
         {
-            if(!strcmp(key[i],key[j]))
+            if(! (strcmp(key[i],key[j])))
             {
                 printf("Key must not contain reapeated characters.");
             }
