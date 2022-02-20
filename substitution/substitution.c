@@ -62,7 +62,7 @@ bool only_alphabets(string s)
     return true;
 }
 
-check_rep_char(argv[1])
+check_rep_char(string argv[1])
 
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
