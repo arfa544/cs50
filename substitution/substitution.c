@@ -6,7 +6,7 @@
 
 bool only_alphabets(string s);     //Conforms that the input key is only an alphabet.
 char rotate(char c, string key);   //Converts plaintext into ciphertext.
-void check_rep_char(string key);    //To check the non occarance of same characters.
+int check_rep_char(string key);    //To check the non occarance of same characters.
 
 int main(int argc, string argv[])
 {
@@ -64,7 +64,7 @@ bool only_alphabets(string s)
 }
 
 //To check the non occarance of same characters.
-void check_rep_char(string key)
+int check_rep_char(string key)
 {
     for (int i = 0; i < strlen(key); i++)
     {
