@@ -63,6 +63,15 @@ bool only_alphabets(string s)
 }
 
 check_rep_char(string argv[1])
+{
+    for (int i = 0; i < strlen(argv[1]); i++)
+    {
+        for (int j = i; j < strlen(argv[1]); j++)
+        {
+            
+        }
+    }
+}
 
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
