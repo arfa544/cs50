@@ -68,7 +68,7 @@ check_rep_char(string argv[1])
     {
         for (int j = i; j < strlen(argv[1]); j++)
         {
-            
+            if(strcmp())
         }
     }
 }
