@@ -65,6 +65,7 @@ char rotate(char c, string key)
     if (islower(c))
     {
         c = c - 97;
+        c = 
         for (int i = 0; i < 27; i++)
         {
             key[i] = text
