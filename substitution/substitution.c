@@ -10,7 +10,7 @@ int check_rep_char(string key);    //To check the non occarance of same characte
 
 int main(int argc, string argv[])
 {
-     // Check if exactly 1 key is passed.
+    // Check if exactly 1 key is passed.
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
@@ -38,7 +38,7 @@ int main(int argc, string argv[])
     {
         for (int j = i + 1; j < strlen(key); j++)
         {
-            if(key[i] == key[j])
+            if (key[i] == key[j])
             {
                 printf("Key must not contain reapeated characters.\n");
                 return 1;
@@ -83,7 +83,7 @@ char rotate(char c, string key)
     {
         c = c - 97;
         s = (int)c;
-        if(isupper(key[s]))
+        if (isupper(key[s]))
         {
             return key[s] + 32;
         }
@@ -98,7 +98,7 @@ char rotate(char c, string key)
     {
         c = c - 65;
         s = (int)c;
-        if(islower(key[s]))
+        if (islower(key[s]))
         {
             return key[s] - 32;
         }
