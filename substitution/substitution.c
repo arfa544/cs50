@@ -74,6 +74,7 @@ void check_rep_char(string key)
             {
                 //printf("Key must not contain reapeated characters.");
                 printf("i\n");
+                return 1;
             }
         }
     }
