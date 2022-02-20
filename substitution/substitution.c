@@ -30,6 +30,12 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    //Getting input from user.
+    string plaintext = get_string("Plaintext:");
+
+    //Printing output.
+    printf("ciphertext:");
+
 }
 
 //Conforms that the input key is only an alphabet.

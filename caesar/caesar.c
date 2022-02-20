@@ -26,8 +26,11 @@ int main(int argc, string argv[])
 
     //coverting key into an integer.
     key = atoi(argv[1]);
-    //printf("%i", key);
+
+    //Getting input from user.
     string plaintext = get_string("Plaintext:");
+
+    //Printing output.
     printf("ciphertext:");
     for (int i = 0; i < strlen(plaintext); i++)
     {
