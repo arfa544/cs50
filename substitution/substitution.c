@@ -34,13 +34,14 @@ int main(int argc, string argv[])
 
     //To check the non occarance of same characters.
     //check_rep_char(argv[1]);
+    string key = argv[1];
     for (int i = 0; i < strlen(key); i++)
     {
         for (int j = i; j < strlen(key); j++)
         {
             if(key[i] == key[j])
             {
-                printf("Key must not contain reapeated characters.");
+                printf("Key must not contain reapeated characters.\n");
                 return 1;
             }
         }
