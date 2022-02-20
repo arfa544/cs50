@@ -64,10 +64,12 @@ char rotate(char c, string key)
 {
     if (islower(c))
     {
+        text = c - 97;
         for (int i = 0; i < strlen(key); i++)
         {
             if(isupper(key[i]))
             {
+
                 lower = key[i] - 32;
                 return(c - 97(key[i] - 32));
             }
