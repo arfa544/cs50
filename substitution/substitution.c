@@ -32,7 +32,7 @@ int main(int argc, string argv[])
     }
 
     //To check the non occarance of same characters.
-    check_rep_char()
+    check_rep_char(argv[1]);
 
     //Getting input from user.
     string plaintext = get_string("Plaintext:");
@@ -61,6 +61,8 @@ bool only_alphabets(string s)
     }
     return true;
 }
+
+check_rep_char(argv[1])
 
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
