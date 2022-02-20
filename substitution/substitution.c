@@ -69,23 +69,13 @@ char rotate(char c, string key)
         s = (int)c;
         if(isupper(key[s]))
         {
-            printf("%c", key[s] + 32);
+            return key[s] + 32;
         }
         else
         {
             return key[s];
         }
-        // for (int i = 0; i < 27; i++)
-        // {
-        //     key[i] = text
-        // }
-        // for (int i = 0; i < strlen(key); i++)
-        // {
-        //     if(isupper(key[i]))
-        //     {
-        //         lower = key[i] - 32;
-        //         return lower;
-        //     }
+       
     }
-    return key[s] + 32;
+    return c;
 }
