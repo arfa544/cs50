@@ -33,7 +33,18 @@ int main(int argc, string argv[])
     }
 
     //To check the non occarance of same characters.
-    check_rep_char(argv[1]);
+    //check_rep_char(argv[1]);
+    for (int i = 0; i < strlen(key); i++)
+    {
+        for (int j = i; j < strlen(key); j++)
+        {
+            if(key[i] == key[j])
+            {
+                printf("Key must not contain reapeated characters.");
+                return 1;
+            }
+        }
+    }
 
     //Getting input from user.
     string plaintext = get_string("Plaintext:");
@@ -64,21 +75,21 @@ bool only_alphabets(string s)
 }
 
 //To check the non occarance of same characters.
-int check_rep_char(string key)
-{
-    for (int i = 0; i < strlen(key); i++)
-    {
-        for (int j = i; j < strlen(key); j++)
-        {
-            if(key[i] == key[j])
-            {
-                //printf("Key must not contain reapeated characters.");
-                printf("i\n");
-                return 1;
-            }
-        }
-    }
-}
+// int check_rep_char(string key)
+// {
+//     for (int i = 0; i < strlen(key); i++)
+//     {
+//         for (int j = i; j < strlen(key); j++)
+//         {
+//             if(key[i] == key[j])
+//             {
+//                 //printf("Key must not contain reapeated characters.");
+
+//                 return 1;
+//             }
+//         }
+//     }
+// }
 
 //Converts plaintext into ciphertext.
 char rotate(char c, string key)
