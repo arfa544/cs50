@@ -31,6 +31,9 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    //To check the non occarance of same characters.
+    
+
     //Getting input from user.
     string plaintext = get_string("Plaintext:");
 
