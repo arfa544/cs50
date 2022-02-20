@@ -4,6 +4,7 @@
 
 bool only_alphabets(string s);     //Conforms that the input key is only an alphabet.
 
+
 int main(int argc, string argv[])
 {
      // Check if exactly 1 key is passed.
@@ -20,6 +21,9 @@ int main(int argc, string argv[])
         printf("Key must only cintain alphabetical characters.\n");
         return 1;
     }
+
+    //To check that the contains 26 characters.
+
 
 }
 
