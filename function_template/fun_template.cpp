@@ -5,7 +5,7 @@ template <class T>
 void swap(T a, T b)
 {
 	cout<<"Before swap:"<<a<<"\t"<<b<<endl;
-	int temp;
+	float temp;
 	temp = a;
 	a = b;
 	b = temp;
@@ -14,6 +14,6 @@ void swap(T a, T b)
 
 int main()
 {
-	swap<float>(1.2,2.3);
+	swap<float>(1.222,2.333);
 	return 0;
 }
