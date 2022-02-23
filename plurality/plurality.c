@@ -89,6 +89,6 @@ void print_winner(void)
             candidates[i+1].votes = candidates[i].votes;
         }
     }
-    printf("%s",candidates[1].votes);
+    printf("%i",candidates[1].votes);
     return;
 }
