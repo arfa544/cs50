@@ -73,7 +73,7 @@ bool vote(string name)
             candidates[i].votes++;
             printf("%s:%i\n",candidates[i].name,candidates[i].votes);
         }
-        return true;
+        
     }
     return false;
 }
