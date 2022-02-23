@@ -73,9 +73,8 @@ bool vote(string name)
             candidates[i].votes++;
             printf("%s:%i\n",candidates[i].name,candidates[i].votes);
         }
-        
     }
-    return false;
+    return true;
 }
 
 // Print the winner (or winners) of the election
