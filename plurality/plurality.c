@@ -80,6 +80,7 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+    //To find the maximum number of votes.
     int  max_vote = 0;
     for (int i = 0; i < candidate_count; i++)
     {
