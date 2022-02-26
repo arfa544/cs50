@@ -129,10 +129,10 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-    if (strcmp(candidates[j].name, name) == 0)
+    if (strcmp(candidates[rank].name, name) == 0)
     {
-        preferences[i][j]++;
-        printf("%s : %i", candidates[j].name, preferences[i][j]);
+        preferences[voter][rank]++;
+        printf("%s : %i", candidates[rank].name, preferences[voter][rank]);
         return true;
     }
     return false;
