@@ -145,11 +145,19 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    for (int i = 0; i<candidate_count, i++)
+    for (int i = 0; i < candidate_count, i++)
     {
         if (preferences[i][0] == 0)
         {
-            cadidates
+            cadidates[0].votes++;
+        }
+        else if (preferences[i][0] == 1)
+        {
+            cadidates[1].votes++;
+        }
+        else if (preferences[i][0] == 2)
+        {
+            cadidates[2].votes++;
         }
     }
     return;
