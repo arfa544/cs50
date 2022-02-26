@@ -135,7 +135,7 @@ bool vote(int voter, int rank, string name)
         printf("%s : %i\n", candidates[rank].name, preferences[voter][rank]);
         return true;
     }
-    
+    if (strcmp(candidates[rank+1].name, name) == 0)
 }
 
 // Tabulate votes for non-eliminated candidates
