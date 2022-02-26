@@ -133,7 +133,7 @@ bool vote(int voter, int rank, string name)
     {
         if (strcmp(candidates[k].name, name) == 0)
         {
-            preferences[voter][rank] = rank;
+            preferences[voter][rank]++;
             printf("%s : %i\n", candidates[k].name, preferences[voter][rank]);
             return true;
         }
