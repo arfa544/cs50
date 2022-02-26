@@ -129,16 +129,16 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-    if (strcmp(candidates[rank].name, name) == 0)
+    for (int k = 0; k < candidate_count; k++)
     {
-        preferences[voter][rank] = rank;
-        printf("%s : %i\n", candidates[rank].name, preferences[voter][rank]);
-        return true;
+        if (strcmp(candidates[rank].name, name) == 0)
+        {
+            preferences[voter][rank] = rank;
+            printf("%s : %i\n", candidates[rank].name, preferences[voter][rank]);
+            return true;
+        }
     }
-    if (strcmp(candidates[rank+1].name, name) == 0)
-    {
-        
-    }
+    return false;
 }
 
 // Tabulate votes for non-eliminated candidates
