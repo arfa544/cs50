@@ -152,14 +152,17 @@ void tabulate(void)
             if (preferences[i][0] == 0)
             {
                 cadidates[0].votes++;
+                printf("%i", cadidates[0].votes);
             }
             else if (preferences[i][0] == 1)
             {
                 cadidates[1].votes++;
+                printf("%i", cadidates[1].votes);
             }
             else (preferences[i][0] == 2)
             {
                 cadidates[2].votes++;
+                printf("%i", cadidates[2].votes);
             }
         }
     }
