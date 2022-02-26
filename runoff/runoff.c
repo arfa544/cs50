@@ -132,7 +132,7 @@ bool vote(int voter, int rank, string name)
     if (strcmp(candidates[rank].name, name) == 0)
     {
         preferences[voter][rank]++;
-        printf("%s : %i", candidates[rank].name, preferences[voter][rank]);
+        printf("%s : %i\n", candidates[rank].name, preferences[voter][rank]);
         return true;
     }
     return false;
