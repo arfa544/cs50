@@ -100,6 +100,10 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+    for (int k = 0; k < candidate_count; k++)
+    {
+        if(strcmp(cnadidates[k].name == name))
+    }
     return false;
 }
 
