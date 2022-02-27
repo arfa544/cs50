@@ -105,6 +105,7 @@ bool vote(int rank, string name, int ranks[])
         if(strcmp(cnadidates[k].name == name) == 0)
         {
             ranks[k]++;
+            printf()
             return true;
         }
     }
