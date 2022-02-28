@@ -132,10 +132,12 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
-    for (i = 0; i < MAX; i++)
+    for (row = 0; row < MAX; row++)
     {
-        for (j = i+1; j < MAX; j++)
+        for (col = row + 1; col < MAX; col++)
         {
+            int preference1 = preferences[row][col];
+            int preference2 = preferences[col][row];
             
         }
     }
