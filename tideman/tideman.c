@@ -138,7 +138,20 @@ void add_pairs(void)
         {
             int preference1 = preferences[row][col];
             int preference2 = preferences[col][row];
-            
+            if (preference1 != preference2)
+            {
+                pair p;
+                if (preference1 > preference2)
+                {
+                    p.winner = row;
+                    p.loser = col;
+                }
+                else
+                {
+                    p.winner = col;
+                    p.loser = row;
+                }
+            }
         }
     }
     return;
