@@ -151,6 +151,7 @@ void add_pairs(void)
                     p.winner = col;
                     p.loser = row;
                 }
+                pairs[pair_count++] = p;
             }
         }
     }
