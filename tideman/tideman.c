@@ -192,6 +192,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    
     return;
 }
 
@@ -209,8 +210,16 @@ bool cycle(int winner, int loser)
                 winner = i;
             }
         }
-
+        if (!found)
+        {
+            winner = -1;
+        }
     }
+    if (winner == loser)
+    {
+        return true;
+    }
+    return false;
 }
 
 // Print the winner of the election
