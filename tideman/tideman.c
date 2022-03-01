@@ -32,6 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
+bool cycle(int winner, int loser);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -195,7 +196,10 @@ void lock_pairs(void)
 }
 
 //To check whether the chain creates a cycle.
-bool 
+bool cycle(int winner, int loser)
+{
+    while (winner != -1 && winner != loser)
+}
 
 // Print the winner of the election
 void print_winner(void)
