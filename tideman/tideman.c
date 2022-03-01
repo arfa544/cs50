@@ -245,6 +245,7 @@ void print_winner(void)
             }
         }
         printf("%s\n", candidates[i]);
+        return;
         // if (found_source == true)
         // {
         //     can_index = i;
