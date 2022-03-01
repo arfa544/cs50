@@ -146,12 +146,6 @@ void add_pairs(void)
             }
         }
     }
-    // for (int i = 0; i <pair_count; i++)
-    // {
-    //     printf(pairs[i]);
-    // }
-    // printf("\n");
-    // return;
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -167,7 +161,7 @@ void sort_pairs(void)
         int loser_v = preferences[pairs[i].loser][pairs[i].winner];
         int current_strength = winner_v - loser_v;
 
-        for(int j = i + 1; j < pair_count; j++)
+        for (int j = i + 1; j < pair_count; j++)
         {
             int winner_votes = preferences[pairs[j].winner][pairs[j].loser];
             int loser_votes = preferences[pairs[j].loser][pairs[j].winner];
