@@ -244,15 +244,16 @@ void print_winner(void)
                 break;
             }
         }
+        printf("%s\n", candidates[i]);
         // if (found_source == true)
         // {
         //     can_index = i;
         //     break;
         // }
-        if (found_source == true)
-        {
-            printf("%s\n",candidates[can_index]);
-            return;
-        }
+        // if (found_source == true)
+        // {
+        //     printf("%s\n",candidates[can_index]);
+        //     return;
+        // }
     }
 }
