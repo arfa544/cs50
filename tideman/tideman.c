@@ -232,10 +232,10 @@ bool cycle(int winner, int loser)
 void print_winner(void)
 {
     // TODO
+    int can_index = 0;
     for (int i =0; i <MAX; i++)
     {
         bool found_source = true;
-        int can_index = 0;
         for (int j = 0; j < MAX; j++)
         {
             if(locked[i][j] == true)
@@ -244,11 +244,15 @@ void print_winner(void)
                 break;
             }
         }
-        if(found_source)
+        if (found_source == true)
         {
-            printf("%s\n",candidates[i]);
+            can_index = i;
+            break;
+        }
+        if (found_source == true)
+        {
+            printf("%s\n",candidates[can_index]);
             return;
         }
     }
-    return;
 }
