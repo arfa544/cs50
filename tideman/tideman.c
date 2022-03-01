@@ -104,7 +104,7 @@ bool vote(int rank, string name, int ranks[])
     // TODO
     for (int k = 0; k < candidate_count; k++)
     {
-        if(strcmp(candidates[k],name) == 0)
+        if (strcmp(candidates[k], name) == 0)
         {
             ranks[rank] = k;
             //printf("%i\n",ranks[k]);
@@ -194,7 +194,7 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        if(!cycle(pairs[i].winner,pairs[i].loser))
+        if (!cycle(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -238,7 +238,7 @@ void print_winner(void)
         //bool found_source = true;
         for (int j = 0; j < candidate_count; j++)
         {
-            if(locked[i][j] == true)
+            if (locked[i][j] == true)
             {
                 //found_source = false;
                 break;
