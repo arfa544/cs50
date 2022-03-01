@@ -161,7 +161,7 @@ void sort_pairs(void)
     {
         for(int j = i+1; j < pair_count; j++)
         {
-            if (pairs[i] < pairs[j])
+            if (pairs[i].winner < pairs[j].winner)
             {
                 int temp = pairs[i];
                 pairs[i] = pairs[j];
