@@ -145,12 +145,12 @@ void add_pairs(void)
             }
         }
     }
-    for (int i = 0; i <pair_count; i++)
-    {
-        printf(pairs[i]);
-    }
-    printf("\n");
-    return;
+    // for (int i = 0; i <pair_count; i++)
+    // {
+    //     printf(pairs[i]);
+    // }
+    // printf("\n");
+    // return;
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -169,11 +169,11 @@ void sort_pairs(void)
             }
         }
     }
-    for (int i = 0; i <pair_count; i++)
-    {
-        printf("%i",pairs[i]);
-    }
-    return;
+    // for (int i = 0; i <pair_count; i++)
+    // {
+    //     printf("%i",pairs[i]);
+    // }
+    // return;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
