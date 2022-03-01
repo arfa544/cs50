@@ -159,6 +159,9 @@ void sort_pairs(void)
     // TODO
     for (int i = 0; i < pair_count - 1; i++)
     {
+        int max_index = i;
+        int winner_v = preferences[pairs[i].winner][pairs[i].loser]
+        current_strength =
         for(int j = i+1; j < pair_count; j++)
         {
             if (pairs[i].winner < pairs[j].winner)
