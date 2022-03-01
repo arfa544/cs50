@@ -234,14 +234,16 @@ void print_winner(void)
     // TODO
     for (int i =0; i <MAX; i++)
     [
-        found_source = true;
+        bool found_source = true;
         for (int j = 0; j < MAX; j++)
         {
             if(locked[i][j] == true)
             {
                 found_source = false;
+                break;
             }
         }
+
     ]
     return;
 }
