@@ -160,16 +160,12 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count - 1; i++)
     {
         int max_index = i;
-        int winner_v = preferences[pairs[i].winner][pairs[i].loser]
-        current_strength =
+        int winner_v = preferences[pairs[i].winner][pairs[i].loser];
+        int loser_v = preferences[pairs[i].loser][pairs[i].winner];
+        current_strength = winner_v - loser_v;
         for(int j = i+1; j < pair_count; j++)
         {
-            if (pairs[i].winner < pairs[j].winner)
-            {
-                int temp = pairs[i];
-                pairs[i] = pairs[j];
-                pairs[j] = temp;
-            }
+            
         }
     }
     // for (int i = 0; i <pair_count; i++)
