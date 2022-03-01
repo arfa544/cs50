@@ -235,6 +235,7 @@ void print_winner(void)
     for (int i =0; i <MAX; i++)
     {
         bool found_source = true;
+        int can_index = 0;
         for (int j = 0; j < MAX; j++)
         {
             if(locked[i][j] == true)
