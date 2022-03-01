@@ -243,7 +243,11 @@ void print_winner(void)
                 break;
             }
         }
-
+        if(found_source)
+        {
+            printf("%s\n",candidates[i]);
+            return;
+        }
     ]
     return;
 }
