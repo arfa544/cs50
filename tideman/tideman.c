@@ -157,8 +157,10 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
+    //Selection sort.
     for (int i = 0; i < pair_count - 1; i++)
     {
+        //Calculating strength of victory.
         int max_index = i;
         int winner_v = preferences[pairs[i].winner][pairs[i].loser];
         int loser_v = preferences[pairs[i].loser][pairs[i].winner];
@@ -169,19 +171,20 @@ void sort_pairs(void)
             int winner_votes = preferences[pairs[j].winner][pairs[j].loser];
             int loser_votes = preferences[pairs[j].loser][pairs[j].winner];
             int temp_strength = winner_votes - loser_votes;
+            //Finding the maximum.
             if (temp_strength > current_strength)
             {
                 max_index = j;
-                current_strength = 
+                current_strength = temp_strength;
             }
-
         }
+
+        //Swapping two pairs according to strength of victory.
+        pair temp = pairs[max_index];
+        pairs[max_index] = pairs[i];
+        pairs[i] = temp;
     }
-    // for (int i = 0; i <pair_count; i++)
-    // {
-    //     printf("%i",pairs[i]);
-    // }
-    // return;
+    return;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
