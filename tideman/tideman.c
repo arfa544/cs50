@@ -207,7 +207,7 @@ bool cycle(int winner, int loser)
 {
     while (winner != -1 && winner != loser)
     {
-        bool found = true;
+        bool found = false;
         for (int i = 0; i < candidate_count; i++)
         {
             if (locked[i][winner])
