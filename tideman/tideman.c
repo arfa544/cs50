@@ -205,7 +205,8 @@ bool cycle(int winner, int loser)
         {
             if (locked[i]winner)
             {
-                
+                found = true;
+                winner = i;
             }
         }
 
