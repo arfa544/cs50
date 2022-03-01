@@ -194,6 +194,9 @@ void lock_pairs(void)
     return;
 }
 
+//To check whether the chain creates a cycle.
+bool 
+
 // Print the winner of the election
 void print_winner(void)
 {
