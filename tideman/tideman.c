@@ -145,6 +145,11 @@ void add_pairs(void)
             }
         }
     }
+    for (int i = 0; i <pair_count; i++)
+    {
+        printf("%i",pairs[i]);
+    }
+    printf("\n");
     return;
 }
 
@@ -154,7 +159,19 @@ void sort_pairs(void)
     // TODO
     for (int i = 0; i < pair_count - 1; i++)
     {
-        for(int )
+        for(int j = i+1; j < pair_count; j++)
+        {
+            if (pairs[i] < pairs[j])
+            {
+                int temp = pairs[i];
+                pairs[i] = pairs[j];
+                pairs[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i <pair_count; i++)
+    {
+        printf("%i",pairs[i]);
     }
     return;
 }
