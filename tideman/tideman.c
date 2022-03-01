@@ -162,10 +162,19 @@ void sort_pairs(void)
         int max_index = i;
         int winner_v = preferences[pairs[i].winner][pairs[i].loser];
         int loser_v = preferences[pairs[i].loser][pairs[i].winner];
-        current_strength = winner_v - loser_v;
-        for(int j = i+1; j < pair_count; j++)
+        int current_strength = winner_v - loser_v;
+
+        for(int j = i + 1; j < pair_count; j++)
         {
-            
+            int winner_votes = preferences[pairs[j].winner][pairs[j].loser];
+            int loser_votes = preferences[pairs[j].loser][pairs[j].winner];
+            int temp_strength = winner_votes - loser_votes;
+            if (temp_strength > current_strength)
+            {
+                max_index = j;
+                current_strength = 
+            }
+
         }
     }
     // for (int i = 0; i <pair_count; i++)
