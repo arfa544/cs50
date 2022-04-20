@@ -29,8 +29,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width])
+void reflect(int height, int width, c image[height][width])
 {
+    //Each row.
+    for (int i = 0; i < height; i++)
+    {
+        //each column.
+        for (int j = 0; j < width; j++)
+        {
+            RGBTRIPLE temp = image[i][j];
+            image[i][j] = image[i][width - (j + 1)];
+            image[i][width - (j + 1)] = temp;
+        }
+    }
     return;
 }
 
