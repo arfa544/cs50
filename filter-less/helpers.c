@@ -29,7 +29,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Reflect image horizontally
-void reflect(int height, int width, c image[height][width])
+void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     //Each row.
     for (int i = 0; i < height; i++)
