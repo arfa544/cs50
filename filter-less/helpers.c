@@ -34,8 +34,8 @@ void reflect(int height, int width, c image[height][width])
     //Each row.
     for (int i = 0; i < height; i++)
     {
-        //each column.
-        for (int j = 0; j < width; j++)
+        //Each column.
+        for (int j = 0; j < width / 2; j++)
         {
             RGBTRIPLE temp = image[i][j];
             image[i][j] = image[i][width - (j + 1)];
