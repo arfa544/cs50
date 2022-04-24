@@ -116,9 +116,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
 
                     //Get image value
-                    tatalRed += image[currentX][currentY].rgbtRed;
-                    tatalGreen += image[currentX][currentY].rgbtGreen;
-                    tatalBlue += image[currentX][currentY].rgbtBlue;
+                    totalRed += image[currentX][currentY].rgbtRed;
+                    totalGreen += image[currentX][currentY].rgbtGreen;
+                    totalBlue += image[currentX][currentY].rgbtBlue;
 
                     counter++;
                 }
@@ -138,7 +138,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             image[i][j].rgbtRed = temp[i][j].rgbtRed;
             image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
-            image[i][j].rgbtBlue = temp[i][j].rgbtBlue
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
         }
     }
     return;
