@@ -153,6 +153,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     blueY = blueY + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gx[x][y]);
                 }
             }
+
+            //Calculate square root of Gx and Gy
+            int red = round(sqrt((redX * redX) + (redY * redY)));
+            int green = round(sqrt((greenX * greenX) + (greenY * greenY)));
+            int blue = round(sqrt((blueX * blueX) + (blueY * blueY)));
         }
     }
 
