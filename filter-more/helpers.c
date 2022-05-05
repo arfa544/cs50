@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include<math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -179,7 +180,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j].rgbtBlue = blue;
         }
     }
-    
+
     // Copy new pixels into original image
     for (int i = 0; i < height; i++)
     {
