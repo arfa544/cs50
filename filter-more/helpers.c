@@ -138,7 +138,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int y = 0; y < 3; y++)
                 {
                     // Check for valid pixels
-                    if (i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > height - 1)
+                    if (i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1)
                     {
                         continue;
                     }
