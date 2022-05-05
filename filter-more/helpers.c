@@ -174,7 +174,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             //Copy values into temp image
-            
+            temp[i][j].rgbtRed = red;
+            temp[i][j].rgbtGreen = green;
+            temp[i][j].rgbtBlue = blue;
         }
     }
 
