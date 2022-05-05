@@ -158,6 +158,23 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int red = round(sqrt((redX * redX) + (redY * redY)));
             int green = round(sqrt((greenX * greenX) + (greenY * greenY)));
             int blue = round(sqrt((blueX * blueX) + (blueY * blueY)));
+
+            //Cap value at 255 if exceeds
+            if (red > 255)
+            {
+                red = 255;
+            }
+            if (green > 255)
+            {
+                green = 255;
+            }
+            if(blue > 255)
+            {
+                blue = 255;
+            }
+
+            //Copy values into temp image
+            
         }
     }
 
