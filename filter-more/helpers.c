@@ -106,6 +106,55 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //Create a copy of image
-    
+    RGBTRIPLE temp[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            temp[i][j] = image[i][j];
+        }
+    }
+
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+
+    //Loop through each row and each column
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int redX = 0;
+            int greenX = 0;
+            int blueX = 0;
+
+            int redY = 0;
+            int greenY = 0;
+            int blueY = 0;
+
+            //Loop through each pixel for neibhouring pixels
+            for(int x = 0; x < 3; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    // Check for valid pixels
+                    if (i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > height - 1)
+                    {
+                        continue;
+                    }
+
+                    //Calculate Gx for each pixel
+                    redX = redX + (image[i - 1 + x][j - 1 + y].rgbtRed * Gx[x][y]);
+                    greenX = greenX + (image[i - 1 + x][j - 1 + y].rgbtGreen * Gx[x][y]);
+                    blueX = blueX + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gx[x][y]);
+
+                    //Calculate Gy for each pixel
+                    redY = redY + (image[i - 1 + x][j - 1 + y].rgbtRed * Gx[x][y]);
+                    greenY = greenY + (image[i - 1 + x][j - 1 + y].rgbtGreen * Gx[x][y]);
+                    blueY = blueY + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gx[x][y]);
+                }
+            }
+        }
+    }
+
     return;
 }
