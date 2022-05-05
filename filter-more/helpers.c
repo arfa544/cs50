@@ -133,7 +133,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int blueY = 0;
 
             //Loop through each pixel for neibhouring pixels
-            for(int x = 0; x < 3; x++)
+            for (int x = 0; x < 3; x++)
             {
                 for (int y = 0; y < 3; y++)
                 {
@@ -169,7 +169,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 green = 255;
             }
-            if(blue > 255)
+            if (blue > 255)
             {
                 blue = 255;
             }
