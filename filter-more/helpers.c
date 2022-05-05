@@ -149,9 +149,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     blueX = blueX + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gx[x][y]);
 
                     //Calculate Gy for each pixel
-                    redY = redY + (image[i - 1 + x][j - 1 + y].rgbtRed * Gx[x][y]);
-                    greenY = greenY + (image[i - 1 + x][j - 1 + y].rgbtGreen * Gx[x][y]);
-                    blueY = blueY + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gx[x][y]);
+                    redY = redY + (image[i - 1 + x][j - 1 + y].rgbtRed * Gy[x][y]);
+                    greenY = greenY + (image[i - 1 + x][j - 1 + y].rgbtGreen * Gy[x][y]);
+                    blueY = blueY + (image[i - 1 + x][j - 1 + y].rgbtBlue * Gy[x][y]);
                 }
             }
 
