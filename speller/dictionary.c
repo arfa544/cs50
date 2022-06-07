@@ -61,7 +61,7 @@ bool load(const char *dictionary)
             return false;
         }
 
-        // Copy word to dicionary
+        // Copy word to node
     }
     return false;
 }
