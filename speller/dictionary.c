@@ -44,8 +44,10 @@ bool load(const char *dictionary)
     // Error message if file is not opened
     if (file == NULL)
     {
-        printf("Unable to open file")
+        printf("Unable to open dictionary file");
+        return false;
     }
+    int word
     return false;
 }
 
