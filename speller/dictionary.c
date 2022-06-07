@@ -2,6 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -18,6 +21,10 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
+
+// Declare variables
+unsigned int word_count;
+unsigned int hash_value;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
