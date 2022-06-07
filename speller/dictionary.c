@@ -49,7 +49,20 @@ bool load(const char *dictionary)
     }
     char word[LENGTH + 1];
 
-    //
+    // Scan dictionary upto end of file
+    while( fscanf(file, "%s", word) != EOF)
+    {
+        // Allocate memory for new node
+        node *n = malloc(sizeof(node));
+
+        // Stop if memory is not allocated
+        if (n == NULL)
+        {
+            return false;
+        }
+
+        // Copy word to dicionary
+    }
     return false;
 }
 
