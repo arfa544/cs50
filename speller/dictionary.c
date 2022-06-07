@@ -39,7 +39,13 @@ bool load(const char *dictionary)
     // TODO
 
     // Open dictionary
-    
+    File *file = fopen(dictionary, "r");
+
+    // Error message if file is not opened
+    if (file == NULL)
+    {
+        printf("Unable to open file")
+    }
     return false;
 }
 
