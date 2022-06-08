@@ -18,7 +18,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 500;
 
 // Hash table
 node *table[N];
@@ -115,16 +115,17 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
-        while (cursor)
+        node *temp = cursor;
+        while (cursor != NULL)
         {
-            node *temp = cursor;
             cursor = cursor->next;
             free(temp);
+            temp = cursor;
         }
-        if (cursor == NULL)
-        {
-            return true;
-        }
+        // if (cursor == NULL)
+        // {
+        //     return true;
+        // }
     }
-    return false;
+    return true;
 }
