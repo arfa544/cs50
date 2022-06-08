@@ -113,11 +113,15 @@ bool unload(void)
 {
     // TODO
     node *cursor = table[i];
-    while (cursor =! NULL)
+    while (cursor)
     {
         node *temp = cursor;
         cursor = curser->next;
         free(temp;)
+    }
+    if (cursor == NULL)
+    {
+        return true;
     }
     return false;
 }
