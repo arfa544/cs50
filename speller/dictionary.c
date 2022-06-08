@@ -75,7 +75,7 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
 
     // Scan dictionary upto end of file
-    while( fscanf(file, "%s", word) != EOF)
+    while (fscanf(file, "%s", word) != EOF)
     {
         // Allocate memory for new node
         node *n = malloc(sizeof(node));
@@ -101,7 +101,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    if(word_count > 0)
+    if (word_count > 0)
     {
         return word_count;
     }
@@ -126,5 +126,5 @@ bool unload(void)
             return true;
         }
     }
-        return false;
+    return false;
 }
