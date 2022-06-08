@@ -112,5 +112,12 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    node *cursor = table[i];
+    while (cursor =! NULL)
+    {
+        node *temp = cursor;
+        cursor = curser->next;
+        free(temp;)
+    }
     return false;
 }
