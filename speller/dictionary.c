@@ -33,6 +33,11 @@ bool check(const char *word)
     hash_value = hash(word);
     node *cursor = table[hash_value];
 
+    // Go through linked list
+    while (cursor =! NULL)
+    {
+        if (strcasecmp(cursor->word, word))
+    }
     return false;
 }
 
