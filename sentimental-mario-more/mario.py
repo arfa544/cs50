@@ -12,6 +12,7 @@ for i in range(1, Height+1):
     print(" " * (Height - i), end="")
     # Printing left '#'
     print("#" * i, end="")
-    
+    print(end=" ")
     # Printing right '#'
     print("#" * i, end="")
+    print()
