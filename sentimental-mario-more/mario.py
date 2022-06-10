@@ -14,4 +14,4 @@ for i in range(1, Height+1):
     print("#" * i, end="")
     print(" ")
     # Printing right '#'
-    print("#" * (Height - i), end="")
+    print("#" * i, end="")
