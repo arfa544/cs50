@@ -10,6 +10,6 @@ while (True):
 for i in range(1, Height+1):
     # Printing spaces
     print(" " * (Height - i), end="")
-    # Printing '#'
+    # Printing left '#'
     print("#" * i, end="")
-    print()
+    print(" ")
