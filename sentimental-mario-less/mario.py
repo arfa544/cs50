@@ -1,7 +1,7 @@
 # TODO
 Height = int(input("Height: "))
-for i in range(Height):
-    for j in range(Height - 1):
-        print("*", end = "")
+for i in range(1,Height):
+    print(" " * (Height - i), end = "")
+    print("#" * i, end = "")
     print()
 
