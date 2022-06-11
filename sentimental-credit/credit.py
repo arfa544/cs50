@@ -12,6 +12,8 @@ def luhn(cn):
             sum += cn % 10
         else:
             digit = 2 * (cn % 10)
-            sum += 
+            sum += digit // 10 + digit % 10
+
+        cn = cn // 10
 
 
