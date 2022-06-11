@@ -4,6 +4,7 @@ from cs50 import get_int
 # Taking input from user.
 cn = get_int("Number: ")
 
+
 def luhn(cn):
     sum = 0
     for i in range(len(str(cn))):
@@ -15,5 +16,8 @@ def luhn(cn):
             sum += digit // 10 + digit % 10
 
         cn = cn // 10
+    if sum % 10 == 0:
+        print sum
+        return True
 
 
