@@ -9,6 +9,9 @@ def luhn(cn):
     for i in range(len(str(cn))):
         # Add even places
         if (i % 2 == 0):
-            
+            sum += cn % 10
+        else:
+            digit = 2 * (cn % 10)
+            sum += 
 
 
