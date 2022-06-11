@@ -3,7 +3,9 @@ from cs50 import get_int
 
 # Taking input from user.
 cn = get_int("Number: ")
-
+luhn(cn)
+if (luhn(cn) == True):
+    print("Valid")
 
 def luhn(cn):
     sum = 0
