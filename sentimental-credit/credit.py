@@ -5,4 +5,10 @@ from cs50 import get_int
 cn = get_int("Number: ")
 
 def luhn(cn):
-    
+    sum = 0
+    for i in range(len(str(cn))):
+        # Add even places
+        if (i % 2 == 0):
+            
+
+
