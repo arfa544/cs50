@@ -19,7 +19,7 @@ def luhn(cn):
 
         cn = cn // 10
     if sum % 10 == 0:
-        print sum
+        print (sum)
         return True
 
 
