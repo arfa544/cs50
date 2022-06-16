@@ -42,6 +42,7 @@ def calculate_quarters(cents):
         cents = cents - 25
         quarters = quarters + 1
         return quarters
+        print("\n")
 
 def calculate_dimes(cents):
     dimes = 0
@@ -49,6 +50,7 @@ def calculate_dimes(cents):
         cents = cents - 10
         dimes = dimes + 1
         return dimes
+        print("\n")
 
 def calculate_nickels(cents):
     nickels = 0
@@ -56,6 +58,7 @@ def calculate_nickels(cents):
         cents = cents - 5
         nickels = nickels + 1
         return nickels
+        print("\n")
 
 def calculate_pennies(cents):
     pennies = 0
@@ -63,5 +66,7 @@ def calculate_pennies(cents):
         cents = cents - 1
         pennies = pennies + 1
         return pennies
+        print("\n")
 
 main()
+print("\n")
