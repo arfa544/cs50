@@ -33,7 +33,9 @@ def get_cents():
         cents = get_float("Change owed: ") * 100
         print(cents)
         if (cents > 0):
+            return cents
             break
+
 
 def calculate_quarters(cents):
     quarters = 0
