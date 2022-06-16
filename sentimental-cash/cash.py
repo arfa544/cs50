@@ -25,7 +25,8 @@ def main():
     coins = quarters + dimes + nickels + pennies
 
     # Print total number of coins to give the customer
-    print(coins, end = "\n")
+    print(coins)
+    print()
 
 def get_cents():
     # Taking input from user
@@ -64,3 +65,4 @@ def calculate_pennies(cents):
     return pennies
 
 main()
+print()
