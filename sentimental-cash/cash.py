@@ -40,7 +40,6 @@ def calculate_quarters(cents):
     while (cents >= 25):
         cents = cents - 25
         quarters = quarters + 1
-        print(quarters)
         return quarters
 
 def calculate_dimes(cents):
@@ -62,6 +61,7 @@ def calculate_pennies(cents):
     while (cents >= 1):
         cents = cents - 1
         pennies = pennies + 1
+        print(pennies)
         return pennies
 
 main()
