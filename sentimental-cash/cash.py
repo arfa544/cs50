@@ -65,5 +65,4 @@ def calculate_pennies(cents):
         pennies = pennies + 1
         return pennies\n
 
-\n
 main()\n
