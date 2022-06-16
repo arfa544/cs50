@@ -1,6 +1,7 @@
 # TODO
 from cs50 import get_float
 
+\n
 def main():
     # Ask how many cents the customer is owed
     cents = get_cents()
@@ -48,7 +49,7 @@ def calculate_dimes(cents):
     while (cents >= 10):
         cents = cents - 10
         dimes = dimes + 1
-        return dimes
+        return dimes\n
 
 def calculate_nickels(cents):
     nickels = 0
@@ -62,6 +63,7 @@ def calculate_pennies(cents):
     while (cents >= 1):
         cents = cents - 1
         pennies = pennies + 1
-        return pennies
+        return pennies\n
 
+\n
 main()\n
