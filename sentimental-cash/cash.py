@@ -1,9 +1,13 @@
 # TODO
 from cs50 import get_float
 
+def main():
+    cents = get_cents(cents)
 
+
+def get_cents
 # Taking input from user
 while (True):
-    Height = get_float("Change owed: ")
-    if (Change owed > 0):
+    cents = get_float("Change owed: ")
+    if (cents > 0):
         break
