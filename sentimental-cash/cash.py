@@ -31,6 +31,7 @@ def get_cents():
     # Taking input from user
     while (True):
         cents = get_float("Change owed: ") * 100
+        print(cents)
         if (cents > 0):
             break
 
