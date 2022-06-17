@@ -11,7 +11,11 @@ def main():
     if (luhn_val == 0):
 
         # Finding number of digits in credit card.
-        
+        no_of_digits = digits(n)
+
+        # To check the condition of AMEX card.
+        if (no_of_digits == 15):
+            
 
 
 # def luhn(cn):
