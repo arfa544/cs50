@@ -15,7 +15,7 @@ def main():
         DNA = dna_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-
+    strs = database_reader.fieldnames[1:]
     # TODO: Check database for matching profiles
 
     return
