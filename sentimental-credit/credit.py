@@ -3,20 +3,17 @@ from cs50 import get_int
 
 
 def main():
-
     # Taking input from user.
     n = get_int("Number: ")
     luhn_val = luhn(n)
 
     # To check all conditions required.
     if (luhn_val == 0):
-
         # Finding number of digits in credit card.
         no_of_digits = digits(n)
 
         # To check the condition of AMEX card.
         if (no_of_digits == 15):
-
             # Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n)
             if (starting_digits == 34 or starting_digits == 37):
@@ -37,14 +34,12 @@ def main():
 
         # To check the condition of VISA card.
         elif (no_of_digits == 13):
-
             # Calling the function to find the starting one digit.
             starting_digits = get_first_digits(no_of_digits, 1, n)
             if (starting_digits == 4):
                 print("VISA")
             else:
                 print("INVALID")
-
         else:
             print("INVALID")
 
