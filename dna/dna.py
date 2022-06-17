@@ -28,8 +28,8 @@ def main():
     for row in database_reader:
         if match(strs, dna_match, row):
             print(f"{row['name']}")
-        else:
-            print("No match")
+        # else:
+        #     print("No match")
 
     database_file.close()
     return
