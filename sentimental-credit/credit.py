@@ -29,11 +29,11 @@ def main():
             # Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n)
             if (starting_digits == 51 or starting_digits == 52 or starting_digits == 53 or starting_digits == 54 or starting_digits == 55):
-                printf("MASTERCARD\n")
+                print("MASTERCARD\n")
             elif (starting_digits / 10 == 4):
-                printf("VISA\n")
+                print("VISA\n")
             else:
-                printf("INVALID\n")
+                print("INVALID\n")
 
         # To check the condition of VISA card.
         elif (no_of_digits == 13):
@@ -41,31 +41,30 @@ def main():
             # Calling the function to find the starting one digit.
             starting_digits = get_first_digits(no_of_digits, 1, n)
             if (starting_digits == 4):
-                printf("VISA\n")
+                print("VISA\n")
             else:
-                printf("INVALID\n")
+                print("INVALID\n")
 
         else:
-            printf("INVALID\n")
+            print("INVALID\n")
 
     # Defaults to INVALID.
     else:
-        printf("INVALID\n")
+        print("INVALID\n")
 
 
 # To find number of digits in credit card number.
 def digits(n):
-
     count = 0
     while (n != 0):
-        n = n / 10
+        n = n // 10
         count = count + 1
     return count
 
 
 # To give the last digit of sum.
 def luhn(n):
-    rem, sum = 0
+    sum = 0
     sum1 = 0
     sum2 = 0
 
@@ -88,11 +87,10 @@ def luhn(n):
 # To find sum of individual digits after multiplying with two.
 def convert_to_single(num):
     sum = 0
-    rem
     while (num != 0):
         rem = num % 10
         sum += rem
-        num /= 10
+        num //= 10
     return sum
 
 
