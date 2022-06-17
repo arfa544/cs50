@@ -1,6 +1,7 @@
 # TODO
 from cs50 import get_int
 
+
 def main():
 
     # Taking input from user.
@@ -48,15 +49,14 @@ def main():
             printf("INVALID\n")
 
     # Defaults to INVALID.
-    else
-    {
-        printf("INVALID\n");
-    }
+    else:
+        printf("INVALID\n")
+
 
 # To find number of digits in credit card number.
 def digits(n):
 
-    count = 0;
+    count = 0
     while (n != 0):
         n = n / 10
         count = count + 1
@@ -83,8 +83,25 @@ def luhn(n):
 
     sum = sum1 + sum2
     rem = sum % 10
-
     return rem
+
+# To find sum of individual digits after multiplying with two.
+def convert_to_single(num):
+    sum = 0
+    rem
+    while (num != 0):
+        rem = num % 10
+        sum += rem
+        num /= 10
+    return sum
+
+
+
+# To get first digits for verification of credit card numbers.
+def get_first_digits(no_of_digits, no_of_places, n):
+    for i in range(no_of_digits - no_of_places):
+        n //= 10
+    return n
 
 # def luhn(cn):
 #     sum = 0

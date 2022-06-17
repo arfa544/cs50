@@ -44,7 +44,7 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-            else if (starting_digits / 10 == 4)
+            else if (starting_digits  10 == 4)
             {
                 printf("VISA\n");
             }
