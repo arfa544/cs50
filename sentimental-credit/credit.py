@@ -15,7 +15,16 @@ def main():
 
         # To check the condition of AMEX card.
         if (no_of_digits == 15):
-            
+
+            # Calling the function to find the starting two digits.
+            starting_digits = get_first_digits(no_of_digits, 2, n)
+            if (starting_digits == 34 or starting_digits == 37):
+                print("AMEX\n")
+            else:
+                print("INVALID\n")
+
+        # To check the condition of MASTERCARD card or VISA card.
+        elif (no_of_digits == 16):
 
 
 # def luhn(cn):
