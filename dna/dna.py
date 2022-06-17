@@ -7,10 +7,10 @@ def main():
     # TODO: Check for command-line usage
 
     # TODO: Read database file into a variable
-    with open(sys.argv[1], "r") as database_file:
-        database_reader = csv.DictReader(database_file)
-        strs = database_reader.fieldnames[1:]
-        #print(strs)
+    database_file = open(sys.argv[1], "r")
+    database_reader = csv.DictReader(database_file)
+    strs = database_reader.fieldnames[1:]
+    #print(strs)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as dna_file:
@@ -26,7 +26,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in database_reader:
-        
+            if match()
     return
 
 
