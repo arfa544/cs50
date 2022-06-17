@@ -84,6 +84,7 @@ def luhn(n):
     rem = sum % 10
     return rem
 
+
 # To find sum of individual digits after multiplying with two.
 def convert_to_single(num):
     sum = 0
