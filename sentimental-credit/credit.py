@@ -19,7 +19,7 @@ def luhn(cn):
         print (sum)
         return True
 
-luhn(cn)
-if (luhn(cn) == True):
+validation = luhn(cn)
+if (validation == True):
     print("Valid")
 
