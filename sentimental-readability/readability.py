@@ -38,4 +38,13 @@ def count_letters(text):
 # To get number of words.
 def count_words(text):
     words = 1
-    for i in range()
+    for i in range(len(text)):
+        if (text[i] == ' '):
+            words = words + 1
+    return words
+
+
+# To get number of sentences.
+def count_sentences(text):
+    sentences = 0
+    
