@@ -25,6 +25,24 @@ def main():
 
         # To check the condition of MASTERCARD card or VISA card.
         elif (no_of_digits == 16):
+            # Calling the function to find the starting two digits.
+            starting_digits = get_first_digits(no_of_digits, 2, n)
+            if (starting_digits == 51 or starting_digits == 52 or starting_digits == 53 or starting_digits == 54 or starting_digits == 55):
+                printf("MASTERCARD\n")
+            elif (starting_digits / 10 == 4):
+                printf("VISA\n")
+            else:
+                printf("INVALID\n")
+
+        # To check the condition of VISA card.
+        elif (no_of_digits == 13):
+            
+            # Calling the function to find the starting one digit.
+            starting_digits = get_first_digits(no_of_digits, 1, n)
+            if (starting_digits == 4):
+                printf("VISA\n")
+            else
+                printf("INVALID\n")
 
 
 # def luhn(cn):
