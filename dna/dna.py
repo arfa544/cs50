@@ -68,6 +68,8 @@ def longest_match(sequence, subsequence):
     return longest_run
 
 
-def match(strs):
+def match(strs, dna_match):
+    for str in strs:
+        if(dna_match[str])
 
 main()
