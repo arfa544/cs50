@@ -28,12 +28,11 @@ def main():
     for row in database_reader:
         if match(strs, dna_match, row):
             print(f"{row['name']}")
+            database_file.close()
             return
-        # else:
-        #     print("No match")
 
+    print("No match")
     database_file.close()
-    return
 
 
 def longest_match(sequence, subsequence):
@@ -78,7 +77,7 @@ def match(strs, dna_match, row):
     for str in strs:
         if(dna_match[str] != row[str]):
             return False
-        print(dna_match[str])
+        #print(dna_match[str])
     return True
 
 
