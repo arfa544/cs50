@@ -14,3 +14,7 @@ def main():
 
     # To get number of sentencess.
     sentences = count_sentences(text)
+
+    L = letters / words * 100
+    S = sentences / words * 100
+    index = 0.0588 * L - 0.296 * S - 15.8
