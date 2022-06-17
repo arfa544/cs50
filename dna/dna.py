@@ -26,7 +26,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in database_reader:
-            if match()
+            if match(strs)
     return
 
 
@@ -67,5 +67,7 @@ def longest_match(sequence, subsequence):
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
 
+
+def match(strs):
 
 main()
