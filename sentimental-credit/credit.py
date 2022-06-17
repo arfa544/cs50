@@ -96,13 +96,14 @@ def convert_to_single(num):
     return sum
 
 
-main()
 # To get first digits for verification of credit card numbers.
 def get_first_digits(no_of_digits, no_of_places, n):
     for i in range(no_of_digits - no_of_places):
         n //= 10
     return n
 
+
+main()
 # def luhn(cn):
 #     sum = 0
 #     for i in range(len(str(cn))):
