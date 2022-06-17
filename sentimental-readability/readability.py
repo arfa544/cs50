@@ -29,4 +29,12 @@ def main():
 
 # To get number of letters.
 def count_letters(text):
-    for i in 
+    for i in text:
+    if(i.isalpha()):
+        letters = letters + 1
+    return letters
+
+
+# To get number of words.
+def count_words(text):
+    
