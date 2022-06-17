@@ -30,8 +30,8 @@ def main():
 # To get number of letters.
 def count_letters(text):
     for i in text:
-    if(i.isalpha()):
-        letters = letters + 1
+        if(i.isalpha()):
+            letters = letters + 1
     return letters
 
 
