@@ -53,6 +53,39 @@ def main():
         printf("INVALID\n");
     }
 
+# To find number of digits in credit card number.
+def digits(n):
+
+    count = 0;
+    while (n != 0):
+        n = n / 10
+        count = count + 1
+    return count
+
+
+# To give the last digit of sum.
+def luhn(n):
+    rem, sum = 0
+    sum1 = 0
+    sum2 = 0
+
+    while (n != 0):
+        # Handling Unit's Digit
+        rem = n % 10
+        sum1 += rem
+        n = n // 10
+
+        # Handling ten's Digit
+        rem = (n % 10) * 2
+        rem = convert_to_single(rem)
+        sum2 += rem
+        n = n // 10
+
+    sum = sum1 + sum2
+    rem = sum % 10
+
+    return rem
+
 # def luhn(cn):
 #     sum = 0
 #     for i in range(len(str(cn))):
