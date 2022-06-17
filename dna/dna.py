@@ -21,6 +21,7 @@ def main():
     dna_match = {}
     for str in strs:
         dna_match[str] = longest_match(DNA, str)
+        print(dna_match)
 
     # TODO: Check database for matching profiles
 
