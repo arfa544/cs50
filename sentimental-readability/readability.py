@@ -29,28 +29,29 @@ def main():
 
 # To get number of letters.
 def count_letters(text):
+    letter = 0
     for i in text:
         if(i.isalpha()):
-            letters = letters + 1
-    return letters
+            letter = letter + 1
+    return letter
 
 
 # To get number of words.
 def count_words(text):
-    words = 1
+    word = 1
     for i in range(len(text)):
         if (text[i] == ' '):
-            words = words + 1
-    return words
+            word = word + 1
+    return word
 
 
 # To get number of sentences.
 def count_sentences(text):
-    sentences = 0
+    sentence = 0
     for i in range(len(text)):
         if (text[i] == '.' or text[i] == '!' or text[i] == '?'):
-            sentences = sentences + 1
-    return sentences
+            sentence = sentence + 1
+    return sentence
 
 
 main()
