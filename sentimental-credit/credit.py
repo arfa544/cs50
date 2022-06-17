@@ -42,7 +42,7 @@ def main():
             starting_digits = get_first_digits(no_of_digits, 1, n)
             if (starting_digits == 4):
                 printf("VISA\n")
-            else
+            else:
                 printf("INVALID\n")
 
         else:
@@ -96,7 +96,7 @@ def convert_to_single(num):
     return sum
 
 
-
+main()
 # To get first digits for verification of credit card numbers.
 def get_first_digits(no_of_digits, no_of_places, n):
     for i in range(no_of_digits - no_of_places):
