@@ -46,8 +46,12 @@ def main():
 
         else:
             printf("INVALID\n")
-    
-    
+
+    # Defaults to INVALID.
+    else
+    {
+        printf("INVALID\n");
+    }
 
 # def luhn(cn):
 #     sum = 0
