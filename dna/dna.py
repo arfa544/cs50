@@ -20,7 +20,6 @@ def main():
     for str in strs:
         dna_match[str] = longest_match(DNA, str)
 
-
     # TODO: Check database for matching profiles
     for row in database_reader:
         if match(strs, dna_match, row):
