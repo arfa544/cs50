@@ -75,9 +75,8 @@ def longest_match(sequence, subsequence):
 
 def match(strs, dna_match, row):
     for str in strs:
-        if(dna_match[str] != row[str]):
+        if(dna_match[str] != int(row[str])):
             return False
-        #print(dna_match[str])
     return True
 
 
