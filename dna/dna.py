@@ -26,7 +26,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in database_reader:
-        if match(strs, dna_match):
+        if match(strs, dna_match, row):
             print(f"{row['name']}")
         else:
             print("No match")
@@ -73,11 +73,11 @@ def longest_match(sequence, subsequence):
     return longest_run
 
 
-def match(strs, dna_match):
+def match(strs, dna_match, row):
     for str in strs:
         if(dna_match[str] != row[str]):
-            return false
-    return true
+            return False
+    return True
 
 
 main()
