@@ -9,7 +9,10 @@ def main():
 
     # To check all conditions required.
     if (luhn_val == 0):
+
+        # Finding number of digits in credit card.
         
+
 
 # def luhn(cn):
 #     sum = 0
