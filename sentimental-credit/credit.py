@@ -20,20 +20,20 @@ def main():
             # Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n)
             if (starting_digits == 34 or starting_digits == 37):
-                print("AMEX\n")
+                print("AMEX")
             else:
-                print("INVALID\n")
+                print("INVALID")
 
         # To check the condition of MASTERCARD card or VISA card.
         elif (no_of_digits == 16):
             # Calling the function to find the starting two digits.
             starting_digits = get_first_digits(no_of_digits, 2, n)
             if (starting_digits == 51 or starting_digits == 52 or starting_digits == 53 or starting_digits == 54 or starting_digits == 55):
-                print("MASTERCARD\n")
-            elif (starting_digits / 10 == 4):
-                print("VISA\n")
+                print("MASTERCARD")
+            elif (starting_digits // 10 == 4):
+                print("VISA")
             else:
-                print("INVALID\n")
+                print("INVALID")
 
         # To check the condition of VISA card.
         elif (no_of_digits == 13):
@@ -41,16 +41,16 @@ def main():
             # Calling the function to find the starting one digit.
             starting_digits = get_first_digits(no_of_digits, 1, n)
             if (starting_digits == 4):
-                print("VISA\n")
+                print("VISA")
             else:
-                print("INVALID\n")
+                print("INVALID")
 
         else:
-            print("INVALID\n")
+            print("INVALID")
 
     # Defaults to INVALID.
     else:
-        print("INVALID\n")
+        print("INVALID")
 
 
 # To find number of digits in credit card number.
