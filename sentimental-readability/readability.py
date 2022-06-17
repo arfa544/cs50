@@ -47,4 +47,10 @@ def count_words(text):
 # To get number of sentences.
 def count_sentences(text):
     sentences = 0
-    
+    for i in range(len(text)):
+        if (text[i] == '.' or text[i] == '!' or text[i] == '?'):
+            sentences = sentences + 1
+    return sentences
+
+
+main()
