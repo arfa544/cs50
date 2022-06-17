@@ -103,22 +103,3 @@ def get_first_digits(no_of_digits, no_of_places, n):
 
 
 main()
-# def luhn(cn):
-#     sum = 0
-#     for i in range(len(str(cn))):
-#         # Add even places
-#         if (i % 2 == 0):
-#             sum += cn % 10
-#         else:
-#             digit = 2 * (cn % 10)
-#             sum += digit // 10 + digit % 10
-
-#         cn = cn // 10
-#     if sum % 10 == 0:
-#         print (sum)
-#         return True
-
-# validation = luhn(cn)
-# if (validation == True):
-#     print("Valid")
-
