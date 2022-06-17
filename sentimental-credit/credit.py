@@ -36,7 +36,7 @@ def main():
 
         # To check the condition of VISA card.
         elif (no_of_digits == 13):
-            
+
             # Calling the function to find the starting one digit.
             starting_digits = get_first_digits(no_of_digits, 1, n)
             if (starting_digits == 4):
@@ -44,6 +44,10 @@ def main():
             else
                 printf("INVALID\n")
 
+        else:
+            printf("INVALID\n")
+    
+    
 
 # def luhn(cn):
 #     sum = 0
