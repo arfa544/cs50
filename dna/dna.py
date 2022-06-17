@@ -18,8 +18,9 @@ def main():
         #print(DNA)
 
     # TODO: Find longest match of each STR in DNA sequence
+    
     for str in strs:
-        
+
     # TODO: Check database for matching profiles
 
     return
