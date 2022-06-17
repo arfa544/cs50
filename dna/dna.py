@@ -25,7 +25,7 @@ def main():
 
 
     # TODO: Check database for matching profiles
-
+    for row in database_reader
     return
 
 
