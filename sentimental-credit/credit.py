@@ -1,25 +1,32 @@
 # TODO
 from cs50 import get_int
 
-# Taking input from user.
-cn = get_int("Number: ")
+def main():
 
-def luhn(cn):
-    sum = 0
-    for i in range(len(str(cn))):
-        # Add even places
-        if (i % 2 == 0):
-            sum += cn % 10
-        else:
-            digit = 2 * (cn % 10)
-            sum += digit // 10 + digit % 10
+    # Taking input from user.
+    n = get_int("Number: ")
+    luhn_val = luhn(n)
 
-        cn = cn // 10
-    if sum % 10 == 0:
-        print (sum)
-        return True
+    # To check all conditions required.
+    if (luhn_val == 0):
+        
 
-validation = luhn(cn)
-if (validation == True):
-    print("Valid")
+# def luhn(cn):
+#     sum = 0
+#     for i in range(len(str(cn))):
+#         # Add even places
+#         if (i % 2 == 0):
+#             sum += cn % 10
+#         else:
+#             digit = 2 * (cn % 10)
+#             sum += digit // 10 + digit % 10
+
+#         cn = cn // 10
+#     if sum % 10 == 0:
+#         print (sum)
+#         return True
+
+# validation = luhn(cn)
+# if (validation == True):
+#     print("Valid")
 
