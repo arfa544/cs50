@@ -15,10 +15,7 @@ def main():
         DNA = f.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    STR1 = longest_match(DNA, "AGATC")
-    STR2 = longest_match(DNA, "AATG")
-    STR3 = longest_match(DNA, "TATC")
-
+    
     # TODO: Check database for matching profiles
 
     return
