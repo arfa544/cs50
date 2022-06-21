@@ -1,0 +1,1 @@
+movie_id IN (SELECT movie_id FROM people JOIN stars.person_id = people.id WHERE
