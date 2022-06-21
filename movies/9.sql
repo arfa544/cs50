@@ -1,0 +1,1 @@
+SELECT distinct(name) FROM people JOIN directors
