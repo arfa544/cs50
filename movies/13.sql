@@ -1,4 +1,4 @@
-SELECT count(name) FROM people
+SELECT count(distinct(name)) FROM people
 JOIN stars ON stars.person_id = people.id
 WHERE name != "Kevin Bacon"
 AND movie_id IN
