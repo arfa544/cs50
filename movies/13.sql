@@ -1,2 +1,2 @@
 SELECT name FROM people
-JOIN 
+WHERE id in (SELECT movie_id FROM stars JOIN people ON stars.movie_id = )
