@@ -33,6 +33,16 @@ JOIN bank_accounts ON people.id = bank_accounts.person_id
 JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
 WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
 --NEW SUSPECTS
+-- +---------+
+-- | Bruce   |
+-- | Diana   |
+-- | Brooke  |
+-- | Kenny   |
+-- | Iman    |
+-- | Luca    |
+-- | Taylor  |
+-- | Benista |
+-- +---------+
 
 --3.As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call,
 --  I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
