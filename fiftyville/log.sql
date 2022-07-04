@@ -14,6 +14,7 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND transcript like "%bakery%";
 SELECT name FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
 WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25;
+--SUSPECTS
 -- +---------+
 -- | Vanessa |
 -- | Bruce   |
@@ -30,7 +31,9 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND 
 SELECT name from people
 JOIN bank_accounts ON people.id = bank_accounts.person_id
 JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
-WHERE 
+WHERE atm_location = "Leggett Street" AND transaction_type = "exit";
+--NEW SUSPECTS
+
 --3.As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call,
 --  I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 --  The thief then asked the person on the other end of the phone to purchase the flight ticket.
