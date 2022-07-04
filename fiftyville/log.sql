@@ -14,10 +14,21 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND transcript like "%bakery%";
 SELECT name FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
 WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25;
-
+-- +---------+
+-- | Vanessa |
+-- | Bruce   |
+-- | Barry   |
+-- | Luca    |
+-- | Sofia   |
+-- | Iman    |
+-- | Diana   |
+-- | Kelsey  |
+-- +---------+
 
 --2.I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 --  I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
+SELECT name from people
+JOIN 
 
 --3.As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call,
 --  I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
