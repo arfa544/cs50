@@ -28,8 +28,9 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND 
 --2.I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 --  I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 SELECT name from people
-JOIN 
-
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
+WHERE 
 --3.As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call,
 --  I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 --  The thief then asked the person on the other end of the phone to purchase the flight ticket.
