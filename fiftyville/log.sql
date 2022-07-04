@@ -13,8 +13,8 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND transcript like "%bakery%";
 --  If you have security footage from the bakery parking lot, you might want to look for cars that left the parking lot in that time frame.
 SELECT name FROM people
 JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
-WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute = 15;
---No data found.
+WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25;
+
 
 --2.I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 --  I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
