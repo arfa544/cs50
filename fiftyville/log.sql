@@ -48,4 +48,5 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"
 --  I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
 --  The thief then asked the person on the other end of the phone to purchase the flight ticket.
 SELECT name from people
-JOIN 
+JOIN passengers ON people.passport_number = passengers.passport_number
+WHERE flight_id = ()
