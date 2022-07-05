@@ -49,4 +49,7 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"
 --  The thief then asked the person on the other end of the phone to purchase the flight ticket.
 SELECT name from people
 JOIN passengers ON people.passport_number = passengers.passport_number
-WHERE flight_id = (SELECT id FROM flights )
+WHERE flight_id = (SELECT id FROM flights
+WHERE year = 2021 AND month = 7 AND day = 28
+ORDER BY hour,minute
+)
