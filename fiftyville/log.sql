@@ -51,13 +51,4 @@ SELECT name from people
 JOIN passengers ON people.passport_number = passengers.passport_number
 WHERE flight_id = (SELECT id FROM flights
 WHERE year = 2021 AND month = 7 AND day = 28
-ORDER BY hour,minute);
--- +-----------+
--- | Mark      |
--- | Keith     |
--- | Amy       |
--- | Jeremy    |
--- | Kristina  |
--- | Walter    |
--- | Stephanie |
--- +-----------+
+ORDER BY hour,minute LIMIT 1);
