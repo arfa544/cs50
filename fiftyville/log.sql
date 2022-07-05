@@ -76,4 +76,5 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 -- |  name   | duration |     caller     |    receiver    |
 -- | Bruce   | 45       | (367) 555-5533 | (375) 555-8161 |
 
-SELECT 
+SELECT * FROM people
+WHERE phone_number = (375)555-8161;
