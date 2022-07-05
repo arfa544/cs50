@@ -67,9 +67,6 @@ ORDER BY hour,minute LIMIT 1);
 --Common suspects from above three conditions are
 --Bruce, Luca
 
-SELECT * FROM phone_calls
-WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
-
 SELECT name, duration, caller, receiver from phone_calls
 JOIN people ON phone_calls.caller = people.phone_number
 WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
@@ -83,3 +80,14 @@ WHERE phone_number = "(375) 555-8161";
 -- +--------+-------+----------------+-----------------+---------------+
 -- | 864400 | Robin | (375) 555-8161 |                 | 4V16VO0       |
 -- +--------+-------+----------------+-----------------+---------------+
+
+SELECT city FROM airports
+JOIN flights ON airports.id = flights.destination_airport_id
+WHERE year = 2021 AND month = 7 AND day = 29
+ORDER BY hour, minute
+LIMIT 1;
+-- +---------------+
+-- |     city      |
+-- +---------------+
+-- | New York City |
+-- +---------------+
