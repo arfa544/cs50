@@ -66,3 +66,6 @@ ORDER BY hour,minute LIMIT 1);
 
 --Common suspects from above three conditions are
 --Bruce, Luca
+
+SELECT * FROM phone_calls
+WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
