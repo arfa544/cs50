@@ -70,9 +70,24 @@ ORDER BY hour,minute LIMIT 1);
 SELECT name, duration, caller, receiver from phone_calls
 JOIN people ON phone_calls.caller = people.phone_number
 WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+-- +---------+----------+----------------+----------------+
 -- |  name   | duration |     caller     |    receiver    |
+-- +---------+----------+----------------+----------------+
+-- | Sofia   | 51       | (130) 555-0289 | (996) 555-8899 |
+-- | Kelsey  | 36       | (499) 555-9472 | (892) 555-8872 |
 -- | Bruce   | 45       | (367) 555-5533 | (375) 555-8161 |
+-- | Kelsey  | 50       | (499) 555-9472 | (717) 555-1342 |
+-- | Taylor  | 43       | (286) 555-6063 | (676) 555-6554 |
+-- | Diana   | 49       | (770) 555-1861 | (725) 555-3243 |
+-- | Carina  | 38       | (031) 555-6622 | (910) 555-3251 |
+-- | Kenny   | 55       | (826) 555-1652 | (066) 555-9701 |
+-- | Benista | 54       | (338) 555-6650 | (704) 555-2131 |
+-- +---------+----------+----------------+----------------+
 
+--Here caller is Bruce but not Luca
+--Hence the thief is BRUCE.
+
+--Catch the accomplice using the receiver number:
 SELECT * FROM people
 WHERE phone_number = "(375) 555-8161";
 -- --------+-------+----------------+-----------------+---------------+
@@ -80,6 +95,8 @@ WHERE phone_number = "(375) 555-8161";
 -- +--------+-------+----------------+-----------------+---------------+
 -- | 864400 | Robin | (375) 555-8161 |                 | 4V16VO0       |
 -- +--------+-------+----------------+-----------------+---------------+
+
+--Hence accomplice is ROBIN.
 
 SELECT city FROM airports
 JOIN flights ON airports.id = flights.destination_airport_id
@@ -91,3 +108,5 @@ LIMIT 1;
 -- +---------------+
 -- | New York City |
 -- +---------------+
+
+--Hence the city the thief escaped to is NEW YORK CITY.
