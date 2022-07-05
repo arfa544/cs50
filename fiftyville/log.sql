@@ -72,4 +72,4 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
 SELECT caller, receiver from phone_calls
 JOIN people ON phone_calls.id = people.id
-WHERE name = 
+WHERE name = "Bruce" OR name = "Luca";
