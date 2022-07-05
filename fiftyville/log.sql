@@ -73,3 +73,7 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 SELECT name, duration, caller, receiver from phone_calls
 JOIN people ON phone_calls.caller = people.phone_number
 WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+-- |  name   | duration |     caller     |    receiver    |
+-- | Bruce   | 45       | (367) 555-5533 | (375) 555-8161 |
+
+SELECT 
