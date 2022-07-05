@@ -71,5 +71,5 @@ SELECT * FROM phone_calls
 WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
 SELECT caller, receiver from phone_calls
-JOIN people ON phone_calls.id = people.id
+JOIN people ON phone_calls.caller = people.phone_number
 WHERE name = "Bruce" OR name = "Luca";
