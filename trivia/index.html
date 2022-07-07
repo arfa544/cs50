@@ -17,9 +17,14 @@
                 });
 
                 //When incorrect answer is clicked, colour changes to red
-                let incorrect = document.querySelector('.incorrect');
-                
-                incorrect.addEventListener('click', function() {
+                let incorrects = document.querySelector('.incorrect');
+                for(let i=0; i<incorrects.length; i++){
+                    incorrects[i].addEventListener('click', function() {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect';
+                    )};
+                }
+
             });
 
         </script>
