@@ -6,3 +6,8 @@ h1{
 .links{
     background-color : 'green';
 }
+
+a:hover, a:active {
+    background-color: green;
+    color: white;
+  }
