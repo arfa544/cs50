@@ -7,9 +7,9 @@
         <link href="styles.css" rel="stylesheet">
         <title>My Webpage</title>
         <script>
-          let input = document.querySelector('input')
-          input.style.backgroundColor = 'red';
-          document.querySelector('#feedback').innerHTML = 'Your response recorded, thanks for your review';
+          document.querySelector('#check').addEventListener('click', function(){
+            let input = document.querySelector('input')
+            document.querySelector('#feedback').innerHTML = 'Your response recorded, thanks for your review';
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
