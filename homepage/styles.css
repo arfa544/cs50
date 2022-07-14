@@ -81,6 +81,6 @@ body.pizza, body.french_fries, body.burger {
 
 body.home
 {
-    margin = auto;
+    
     border: 4px solid pink;
 }
