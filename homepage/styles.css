@@ -1,7 +1,7 @@
 h1{
     text-align : center;
     color : blue;
-    text: black;
+
 }
 
 h2{
@@ -15,6 +15,7 @@ h2{
     padding-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
+    margin = auto;
 }
 
 .container-fluid{
@@ -81,6 +82,6 @@ body.pizza, body.french_fries, body.burger {
 
 body.home
 {
-    
-    border: 4px solid pink;
+
+
 }
