@@ -115,6 +115,11 @@ color: black;
 }
 
 div.text {
-    padding left : 10px;
+    background-color: ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin = auto;
 }
 
