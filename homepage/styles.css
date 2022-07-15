@@ -124,5 +124,12 @@ div.text {
 }
 
 #review {
-    background-color: lightblue;
+    background-color: gray;
+    text:white;
+    color:white;
+    margin:auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
