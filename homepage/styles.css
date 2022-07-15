@@ -112,3 +112,7 @@ float: right;
 background-color: #ddd;
 color: black;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
