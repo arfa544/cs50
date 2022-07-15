@@ -88,7 +88,7 @@ body.home
 
 
 .topnav {
-
+overflow: hidden;
 background-color: #faebd7;
 
 }
@@ -106,7 +106,7 @@ font-size: 17px;
 }
 
 .topnav a.icon {
-float: left;
+float: right;
 }
 
 .topnav a:hover {
