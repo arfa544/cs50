@@ -16,27 +16,28 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="index.html">My Homepage</a>
 
-              <div class="topnav">
-                <div id="myLinks">
-                  <a href="index.html">Home</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
+                <div class="topnav">
+                  <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="pizza.html">Pizza</a>
+                    <a href="burger.html">Burger</a>
+                    <a href="fries.html">Fries</a>
+                  </div>
+                  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
                 </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <i class="fa fa-bars"></i>
-                </a>
-              </div>
 
-              <script>
-                function myFunction() {
-                  var x = document.getElementById("myLinks");
-                  if (x.style.display === "block") {
-                    x.style.display = "none";
-                  } else {
-                    x.style.display = "block";
+                <script>
+                  function myFunction() {
+                    var x = document.getElementById("myLinks");
+                    if (x.style.display === "block") {
+                      x.style.display = "none";
+                    } else {
+                      x.style.display = "block";
+                    }
                   }
-                }
-                </script>
+                  </script>
 
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
