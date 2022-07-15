@@ -86,6 +86,6 @@ body.home
 
 }
 
-.navbar-toggler{
-    color : black;
+.navbar-toggler-icon{
+    background-color: black;
 }
