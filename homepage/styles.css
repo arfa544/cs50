@@ -94,7 +94,7 @@ position: relative;
 }
 
 .topnav #myLinks {
-display: none;
+display: block;
 }
 
 .topnav a {
