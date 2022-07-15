@@ -95,5 +95,19 @@
 
             </ol>
           </div>
+
+          <div id="review">
+            <form action="PayslipServlet" method="get">
+              Your review:    <input type="text"><br/>
+            </form>
+            <button onclick="myFunction()">Submit</button>
+            <p id="result"></p>
+          </div>
+          <script>
+            function myFunction() {
+              document.getElementById("result").innerHTML = "Your response recorded, thanks for your review";
+            }
+          </script>
+
     </body>
 </html>
