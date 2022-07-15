@@ -99,7 +99,8 @@ display: none;
 
 .topnav a {
 float: right;
-
+color: white;
+padding: 14px 16px;
 text-decoration: none;
 font-size: 17px;
 }
@@ -109,6 +110,6 @@ float: right;
 }
 
 .topnav a:hover {
-background-color:#faebd7;
-
+background-color: #ddd;
+color: black;
 }
