@@ -92,11 +92,11 @@ background-color: #333;
 position: relative;
 }
 
-.topnav #myLinks {
+.container-fluid #myLinks {
 display: none;
 }
 
-.topnav a {
+.container-fluid a {
 float: left;
 color: white;
 padding: 14px 16px;
@@ -104,11 +104,11 @@ text-decoration: none;
 font-size: 17px;
 }
 
-.topnav a.icon {
+.container-fluid a.icon {
 float: right;
 }
 
-.topnav a:hover {
+.container-fluid a:hover {
 background-color: #ddd;
 color: black;
 }
