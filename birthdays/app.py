@@ -28,9 +28,9 @@ def index():
 
         # TODO: Add the user's entry into the database
         # Access from data
-        name = request.from.get("name")
-        month = request.from.get("month")
-        day = request.from.get("day")
+        name = request.form.get("name")
+        month = request.form.get("month")
+        day = request.form.get("day")
 
         # Insert data into database
         db.execute("INSERT INTO birthdays(name, month, day) VALUES(?,?,?))", name, month, day)
