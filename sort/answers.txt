@@ -1,16 +1,16 @@
 sort1 uses: TODO
 Bubble sort
 
-How do you know?:
+How do you know?: TODO
 It is faster than sort3 when we give sorted50000.txt as input
 
 sort2 uses: TODO
 Merge sort
 
-How do you know?:
+How do you know?: TODO
 It is faster than sort1 and sort3 when we give random50000.txt as input
 
-sort3 uses:
+sort3 uses: TODO
 Selection sort
 
 How do you know?: TODO
