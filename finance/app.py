@@ -128,7 +128,7 @@ def register():
         elif not request.form.get("confirmation"):
             return apology("must provide password again", 403)
 
-        prim_key = db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"), )
+        prim_key = db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
     else:
         return render_template("register.html")
