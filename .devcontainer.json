@@ -5,15 +5,18 @@
     "cs50.ddb50",
     "cs50.extension-uninstaller",
     "cs50.lab50",
+    "cs50.markdown50",
     "cs50.vscode-presentation-mode",
     "ms-python.python",
     "ms-vscode.cpptools",
     "ms-vscode.hexeditor",
     "ms-vsliveshare.vsliveshare-pack",
+    "redhat.java",
     "tomoki1207.pdf",
+    "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:e3e85cef24fb5470585231ba16175b3b5060e45b",
+  "image": "ghcr.io/cs50/codespace:64c83e6c1be193b71040d139f57abb1107ff8cf7",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -83,6 +86,16 @@
     "gitdoc.pullOnOpen": false,
     "github.gitAuthentication": true,
     "html.suggest.html5": false,
+    "java.configuration.runtimes": [
+      {
+        "default": true,
+        "name": "JavaSE-18",
+        "path": "/opt/jdk-18.0.2.1"
+      }
+    ],
+    "java.debug.settings.enableRunDebugCodeLens": false,
+    "java.inlayHints.parameterNames.enabled": "none",
+    "java.server.launchMode": "Standard",
     "javascript.suggest.enabled": false,
     "javascript.validate.enable": false,
     "problems.decorations.enabled": false,
@@ -111,6 +124,7 @@
     "terminal.integrated.tabs.description": "${task}${separator}${local}",
     "terminal.integrated.tabs.showActiveTerminal": "never",
     "window.autoDetectColorScheme": true,
+    "window.commandCenter": false,
     "workbench.colorCustomizations": {
       "[GitHub Dark Default]": {
         "activityBar.background": "#000",
@@ -142,7 +156,12 @@
       "editorWarning.foreground": "#0000"
     },
     "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.enablePreview": false,
     "workbench.editor.untitled.hint": "hidden",
+    "workbench.editorAssociations": {
+      "*.wav": "vscode.audioPreview",
+      "README.md": "lab50.editor"
+    },
     "workbench.iconTheme": "vs-minimal",
     "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "workbench.preferredLightColorTheme": "GitHub Light Default",
