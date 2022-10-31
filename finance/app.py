@@ -132,7 +132,8 @@ def register():
             return apology("registration error", 403)
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
-            
+        except:
+            return apology("username error", 403)
 
     else:
         return render_template("register.html")
