@@ -128,12 +128,16 @@ def register():
         elif not request.form.get("confirmation"):
             return apology("must provide password again", 403)
 
-        if prim_key is None:
-            return apology("registration error", 403)
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
         except:
-            return apology("username error", 403)
+            return apology("username already exists", 403)
+
+        if prim_key is None:
+            return apology("registration error", 403)
+
+        session["user_id"] = prim_key
+        redirect("/")
 
     else:
         return render_template("register.html")
