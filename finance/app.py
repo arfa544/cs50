@@ -129,7 +129,9 @@ def register():
             return apology("must provide password again", 403)
 
         try:
-            prim_key = db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
+            prim_key = db.execute("INSERT INTO users (username,hash) VALUES (:username, :hash)",
+                       username = request.form.get("username"),
+                       hash = generate_password_hash(request.form.get("password")))
         except:
             return apology("username already exists", 403)
 
