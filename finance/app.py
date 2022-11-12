@@ -69,6 +69,8 @@ def buy():
         if updated_cash < 0:
             return apology("can't afford", 403)
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
+        db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
+        session["user_id"],stock["symbol"],shares,stock["price"])
         flash("Bought!")
         return redirect("/")
     else:
