@@ -62,7 +62,7 @@ def buy():
         stock = lookup(symbol)
         if stock is None:
             return apology("invalid symbol", 403)
-        rows = db.execute("SELECT cash FROM users WHERE id=:id)", id = session["user_id"])
+        rows = db.execute("SELECT cash FROM users WHERE id=:id)", id=session["user_id"])
         cash = rows[0]["cash"]
         updated_cash = cash - shares * stock['price']
         if updated_cash < 0:
