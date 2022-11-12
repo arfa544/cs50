@@ -164,6 +164,8 @@ def register():
         elif not request.form.get("confirmation"):
             return apology("must provide password again", 403)
 
+        if request.form.get("password") != request.form.get("confirmation"):
+            return apology("password must match confirmation", 403)
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (:username, :hash)",
                        username = request.form.get("username"),
