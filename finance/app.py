@@ -68,10 +68,8 @@ def buy():
         updated_cash = cash - shares * stock['price']
         if updated_cash < 0:
             return apology("can't afford", 403)
-        db.execute("UPDATE users SET cash=:updatedCash WHERE id=:id",
-                    updatedCash = updated_cash,
-                    id = session["user_id"])
-        
+        db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
+
         return redirect("/")
     else:
         return render_template("buy.html")
