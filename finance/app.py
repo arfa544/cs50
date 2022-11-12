@@ -61,16 +61,17 @@ def buy():
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
         stock = lookup(symbol)
+        user_id = session["user_id"]
         if stock is None:
             return apology("invalid symbol", 403)
-        rows = db.execute("SELECT cash FROM users WHERE id=:id)", id=session["user_id"])
+        rows = db.execute("SELECT cash FROM users WHERE id=:id)", id=user_id)
         cash = rows[0]["cash"]
         updated_cash = cash - shares * stock['price']
         if updated_cash < 0:
             return apology("can't afford", 403)
-        db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
+        db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
-        session["user_id"],stock["symbol"],shares,stock["price"])
+        user_id,stock["symbol"],shares,stock["price"])
         flash("Bought!")
         return redirect("/")
     else:
