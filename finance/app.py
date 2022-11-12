@@ -58,6 +58,7 @@ def buy():
         if not request.form.get("shares").isdigit():
             return apology("invalid number of shares", 403)
         symbol = request.form.get("symbol").upper()
+        shares = int(request.form.get("shares"))
         stock = lookup(symbol)
         if stock is None:
             return apology("invalid symbol", 403)
@@ -66,6 +67,7 @@ def buy():
         updated_cash = cash - shares * stock['price']
         if updated_cash < 0:
             return apology("can't afford", 403)
+        return redirect("/")
     else:
         return render_template("buy.html")
 
