@@ -69,7 +69,7 @@ def buy():
         if updated_cash < 0:
             return apology("can't afford", 403)
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
-
+        flash("Bought!")
         return redirect("/")
     else:
         return render_template("buy.html")
