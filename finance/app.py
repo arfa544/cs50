@@ -118,7 +118,11 @@ def quote():
         stock = lookup(symbol)
         if stock is None:
             return apology("invalid symbol", 400)
-        return render_template("quoted.html", stockNam)
+        return render_template("quoted.html", stockName={
+            'name': stock['name'],
+            'symbol': stock['symbol'],
+            'price': usd(stock['price'])
+        })
 
     else:
         return render_template("quote.html")
