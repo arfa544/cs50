@@ -51,7 +51,21 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        
+        if not request.form.get("symbol"):
+            return apology("must provide symbol", 403)
+        if not request.form.get("shares"):
+            return apology("must provide shares", 403)
+        if not request.form.get("shares").isdigit():
+            return apology("invalid number of shares", 403)
+        symbol = request.form.get("symbol").upper()
+        stock = lookup(symbol)
+        if stock is None:
+            return apology("invalid symbol", 403)
+        rows = db.execute("SELECT cash FROM users WHERE id=:id)", id = session["user_id"])
+        cash = rows[0]["cash"]
+        updated_cash = cash - shares * stock['price']
+        if updated_cash < 0:
+            return apology("can't afford", 403)
     else:
         return render_template("buy.html")
 
