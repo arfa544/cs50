@@ -71,6 +71,7 @@ def buy():
         db.execute("UPDATE users SET cash=:updatedCash WHERE id=:id",
                     updatedCash = updated_cash,
                     id = session["user_id"])
+        
         return redirect("/")
     else:
         return render_template("buy.html")
