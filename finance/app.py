@@ -57,6 +57,8 @@ def buy():
             return apology("must provide shares", 403)
         if not request.form.get("shares").isdigit():
             return apology("invalid number of shares", 403)
+        if not request.for:
+            return apology("invalid number of shares", 403)
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
         stock = lookup(symbol)
