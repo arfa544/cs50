@@ -52,7 +52,7 @@ def index():
         """, session["user_id"])
     holdings = []
     for row in rows:
-        stock = loockup(row["symbol"])
+        stock = lookup(row["symbol"])
         holdings.append({
             "symbol" : stock["symbol"],
             "name" : stock["name"],
