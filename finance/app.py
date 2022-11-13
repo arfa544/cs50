@@ -51,6 +51,7 @@ def index():
         HAVING totalShares > 0
         """, session["user_id"])
     holdings = []
+    grand_total = 0
     for row in rows:
         stock = lookup(row["symbol"])
         holdings.append({
@@ -60,6 +61,7 @@ def index():
             "price" : usd(stock["price"]),
             "total" : usd(stock["price"] * row["totalShares"])
         })
+        grand_total += stock["price"] * row["totalShares"]
     rows = db.execute("SELECT cash FROM users WHERE id=?", session["user_id"])
     cash = rows[0]["cash"]
     grand_total += cash
