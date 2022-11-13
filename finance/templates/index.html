@@ -13,7 +13,23 @@
             <th>price</th>
             <th>Total</th>
         </thead>
-        <
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{grand_total}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for holding in holdings %}
+            <tr>
+                <td>{{holding["symbol"]}}</td>
+                <td>{{holding["name"]}}</td>
+                <td>{{holding["shares"]}}</td>
+                <td>{{holding["price"]}}</td>
+                <td>{{holding["total"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}
