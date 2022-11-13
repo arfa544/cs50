@@ -210,59 +210,6 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    # Store the username
-    username = db.execute("SELECT username FROM users WHERE id = :uid", uid=int(session['user_id']))[0]["username"]
-
-    if request.method == "POST":
-        # Store the symbol inputed
-        look = lookup(request.form.get("symbol"))
-
-        # Store shares inputed
-        shares = request.form.get("shares")
-
-        # Store the number of shares the user has
-        user_shares = db.execute("SELECT shares FROM portfolio WHERE username = :username and symbol = :symbol",
-                        username=username, symbol=str(request.form.get("symbol")))[0]["shares"]
-
-        # Store the value of sale
-        value = look["price"] * int(shares)
-
-        # If the symbol searched or number of shares is invalid, return apology
-        if not request.form.get("symbol") or look == None:
-            return apology("you must provide a stock", 400)
-        elif not shares or not shares.isdigit() or int(shares) < 1 or int(shares) > int(user_shares):
-            return apology("share number is invalid", 400)
-
-        # If everything checks, proceed with sale
-        else:
-            # Add the value of sale to the user's cash
-            db.execute("UPDATE users SET cash = cash + :value WHERE id = :uid", value=value, uid=int(session['user_id']))
-
-            # Add the transaction to the user's history
-            db.execute("INSERT INTO history (username, operation, symbol, price, shares) VALUES (:username, 'SELL', :symbol, :price, :shares)",
-            username=username, symbol=look['symbol'], price=look['price'], shares=request.form.get('shares'))
-
-            # If the user is selling all the shares, remove the stock from the user's portfolio
-            if int(user_shares) == int(shares):
-                db.execute("DELETE FROM portfolio WHERE username = :username and symbol = :symbol",
-                            username=username, symbol=str(request.form.get("symbol")))
-
-            # If the user is just selling some of the shares, update the portfolio
-            elif int(user_shares) > int(shares):
-                db.execute("UPDATE portfolio SET shares = :shares WHERE username = :username and symbol = :symbol",
-                            shares=shares, username=username, symbol=request.form.get("symbol"))
-
-        # Send them to the portfolio
-        return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-
-        # Get the symbols from portfolio for the select list
-        symbols = db.execute("SELECT symbol FROM portfolio WHERE username = :username", username=username)
-
-        return render_template("sell.html", symbols=symbols)
-
-
+    
 
 
