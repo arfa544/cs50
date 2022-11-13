@@ -18,11 +18,11 @@
   <tbody>
       {% for holding in holdings %}
     <tr>
-      <th scope="row">{{ stock.symbol }}</th>
-      <td>{{ stock.name }}</td>
-      <td>{{ stock.shares }}</td>
-      <td>{{ stock.price }}</td>
-      <td>{{ stock.total }}</td>
+      <th scope="row">{{ holding["symbol"] }}</th>
+      <td>{{ holding["name"] }}</td>
+      <td>{{ holding["shares"] }}</td>
+      <td>{{ holding["price"] }}</td>
+      <td>{{ holding["total"] }}</td>
     </tr>
     {% endfor %}
     <thead>
