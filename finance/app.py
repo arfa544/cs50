@@ -56,7 +56,7 @@ def index():
         holdings.append({
             "symbol" : stock["symbol"],
             "name" : stock["name"],
-            "shares" : stock["shares"],
+            "shares" : row["totalShares"],
             "price" : usd(stock["price"]),
             "total" : usd(stock["price"] * row["totalShares"])
         })
