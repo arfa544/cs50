@@ -74,11 +74,11 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         if not request.form.get("shares"):
-            return apology("must provide shares", 403)
+            return apology("must provide shares", 400)
         if not request.form.get("shares").isdigit():
-            return apology("invalid number of shares", 403)
+            return apology("invalid number of shares", 400)
 
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
@@ -161,7 +161,7 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         symbol = request.form.get("symbol").upper()
         stock = lookup(symbol)
         if stock is None:
@@ -180,15 +180,15 @@ def register():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
 
         # Ensure password was submitted again
         elif not request.form.get("confirmation"):
-            return apology("must provide password again", 403)
+            return apology("must provide password again", 400)
 
         if request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords must match", 403)
@@ -214,11 +214,11 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         if not request.form.get("shares"):
-            return apology("must provide shares", 403)
+            return apology("must provide shares", 400)
         if not request.form.get("shares").isdigit():
-            return apology("invalid number of shares", 403)
+            return apology("invalid number of shares", 400)
 
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
