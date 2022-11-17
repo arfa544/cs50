@@ -74,23 +74,23 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 400)
+            return apology("must provide symbol")
         if not request.form.get("shares"):
-            return apology("must provide shares", 400)
+            return apology("must provide shares")
         if not request.form.get("shares").isdigit():
-            return apology("invalid number of shares", 400)
+            return apology("invalid number of shares")
 
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
         stock = lookup(symbol)
         user_id = session["user_id"]
         if stock is None:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol")
         rows = db.execute("SELECT cash FROM users WHERE id=:id", id=user_id)
         cash = rows[0]["cash"]
         updated_cash = cash - shares * stock['price']
         if updated_cash < 0:
-            return apology("can't afford", 403)
+            return apology("can't afford")
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
         user_id,stock["symbol"],shares,stock["price"])
@@ -120,18 +120,18 @@ def login():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password")
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+            return apology("invalid username and/or password")
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -161,11 +161,11 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 400)
+            return apology("must provide symbol")
         symbol = request.form.get("symbol").upper()
         stock = lookup(symbol)
         if stock is None:
-            return apology("invalid symbol", 400)
+            return apology("invalid symbol")
         return render_template("quoted.html", stock={
             'name': stock['name'],
             'symbol': stock['symbol'],
@@ -180,27 +180,27 @@ def register():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 400)
+            return apology("must provide username")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 400)
+            return apology("must provide password")
 
         # Ensure password was submitted again
         elif not request.form.get("confirmation"):
-            return apology("must provide password again", 400)
+            return apology("must provide password again")
 
         if request.form.get("password") != request.form.get("confirmation"):
-            return apology("passwords must match", 403)
+            return apology("passwords must match")
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (:username, :hash)",
                        username = request.form.get("username"),
                        hash = generate_password_hash(request.form.get("password")))
         except:
-            return apology("username already exists", 403)
+            return apology("username already exists")
 
         if prim_key is None:
-            return apology("registration error", 403)
+            return apology("registration error")
 
         session["user_id"] = prim_key
         return redirect("/")
@@ -214,11 +214,11 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide symbol", 400)
+            return apology("must provide symbol")
         if not request.form.get("shares"):
-            return apology("must provide shares", 400)
+            return apology("must provide shares")
         if not request.form.get("shares").isdigit():
-            return apology("invalid number of shares", 400)
+            return apology("invalid number of shares")
 
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
