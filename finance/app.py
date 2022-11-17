@@ -221,11 +221,11 @@ def sell():
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
         stock = lookup(symbol)
-        user_id = session["user_id"]
+        #user_id = session["user_id"]
         if stock is None:
             return apology("invalid symbol", 403)
 
-        rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", user_id)
+        rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
         for row in roes:
             if row["symbol"] == symbol:
                 if shares > row["totalShares"]:
@@ -241,7 +241,7 @@ def sell():
         flash("Sold!")
         return redirect("/")
     else:
-        rows = db.execute("SELECT symbol, FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", user_id)
+        rows = db.execute("SELECT symbol, FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
         return render_template("sell.html", symbols=[row["symbol"] for row in rows])
 
 
