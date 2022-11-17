@@ -210,7 +210,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-        if request.method == "POST":
+    if request.method == "POST":
         if not request.form.get("symbol"):
             return apology("must provide symbol", 403)
         if not request.form.get("shares"):
