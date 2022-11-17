@@ -201,7 +201,7 @@ def register():
             return apology("registration error", 403)
 
         session["user_id"] = prim_key
-        redirect("/")
+        return redirect("/")
 
     else:
         return render_template("register.html")
