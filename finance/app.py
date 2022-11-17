@@ -252,6 +252,8 @@ def sell():
 def add_cash():
     if request.method == "POST":
         db.execute("UPDATE users SET cash=cash+? WHERE id=?", request.form.get("cash"), session["user_id"])
-        flash
+        flash("Cash Added!")
+        return redirect("/")
+    else:
         return render_template("add_cash.html")
 
