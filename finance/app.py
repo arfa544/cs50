@@ -233,12 +233,12 @@ def sell():
 
         rows = db.execute("SELECT cash FROM users WHERE id=:id", id=user_id)
         cash = rows[0]["cash"]
-        updated_cash = cash - shares * stock['price']
+        updated_cash = cash + shares * stock['price']
 
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
-        user_id,stock["symbol"],shares,stock["price"])
-        flash("Bought!")
+                    user_id, stock["symbol"], -1*shares, stock["price"])
+        flash("Sold!")
         return redirect("/")
     else:
         rows = db.execute("SELECT symbol, FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", user_id)
