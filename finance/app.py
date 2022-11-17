@@ -103,7 +103,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    db.execute("SELECT symbol, shares, price, transacted FROM transactions WHERE user_id=?", session["user_id"])
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -221,7 +221,7 @@ def sell():
         symbol = request.form.get("symbol").upper()
         shares = int(request.form.get("shares"))
         stock = lookup(symbol)
-        #user_id = session["user_id"]
+
         if stock is None:
             return apology("invalid symbol", 403)
 
