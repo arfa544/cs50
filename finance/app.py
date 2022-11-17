@@ -241,7 +241,7 @@ def sell():
         flash("Sold!")
         return redirect("/")
     else:
-        rows = db.execute("SELECT symbol, FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
+        rows = db.execute("SELECT symbol FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
         return render_template("sell.html", symbols=[row["symbol"] for row in rows])
 
 
