@@ -6,8 +6,10 @@
 
 {% block main %}
     <form action="/sell" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" class="form-control mx-auto w-auto" placeholder="Symbol" autofocus name="symbol" type="text">
+        <div class="form-group">
+            <select class="form-control" name="symbol">
+                <option disabled selected value=""
+            </select>
         </div>
         <div class="mb-3">
             <input autocomplete="off" class="form-control mx-auto w-auto" min=1 placeholder="Shares" name="shares" type="number">
