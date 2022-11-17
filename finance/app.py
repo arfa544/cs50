@@ -231,13 +231,13 @@ def sell():
                 if shares > row["totalShares"]:
                     return apology("too many shares", 403)
 
-        rows = db.execute("SELECT cash FROM users WHERE id=:id", id=user_id)
+        rows = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
         cash = rows[0]["cash"]
         updated_cash = cash + shares * stock['price']
 
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
-                    user_id, stock["symbol"], -1*shares, stock["price"])
+                    session["user_id"], stock["symbol"], -1*shares, stock["price"])
         flash("Sold!")
         return redirect("/")
     else:
