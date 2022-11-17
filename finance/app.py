@@ -198,8 +198,8 @@ def register():
             return apology("passwords must match")
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (:username, :hash)",
-                                    username=request.form.get("username"),
-                                    hash=generate_password_hash(request.form.get("password")))
+                                  username=request.form.get("username"),
+                                  hash=generate_password_hash(request.form.get("password")))
         except:
             return apology("username already exists")
 
@@ -251,7 +251,7 @@ def sell():
     else:
         rows = db.execute("SELECT symbol FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0",
                           session["user_id"])
-                          return render_template("sell.html", symbols=[row["symbol"] for row in rows])
+        return render_template("sell.html", symbols=[row["symbol"] for row in rows])
 
 
 @app.route("/add_cash", methods=["GET", "POST"])
