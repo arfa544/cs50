@@ -226,7 +226,7 @@ def sell():
             return apology("invalid symbol", 403)
 
         rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
-        for row in roes:
+        for row in rows:
             if row["symbol"] == symbol:
                 if shares > row["totalShares"]:
                     return apology("too many shares", 403)
