@@ -247,5 +247,9 @@ def sell():
         return render_template("sell.html", symbols=[row["symbol"] for row in rows])
 
 
-
+@app.route("/add_cash", methods=["GET", "POST"])
+@login_required
+def add_cash():
+    if request.method == "GET":
+        return render_template("add_cash.html")
 
