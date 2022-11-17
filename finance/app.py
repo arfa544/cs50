@@ -55,11 +55,11 @@ def index():
     for row in rows:
         stock = lookup(row["symbol"])
         holdings.append({
-            "symbol" : stock["symbol"],
-            "name" : stock["name"],
-            "shares" : row["totalShares"],
-            "price" : usd(stock["price"]),
-            "total" : usd(stock["price"] * row["totalShares"])
+            "symbol": stock["symbol"],
+            "name": stock["name"],
+            "shares": row["totalShares"],
+            "price": usd(stock["price"]),
+            "total": usd(stock["price"] * row["totalShares"])
         })
         grand_total += stock["price"] * row["totalShares"]
     rows = db.execute("SELECT cash FROM users WHERE id=?", session["user_id"])
@@ -67,6 +67,7 @@ def index():
     grand_total += cash
 
     return render_template("index.html", holdings=holdings, cash=usd(cash), grand_total=usd(grand_total))
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -93,11 +94,12 @@ def buy():
             return apology("can't afford")
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
-        user_id,stock["symbol"],shares,stock["price"])
+                   user_id, stock["symbol"], shares, stock["price"])
         flash("Bought!")
         return redirect("/")
     else:
         return render_template("buy.html")
+
 
 @app.route("/history")
 @login_required
@@ -107,6 +109,7 @@ def history():
     for i in range(len(transactions)):
         transactions[i]["price"] = usd(transactions[i]["price"])
     return render_template("history.html", transactions=transactions)
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -175,6 +178,7 @@ def quote():
     else:
         return render_template("quote.html")
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -194,8 +198,8 @@ def register():
             return apology("passwords must match")
         try:
             prim_key = db.execute("INSERT INTO users (username,hash) VALUES (:username, :hash)",
-                       username = request.form.get("username"),
-                       hash = generate_password_hash(request.form.get("password")))
+                                    username=request.form.get("username"),
+                                    hash=generate_password_hash(request.form.get("password")))
         except:
             return apology("username already exists")
 
@@ -207,6 +211,7 @@ def register():
 
     else:
         return render_template("register.html")
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
@@ -227,7 +232,8 @@ def sell():
         if stock is None:
             return apology("invalid symbol")
 
-        rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
+        rows = db.execute(
+            "SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
         for row in rows:
             if row["symbol"] == symbol:
                 if shares > row["totalShares"]:
@@ -239,12 +245,13 @@ def sell():
 
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
-                    session["user_id"], stock["symbol"], -1*shares, stock["price"])
+                   session["user_id"], stock["symbol"], -1*shares, stock["price"])
         flash("Sold!")
         return redirect("/")
     else:
-        rows = db.execute("SELECT symbol FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
-        return render_template("sell.html", symbols=[row["symbol"] for row in rows])
+        rows = db.execute("SELECT symbol FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0",
+                          session["user_id"])
+                          return render_template("sell.html", symbols=[row["symbol"] for row in rows])
 
 
 @app.route("/add_cash", methods=["GET", "POST"])
