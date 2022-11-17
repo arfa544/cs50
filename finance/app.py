@@ -225,8 +225,7 @@ def sell():
         if stock is None:
             return apology("invalid symbol", 403)
 
-        db.execute("SELECT SUM(shares) as totalShares FROM transactions)
-
+        
         rows = db.execute("SELECT cash FROM users WHERE id=:id", id=user_id)
         cash = rows[0]["cash"]
         updated_cash = cash - shares * stock['price']
