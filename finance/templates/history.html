@@ -17,11 +17,10 @@
   <tbody>
       {% for transaction in transactions %}
     <tr>
-      <th scope="row">{{ holding["symbol"] }}</th>
-      <td>{{ holding["name"] }}</td>
-      <td>{{ holding["shares"] }}</td>
-      <td>{{ holding["price"] }}</td>
-      <td>{{ holding["total"] }}</td>
+      <th scope="row">{{ transaction["symbol"] }}</th>
+      <td>{{ transaction["shares"] }}</td>
+      <td>{{ transaction["price"] }}</td>
+      <td>{{ transaction["transacted"] }}</td>
     </tr>
     {% endfor %}
     <thead>
