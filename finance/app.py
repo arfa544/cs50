@@ -250,6 +250,7 @@ def sell():
 @app.route("/add_cash", methods=["GET", "POST"])
 @login_required
 def add_cash():
-    if request.method == "GET":
+    if request.method == "POST":
+        
         return render_template("add_cash.html")
 
