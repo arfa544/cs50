@@ -225,13 +225,16 @@ def sell():
         if stock is None:
             return apology("invalid symbol", 403)
 
-        db.execute("SELECT SUM(shares) as totalShares FROM transactions)
+        rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", user_id)
+        for row in roes:
+            if row["symbol"] == symbol:
+                if shares > row["totalShares"]:
+                    return apology("too many shares", 403)
 
         rows = db.execute("SELECT cash FROM users WHERE id=:id", id=user_id)
         cash = rows[0]["cash"]
         updated_cash = cash - shares * stock['price']
-        if updated_cash < 0:
-            return apology("can't afford", 403)
+
         db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
         user_id,stock["symbol"],shares,stock["price"])
