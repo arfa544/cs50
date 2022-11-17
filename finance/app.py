@@ -225,13 +225,13 @@ def sell():
         stock = lookup(symbol)
 
         if stock is None:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol")
 
         rows = db.execute("SELECT symbol, SUM(shares) as totalShares FROM transactions WHERE user_id=? GROUP BY symbol HAVING SUM(shares)>0", session["user_id"])
         for row in rows:
             if row["symbol"] == symbol:
                 if shares > row["totalShares"]:
-                    return apology("too many shares", 403)
+                    return apology("too many shares")
 
         rows = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
         cash = rows[0]["cash"]
