@@ -235,7 +235,7 @@ def sell():
         cash = rows[0]["cash"]
         updated_cash = cash + shares * stock['price']
 
-        db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, user_id)
+        db.execute("UPDATE users SET cash=? WHERE id=?", updated_cash, session["user_id"])
         db.execute("INSERT INTO transactions(user_id, symbol, shares, price) VALUES(?,?,?,?)",
                     session["user_id"], stock["symbol"], -1*shares, stock["price"])
         flash("Sold!")
