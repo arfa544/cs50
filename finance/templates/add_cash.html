@@ -7,8 +7,9 @@
 {% block main %}
     <form action="/add_cash" method="post">
         <div class="mb-3">
-            <input autocomplete="off" class="form-control mx-auto w-auto" min=1 placeholder="Amount to add" name="shares" type="number">
+            <input autocomplete="off" class="form-control mx-auto w-auto" min=1 placeholder="Amount to add" name="cash" type="number">
         </div>
+        <button class="btn btn-primary" type="submit">Add Cash</button>
     </form>
 
 {% endblock %}
