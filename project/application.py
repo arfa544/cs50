@@ -190,7 +190,7 @@ def update():
                 del members[i]
                 break
 
-        # checking members list
+        # checking members dict.
         if not members:
             flash('You have not yet added any family members!')
             return redirect('/add')
@@ -460,8 +460,8 @@ def register():
 
     # User reached route via GET
     else:
+        # Get all family members dict.
         members = db.execute("SELECT family_name FROM family")
-        print("members", members)
         return render_template("register.html", members=members)
 
 
