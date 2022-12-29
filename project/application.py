@@ -467,12 +467,8 @@ def register():
         # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
 
         """ Automatically log in new user """
-
-        # query database for user's details
-        rows = db.execute("SELECT * FROM users WHERE user_name = ?", username)
-
         # remember new user's session to log in
-        session["user_id"] = rows[0]["user_id"]
+        session["user_id"] = user_id
         session["family_id"] = family_id
 
         # redirect user to edit profile
