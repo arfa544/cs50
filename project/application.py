@@ -452,6 +452,11 @@ def register():
                 flash("Please select a existing Family name, or provide a new family name.")
                 return redirect("/register")
 
+            family_name_exists = db.execute("SELECT family_name FROM family WHERE family_name = ?", new_family_name)
+            if family_name_exists != []:
+                flash("Family Name already exists! Please select from drop down.")
+                return redirect("/register")
+
             print(f'new_family_name: {new_family_name}')
             family_id = db.execute("INSERT INTO family(family_name) VALUES (?)", new_family_name)
 
