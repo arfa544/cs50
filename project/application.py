@@ -470,6 +470,7 @@ def register():
 
         # remember new user's session to log in
         session["user_id"] = rows[0]["user_id"]
+        session["family_id"] = family_id
 
         # redirect user to edit profile
         flash("Welcome to ProjectMota2. Please enter your personal details below.")
