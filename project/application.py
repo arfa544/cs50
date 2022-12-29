@@ -451,8 +451,9 @@ def register():
             if new_family_name is None:
                 flash("Please select a existing Family name, or provide a new family name.")
                 return redirect("/register")
-            db.execute("INSERT INTO family(family_name) VALUES (?)", new_family_name)
 
+            family_id = db.execute("INSERT INTO family(family_name) VALUES (?) RETURNING family_id", new_family_name)
+            print(f"family_id: {family_id}")
 
         # creating new entry for user in family and profile table
         # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
