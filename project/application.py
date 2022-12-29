@@ -54,7 +54,7 @@ def login():
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["pwd"], password):
+        if len(rows) != 1 or not check_password_hash(rows[0]["password"], password):
             flash("Invalid username and/or password!")
             return redirect("/login")
 
@@ -86,7 +86,7 @@ def logout():
 def index():
     rows = db.execute("SELECT * FROM users WHERE user_id = ?", session["user_id"])
 
-    history = db.execute("SELECT date, height, weight, bmi FROM profile WHERE user_id = ?", session["user_id"])
+    history = db.execute("SELECT record_date, height, weight, bmi FROM profile WHERE user_id = ?", session["user_id"])
     for x in range(len(history)):
         if history[x]["bmi"] < 18.5:
             history[x].update(category = 'underweight')
@@ -142,8 +142,8 @@ def update():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            # updating family table
-            db.execute("UPDATE family SET height = ?, weight = ?, bmi = ? WHERE user_id = ? and name = ?", cms, kgs, bmi, session["user_id"], name)
+            # updating profile table
+            db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
 
         # using metric units
         if 'updateMe' in request.form:
@@ -170,7 +170,7 @@ def update():
             bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
 
             # updating family table
-            db.execute("UPDATE family SET height = ?, weight = ?, bmi = ? WHERE user_id = ? and name = ?", cms, kgs, bmi, session["user_id"], name)
+            db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
 
         flash('Family details updated successfully!')
         return redirect('/family')
@@ -232,8 +232,8 @@ def add():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            # adding new entry in family table
-            db.execute("INSERT INTO family (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
+            # adding new entry in profile table
+            db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
 
         # using metric units
         if 'addMe' in request.form:
@@ -259,8 +259,8 @@ def add():
             # calculating bmi, height in cms, weight in kgs
             bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
 
-            # adding new entry in family table
-            db.execute("INSERT INTO family (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
+            # adding new entry in profile table
+            db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
 
         flash('New family member added successfully!')
         return redirect('/family')
@@ -437,7 +437,7 @@ def register():
             return redirect("/register")
 
         # inserting and hashing new user
-        db.execute("INSERT INTO users (username, pwd, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
+        db.execute("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
 
 
         user = db.execute("SELECT user_id FROM users WHERE username = ?", username)
