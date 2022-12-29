@@ -443,8 +443,8 @@ def register():
         user = db.execute("SELECT user_id FROM users WHERE username = ?", username)
 
         # creating new entry for user in family and profile table
-        db.execute("INSERT INTO family (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["id"], username, 0, 0, 0)
-        db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
+        db.execute("INSERT INTO family (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
+        db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
 
         """ Automatically log in new user """
 
@@ -452,7 +452,7 @@ def register():
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
 
         # remember new user's session to log in
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = rows[0]["user_id"]
 
         # redirect user to edit profile
         flash("Welcome to ProjectMota2. Please enter your personal details below.")
