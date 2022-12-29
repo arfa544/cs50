@@ -413,7 +413,7 @@ def register():
         if not username:
             flash("You must provide username!")
             return redirect("/register")
-        user_exists = db.execute("SELECT user_name FROM users WHERE username = ?", username)
+        user_exists = db.execute("SELECT user_name FROM users WHERE user_name = ?", username)
         if user_exists != []:
             flash("User already exists! Choose another username.")
             return redirect("/register")
