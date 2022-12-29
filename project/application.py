@@ -84,7 +84,7 @@ def logout():
 @app.route('/')
 @login_required
 def index():
-    rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+    rows = db.execute("SELECT * FROM users WHERE user_id = ?", session["user_id"])
 
     history = db.execute("SELECT date, height, weight, bmi FROM profile WHERE user_id = ?", session["user_id"])
     for x in range(len(history)):
@@ -182,7 +182,7 @@ def update():
         members = db.execute("SELECT name FROM family WHERE user_id = ?", session['user_id'])
 
         # query database for username
-        user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+        user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
 
         # removing user's name from members list
         for i in range(len(members)):
@@ -296,7 +296,7 @@ def remove():
         members = db.execute("SELECT name FROM family WHERE user_id = ?", session['user_id'])# checking members list
 
         # query database for username
-        user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+        user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
 
         # removing user's name from members list
         for i in range(len(members)):
@@ -315,7 +315,7 @@ def remove():
 @app.route('/family')
 @login_required
 def family():
-    rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+    rows = db.execute("SELECT * FROM users WHERE user_id = ?", session["user_id"])
 
     history = db.execute("SELECT name, height, weight, bmi FROM family WHERE user_id = ?", session["user_id"])
     for x in range(len(history)):
@@ -364,7 +364,7 @@ def profile():
             db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
 
             # updating family table
-            user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+            user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
             db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
 
         # metric units were chosen
@@ -389,7 +389,7 @@ def profile():
             db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
 
             # updating family table
-            user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+            user = db.execute("SELECT username FROM users WHERE uder_id = ?", session["user_id"])
             db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
 
         else:
