@@ -461,6 +461,7 @@ def register():
     # User reached route via GET
     else:
         members = db.execute("SELECT family_name FROM family")
+        print("members", members)
         return render_template("register.html", members=members)
 
 
