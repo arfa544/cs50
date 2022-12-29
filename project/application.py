@@ -393,7 +393,7 @@ def profile():
             db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
 
             # updating family table
-            user = db.execute("SELECT user_name FROM users WHERE uder_id = ?", session["user_id"])
+            user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
             db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["user_name"])
 
         else:
