@@ -51,7 +51,7 @@ def login():
             return redirect("/login")
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        rows = db.execute("SELECT * FROM users WHERE user_name = ?", username)
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["password"], password):
@@ -99,7 +99,7 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
-    return render_template('index.html', user=rows[0]["username"], details=history)
+    return render_template('index.html', user=rows[0]["user_name"], details=history)
 
 
 @app.route('/bmi')
