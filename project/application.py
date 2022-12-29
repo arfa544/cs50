@@ -65,8 +65,6 @@ def login():
         family_id = db.execute(f"SELECT family_id FROM family_user_mapping where user_id = {session['user_id']}")[0]["family_id"]
         session["family_id"] = family_id
 
-        print(f"family_id: {session['family_id']}")
-
         # Redirect user to home page
         return redirect("/")
 
