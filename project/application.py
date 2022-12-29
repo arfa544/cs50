@@ -454,7 +454,7 @@ def register():
 
             family_name_exists = db.execute("SELECT family_name FROM family WHERE family_name = ?", new_family_name)
             if family_name_exists != []:
-                flash("Family Name already exists! Please select from drop down.")
+                flash("Family Name already exists! Please select from drop down.", category="warning")
                 return redirect("/register")
 
             print(f'new_family_name: {new_family_name}')
