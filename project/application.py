@@ -462,6 +462,8 @@ def register():
 
         print(f"family_id: {family_id}")
         print(f"user_id: {user_id}")
+
+        db.execute(f"INSERT INTO family_user_mapping (family_id, user_id) VALUES ({family_id}, {user_id})")
         # creating new entry for user in family and profile table
         # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
         # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
