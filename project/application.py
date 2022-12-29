@@ -437,10 +437,7 @@ def register():
             return redirect("/register")
 
         # inserting and hashing new user
-        db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
-
-
-        user_ids = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)
+        user_id = db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
 
         # get selected Family Name
         selected_family_name = request.form.get("select_family_name")
@@ -464,6 +461,7 @@ def register():
             family_id = db.execute(f"SELECT family_id from family WHERE family_name = '{selected_family_name}'")[0]['family_id']
 
         print(f"family_id: {family_id}")
+        print(f"user_id: {user_id}")
         # creating new entry for user in family and profile table
         # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
         # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
