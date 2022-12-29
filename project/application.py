@@ -389,8 +389,8 @@ def profile():
             db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
 
             # updating family table
-            user = db.execute("SELECT username FROM users WHERE uder_id = ?", session["user_id"])
-            db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
+            user = db.execute("SELECT user_name FROM users WHERE uder_id = ?", session["user_id"])
+            db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["user_name"])
 
         else:
             print("ERRRORRR ERRRORRR ERRRORRR")
@@ -413,7 +413,7 @@ def register():
         if not username:
             flash("You must provide username!")
             return redirect("/register")
-        user_exists = db.execute("SELECT username FROM users WHERE username = ?", username)
+        user_exists = db.execute("SELECT user_name FROM users WHERE username = ?", username)
         if user_exists != []:
             flash("User already exists! Choose another username.")
             return redirect("/register")
@@ -437,10 +437,10 @@ def register():
             return redirect("/register")
 
         # inserting and hashing new user
-        db.execute("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
+        db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
 
 
-        user = db.execute("SELECT user_id FROM users WHERE username = ?", username)
+        user = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)
 
         # creating new entry for user in family and profile table
         db.execute("INSERT INTO family (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
@@ -449,7 +449,7 @@ def register():
         """ Automatically log in new user """
 
         # query database for user's details
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        rows = db.execute("SELECT * FROM users WHERE user_name = ?", username)
 
         # remember new user's session to log in
         session["user_id"] = rows[0]["user_id"]
