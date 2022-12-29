@@ -443,8 +443,16 @@ def register():
         user_ids = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)
 
         # get selected Family Name
-        selected_family_name = request.form.get("Family Name")
+        selected_family_name = request.form.get("select_family_name")
         print(f'selected_family_name: {selected_family_name}')
+
+        if selected_family_name is None:
+            new_family_name = request.form.get("new_family_name")
+            if new_family_name is None:
+                flash("Please select a existing Family name, or provide a new family name.")
+                return redirect("/register")
+
+            
         # creating new entry for user in family and profile table
         # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
         # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
