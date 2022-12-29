@@ -440,7 +440,7 @@ def register():
         db.execute("INSERT INTO users (username, pwd, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
 
 
-        user = db.execute("SELECT id FROM users WHERE username = ?", username)
+        user = db.execute("SELECT user_id FROM users WHERE username = ?", username)
 
         # creating new entry for user in family and profile table
         db.execute("INSERT INTO family (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["id"], username, 0, 0, 0)
