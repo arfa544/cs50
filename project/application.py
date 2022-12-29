@@ -454,8 +454,11 @@ def register():
 
             print(f'new_family_name: {new_family_name}')
             family_id = db.execute("INSERT INTO family(family_name) VALUES (?)", new_family_name)
-            print(f"family_id: {family_id}")
 
+        else:
+            family_id = db.execute(f"SELECT family_id from family WHERE family_name = '{selected_family_name}'")
+
+        print(f"family_id: {family_id}")
         # creating new entry for user in family and profile table
         # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
         # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
