@@ -346,7 +346,7 @@ def family():
         print(f'record: {record}')
         details.append(record)
         bmis = list(map(lambda x: x['bmi'], records))
-        record_dates = list(map(lambda x: datetime.datetime.strptime(x['record_date'],"%Y-%m-%d %H:%M:%S"), records))
+        record_dates = list(map(lambda x: datetime.strptime(x['record_date'],"%Y-%m-%d %H:%M:%S"), records))
         bmis.reverse()
         record_dates.reverse()
         print(f'record_dates: {type(record_dates[0])}')
