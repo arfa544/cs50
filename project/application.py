@@ -238,7 +238,7 @@ def add():
 
             # inserting and hashing new user
             user_id = db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
-            
+            db.execute(f"INSERT INTO family_user_mapping (family_id, user_id) VALUES ({family_id}, {user_id})")
 
 
 
