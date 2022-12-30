@@ -218,7 +218,29 @@ def add():
                 flash("You must enter a name!")
                 return redirect('/add')
 
-            
+            # checking email
+            email = request.form.get("email")
+            if not email:
+                flash("You must provide email id!")
+                return redirect("/register")
+            if '@' not in email or '.' not in email:
+                flash("You must provide a valid email id!")
+                return redirect("/register")
+
+            # checking and confirming password
+            password = request.form.get("password")
+            if not password:
+                flash("Missing password!")
+                return redirect("/register")
+            if password != request.form.get("confirm-pwd") or not request.form.get("confirm-pwd"):
+                flash("Passwords do not match!")
+                return redirect("/register")
+
+            # inserting and hashing new user
+            user_id = db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
+
+
+
 
         # using metric units
         # if 'addMe' in request.form:
