@@ -107,7 +107,7 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
-    plt.style.use('Solarize_Light2')
+    plt.style.use('dark_background')
     fig, ax = plt.subplots(1)
     bmis = list(map(lambda x: x['bmi'], history))
     record_dates = list(map(lambda x: x['record_date'], history))
