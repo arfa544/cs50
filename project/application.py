@@ -28,7 +28,7 @@ def plot_png():
    ax.plot(x, y)
 
    fig.savefig('test.png')
-   return "Response(output.getvalue(), mimetype='image/png')"
+   return """Hello<img src="/workspaces/82232171/project/test.png" alt="Italian Trulli">"""
 
 # End test
 
