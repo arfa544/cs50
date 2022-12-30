@@ -311,7 +311,7 @@ def remove():
 
         # removing user's name from members list
         for i in range(len(members)):
-            if members[i]['name'] == user[0]['username']:
+            if members[i]['user_name'] == user[0]['user_name']:
                 del members[i]
                 break
 
