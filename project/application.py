@@ -357,7 +357,7 @@ def family():
     fig.tight_layout()
     fig_path = "./static/plots/family_plot1.png"
     fig.savefig(fig_path)
-    return render_template('family.html', details=details)
+    return render_template('family.html', details=details, fig_path=fig_path)
 
 
 @app.route('/profile', methods=["GET", "POST"])
