@@ -132,7 +132,7 @@ def index():
     ax.plot(record_dates, bmis)
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
-    return render_template('index.html', user=rows[0]["user_name"], details=history, fig_path=fig_path, fig=plt.show())
+    return render_template('index.html', user=rows[0]["user_name"], details=history, fig_path=fig_path)
 
 
 @app.route('/bmi')
