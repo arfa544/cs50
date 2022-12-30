@@ -320,7 +320,7 @@ def remove():
 @login_required
 def family():
     rows = db.execute("SELECT * FROM users WHERE user_id = ?", session["user_id"])
-
+    print(f'rows: {rows}')
     history = db.execute("SELECT user_name, height, weight, bmi FROM records WHERE user_id = ?", session["user_id"])
     for x in range(len(history)):
         if history[x]["bmi"] < 18.5:
