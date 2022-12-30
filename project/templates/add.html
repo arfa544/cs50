@@ -7,8 +7,8 @@
 {% block main %}
     <center>
         <h3><em>Add New Family Members</em></h3>
-        <input type="radio" id="imperial" name="units" value="imperial"><label for="imperial">Imperial</label>
-        <input type="radio" id="metric" name="units" value="metric" checked><label for="metric">Metric</label>
+        <!-- <input type="radio" id="imperial" name="units" value="imperial"><label for="imperial">Imperial</label>
+        <input type="radio" id="metric" name="units" value="metric" checked><label for="metric">Metric</label> -->
 
         <form id="addM" action="/add" method="post">
             <div>Name: <input autofocus autocomplete="off" type="text" name="Name" id="Name" placeholder="Member's Name"><br><br></div>
@@ -24,9 +24,9 @@
 
         <form id="addI" action="/add" method="post">
             <div>Name: <input autofocus autocomplete="off" type="text" name="Name" id="Name" placeholder="Member's Name"><br><br></div>
-            <div>Height: <input autofocus autocomplete="off" type="number" name="feet" id="feet" placeholder="Feet" min=1>
+            <!-- <div>Height: <input autofocus autocomplete="off" type="number" name="feet" id="feet" placeholder="Feet" min=1>
             <input autofocus autocomplete="off" type="number" name="inch" id="inch" placeholder="Inch" min=0><br><br></div>
-            <div>Weight: <input autocomplete="off" type="number" name="lbs" id="lbs" placeholder="Pounds" min=1><br><br></div>
+            <div>Weight: <input autocomplete="off" type="number" name="lbs" id="lbs" placeholder="Pounds" min=1><br><br></div> -->
         	<button type="submit" name="addIm">Update</button>
         	<button type="reset">Clear</button>
         </form>
