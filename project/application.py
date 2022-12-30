@@ -113,7 +113,7 @@ def index():
     record_dates = list(map(lambda x: x['record_date'], history))
     bmis.reverse()
     record_dates.reverse()
-    ax.plot(record_dates, bmis, marker='o')
+    ax.plot(record_dates, bmis, marker='o', color = 'red')
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
 
