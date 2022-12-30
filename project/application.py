@@ -295,7 +295,8 @@ def remove():
             return redirect('/remove')
 
         # deleting the reqested entry from family table
-        
+        user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", name)
+        print(f'user_id: {user_id}')
         db.execute('DELETE FROM family WHERE name = ? and user_id = ?', name, session['user_id'])
 
         flash('Member was removed successfully!')
