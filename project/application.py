@@ -7,32 +7,14 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
+from matplotlib import pyplot as plt
+
 
 from helpers import login_required
 
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
-# Test matplotlib
-
-from matplotlib import pyplot as plt
-
-
-app = Flask(__name__)
-@app.route('/plot')
-def plot_png():
-    fig, ax = plt.subplots(1)
-    x = [1, 2, 3, 4]
-    y = [1, 2, 1, 3]
-    ax.plot(x, y)
-
-    plot_path = "./static/plots/test.png"
-    fig.savefig(plot_path)
-    return f"""Hello<img src={plot_path} alt="Italian Trulli">"""
-
-# End test
-
 
 
 @app.after_request
