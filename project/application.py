@@ -68,7 +68,8 @@ def bokeh():
         js_resources=js_resources,
         css_resources=css_resources,
     )
-    return util.string.encode_utf8(html)
+    # return util.string.encode_utf8(html)
+    return html
 
 
 @app.route("/login", methods=["GET", "POST"])
