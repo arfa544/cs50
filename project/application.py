@@ -295,7 +295,8 @@ def remove():
             return redirect('/remove')
 
         # deleting the reqested entry from family table
-        db.execute('DELETE FROM records WHERE user_id IN (SELECT user_name in ) = ? and user_id = ?', name, session['user_id'])
+        
+        db.execute('DELETE FROM family WHERE name = ? and user_id = ?', name, session['user_id'])
 
         flash('Member was removed successfully!')
         return redirect('/family')
@@ -304,7 +305,7 @@ def remove():
     else:
 
         # finding family members
-        members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family_id'])# checking members list
+        members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family'])# checking members list
         print(f'members: {members}')
         # query database for username
         user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
