@@ -126,8 +126,10 @@ def index():
             history[x].update(category = 'obese')
 
     fig, ax = plt.subplots(1)
-    print(f"map: {list(map(lambda x: x['bmi'], history))}")
-    # ax.plot(map())
+    bmis = list(map(lambda x: x['bmi'], history))
+    record_dates = list(map(lambda x: x['record_date'], history))
+    # print(f"map: {list(map(lambda x: x['bmi'], history))}")
+    ax.plot(record_dates, bmis)
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
     return render_template('index.html', user=rows[0]["user_name"], details=history)
