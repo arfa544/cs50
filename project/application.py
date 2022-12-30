@@ -342,6 +342,20 @@ def family():
             record.update(category = 'Obese')
         print(f'record: {record}')
         details.append(record)
+
+    plt.style.use('dark_background')
+    fig, ax = plt.subplots(1)
+    bmis = list(map(lambda x: x['bmi'], history))
+    record_dates = list(map(lambda x: x['record_date'], history))
+    bmis.reverse()
+    record_dates.reverse()
+    ax.plot(record_dates, bmis, marker='o', color = 'r')
+    ax.set(title="BMI over time", ylabel="BMI")
+    plt.xticks(rotation=15, ha='right')
+
+    fig.tight_layout()
+    fig_path = "./static/plots/index_plot1.png"
+    fig.savefig(fig_path)
     return render_template('family.html', details=details)
 
 
