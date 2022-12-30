@@ -327,17 +327,17 @@ def family():
         print(f'user_name: {user_name}')
         record = db.execute("SELECT height, weight, bmi, record_date FROM records WHERE user_id = ? ORDER BY record_date DESC", user_id)[0]
         print(f'record: {record}')
-    
-        if history[x]["bmi"] < 18.5:
-            history[x].update(category = 'Underweight')
-        elif history[x]["bmi"] >= 18.5 and history[x]["bmi"] < 23:
-            history[x].update(category = 'Normal')
-        elif history[x]["bmi"] >= 23 and history[x]['bmi'] < 25:
-            history[x].update(category = 'Overweight')
-        elif history[x]["bmi"] >= 25 and history[x]['bmi'] < 30:
-            history[x].update(category = 'Pre-obese')
-        elif history[x]["bmi"] >= 30:
-            history[x].update(category = 'Obese')
+
+        if record["bmi"] < 18.5:
+            record.update(category = 'Underweight')
+        elif record["bmi"] >= 18.5 and record["bmi"] < 23:
+            record.update(category = 'Normal')
+        elif record["bmi"] >= 23 and record['bmi'] < 25:
+            record.update(category = 'Overweight')
+        elif record["bmi"] >= 25 and record['bmi'] < 30:
+            record.update(category = 'Pre-obese')
+        elif record["bmi"] >= 30:
+            record.update(category = 'Obese')
 
     return render_template('family.html', details=history)
 
