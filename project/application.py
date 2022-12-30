@@ -125,7 +125,8 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
-    fig, ax = plt.subplots(1, num='ggplot')
+    plt.style.use('Solarize_Light2')
+    fig, ax = plt.subplots(1)
     bmis = list(map(lambda x: x['bmi'], history))
     record_dates = list(map(lambda x: x['record_date'], history))
     bmis.reverse()
@@ -133,6 +134,7 @@ def index():
     ax.plot(record_dates, bmis)
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
+
     fig.tight_layout()
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
