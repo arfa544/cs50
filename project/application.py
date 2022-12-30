@@ -16,7 +16,30 @@ from helpers import login_required
 from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.resources import INLINE
-from bokeh.util.strings import encode_utf8
+from bokeh import util
+
+
+## END OF BOKEH TEST
+
+
+app = Flask(__name__)
+
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
+@app.after_request
+def after_request(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Expires"] = 0
+    response.headers["Pragma"] = "no-cache"
+    return response
+
+app.config["SESSION_FILE_DIR"] = mkdtemp()
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+db = SQL("sqlite:///project.db")
+
 
 @app.route('/bokeh')
 def bokeh():
@@ -45,29 +68,9 @@ def bokeh():
         js_resources=js_resources,
         css_resources=css_resources,
     )
-    return encode_utf8(html)
+    return util.string.encode_utf8(html)
 
-## END OF BOKEH TEST
-
-
-app = Flask(__name__)
-
-app.config["TEMPLATES_AUTO_RELOAD"] = True
-
-@app.after_request
-def after_request(response):
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    response.headers["Expires"] = 0
-    response.headers["Pragma"] = "no-cache"
-    return response
-
-app.config["SESSION_FILE_DIR"] = mkdtemp()
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
-
-db = SQL("sqlite:///project.db")
-
+    
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
