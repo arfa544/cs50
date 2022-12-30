@@ -490,7 +490,7 @@ def register():
             family_id = db.execute("INSERT INTO family(family_name) VALUES (?)", new_family_name)
 
         else:
-            family_id = db.execute(f"SELECT family_id from family WHERE family_name = '{selected_family_name}'")[0]['family_id']
+            family_id = db.execute("SELECT family_id from family WHERE family_name = ?", selected_family_name)[0]['family_id']
 
         print(f"family_id: {family_id}")
         print(f"user_id: {user_id}")
