@@ -20,15 +20,15 @@ from matplotlib import pyplot as plt
 
 
 app = Flask(__name__)
-@app.route('/print-plot')
+@app.route('/plot')
 def plot_png():
    fig, ax = plt.subplots(1)
    x = [1, 2, 3, 4]
    y = [1, 2, 1, 3]
    ax.plot(x, y)
 
-   fig.save
-   return Response(output.getvalue(), mimetype='image/png')
+   fig.savefig('test.png')
+   return "Response(output.getvalue(), mimetype='image/png')"
 
 # End test
 
