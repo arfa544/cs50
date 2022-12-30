@@ -125,6 +125,8 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
+    fig, ax = plt.subplots(1)
+    fig.savefig()
     return render_template('index.html', user=rows[0]["user_name"], details=history)
 
 
