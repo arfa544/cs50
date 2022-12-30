@@ -22,13 +22,14 @@ from matplotlib import pyplot as plt
 app = Flask(__name__)
 @app.route('/plot')
 def plot_png():
-   fig, ax = plt.subplots(1)
-   x = [1, 2, 3, 4]
-   y = [1, 2, 1, 3]
-   ax.plot(x, y)
+    fig, ax = plt.subplots(1)
+    x = [1, 2, 3, 4]
+    y = [1, 2, 1, 3]
+    ax.plot(x, y)
 
-   fig.savefig('test.png')
-   return """Hello<img src="/workspaces/82232171/project/test.png" alt="Italian Trulli">"""
+    plot_path = "./static/plots/test.png"
+    fig.savefig(plot_path)
+    return f"""Hello<img src={plot_path} alt="Italian Trulli">"""
 
 # End test
 
