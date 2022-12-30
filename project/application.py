@@ -214,7 +214,7 @@ def add():
 
             # checking for name
             username = request.form.get('Name')
-            if not name:
+            if not username:
                 flash("You must enter a name!")
                 return redirect('/add')
 
