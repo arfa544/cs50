@@ -364,12 +364,15 @@ def profile():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            # updating profile table
-            db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
+            # # updating profile table
+            # db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
 
-            # updating family table
-            user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
-            db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
+            # # updating family table
+            # user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
+            # db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
+
+            # Insert into records
+            db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms)
 
         # metric units were chosen
         elif 'updateMe' in request.form:
