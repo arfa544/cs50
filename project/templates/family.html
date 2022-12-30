@@ -16,6 +16,7 @@
                 <th>WEIGHT (IN KG)</th>
                 <th>BODY MASS INDEX (BMI)</th>
                 <th>CATEGORY</th>
+                <th>RECORD_DATE</th>
             </thead>
             <tbody>
                 {% for detail in details %}
@@ -26,6 +27,7 @@
                         <td>{{ detail['weight'] }}</td>
                         <td>{{ detail['bmi'] }}</td>
                         <td>{{ detail['category'] }}</td>
+                        <td>{{ detail['record_date'] }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
