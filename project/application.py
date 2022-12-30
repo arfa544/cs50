@@ -132,7 +132,7 @@ def index():
     record_dates.reverse()
     ax.plot(record_dates, bmis)
     ax.set(title="BMI over time", ylabel="BMI")
-    plt.xticks(rotation=30, ha='right')
+    plt.xticks(rotation=15, ha='right')
     fig.tight_layout()
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
