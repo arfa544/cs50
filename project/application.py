@@ -338,6 +338,7 @@ def family():
             record.update(category = 'Pre-obese')
         elif record["bmi"] >= 30:
             record.update(category = 'Obese')
+        print(f'record: {record}')
 
     return render_template('family.html', details=history)
 
