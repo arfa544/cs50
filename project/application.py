@@ -321,7 +321,7 @@ def remove():
 def family():
     user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])[0]["user_name"]
     print(f'user_name: {user_name}')
-    history = db.execute("SELECT user_name, height, weight, bmi FROM records WHERE user_id = ?", session["user_id"])
+    history = db.execute("SELECT user_id, height, weight, bmi FROM records WHERE user_id = ?", session["user_id"])
     for x in range(len(history)):
         if history[x]["bmi"] < 18.5:
             history[x].update(category = 'Underweight')
