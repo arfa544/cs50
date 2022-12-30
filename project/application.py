@@ -319,6 +319,9 @@ def family():
     user_ids = db.execute("SELECT user_id FROM family_user_mapping WHERE family_id = ?", session["family_id"])
     print(f'user_ids: {user_ids}')
 
+    plt.style.use('dark_background')
+    fig, ax = plt.subplots(1)
+
     details = list()
     for user_id in user_ids:
         user_id = user_id["user_id"]
@@ -343,8 +346,7 @@ def family():
         print(f'record: {record}')
         details.append(record)
 
-    plt.style.use('dark_background')
-    fig, ax = plt.subplots(1)
+
     bmis = list(map(lambda x: x['bmi'], history))
     record_dates = list(map(lambda x: x['record_date'], history))
     bmis.reverse()
