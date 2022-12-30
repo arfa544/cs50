@@ -304,7 +304,7 @@ def remove():
     else:
 
         # finding family members
-        members = db.execute("SELECT user_name FROM users LEFT JOIN records USING (user_id) WHERE user_id = ?", session['user_id'])# checking members list
+        members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family_id'])# checking members list
         print(f'members: {members}')
         # query database for username
         user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
