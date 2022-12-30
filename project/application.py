@@ -115,6 +115,7 @@ def index():
     record_dates.reverse()
     ax.plot(record_dates, bmis, marker='o', color = 'r')
     ax.set(title="BMI over time", ylabel="BMI")
+    ax.set_xlabel('Time', fontsize=10)
     plt.xticks(rotation=15, ha='right')
 
     fig.tight_layout()
