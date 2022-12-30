@@ -218,26 +218,7 @@ def add():
                 flash("You must enter a name!")
                 return redirect('/add')
 
-            # checking for height
-            feet = request.form.get("feet")
-            inch = request.form.get("inch")
-            if not feet and not inch:
-                flash("Height cannot be left blank!")
-                return redirect('/add')
-
-            # checking for weight
-            lbs = request.form.get("lbs")
-            if not lbs:
-                flash("Weight cannot be left blank!")
-                return redirect('/add')
-
-            # calculating bmi, height in cms, weight in kgs
-            bmi = round(703 * int(lbs) / pow((int(feet) * 12 + int(inch)), 2), 2)
-            kgs = round(int(lbs) * 0.453592, 2)
-            cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
-
-            # adding new entry in profile table
-            db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
+            
 
         # using metric units
         # if 'addMe' in request.form:
