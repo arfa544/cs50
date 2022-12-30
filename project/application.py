@@ -349,7 +349,7 @@ def family():
         record_dates = list(map(lambda x: x['record_date'], records))
         bmis.reverse()
         record_dates.reverse()
-        print(f'record_dates: {record_dates}')
+        print(f'record_dates: {type(record_dates[0])}')
         ax.plot(record_dates, bmis, marker='o', label = user_name)
         plt.legend()
 
