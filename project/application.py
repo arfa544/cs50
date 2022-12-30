@@ -46,7 +46,7 @@ def bokeh():
 
     # init a basic bar chart:
     # http://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html#bars
-    fig = figure(plot_width=600, plot_height=600)
+    fig = figure(frame_width=600, frame_height=600)
     fig.vbar(
         x=[1, 2, 3, 4],
         width=0.5,
@@ -62,7 +62,7 @@ def bokeh():
     # render template
     script, div = components(fig)
     html = render_template(
-        'index.html',
+        'bokeh.html',
         plot_script=script,
         plot_div=div,
         js_resources=js_resources,
@@ -70,7 +70,7 @@ def bokeh():
     )
     return util.string.encode_utf8(html)
 
-    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
