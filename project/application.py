@@ -329,7 +329,7 @@ def family():
         print(f'user_name: {user_name}')
         record = db.execute("SELECT height, weight, bmi, record_date FROM records WHERE user_id = ? ORDER BY record_date DESC", user_id)[0]
         print(f'record: {record}')
-
+        record["user_name"] = user_name
         if record["bmi"] < 18.5:
             record.update(category = 'Underweight')
         elif record["bmi"] >= 18.5 and record["bmi"] < 23:
