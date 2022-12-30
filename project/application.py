@@ -18,7 +18,7 @@ from bokeh.plotting import figure
 from bokeh.resources import INLINE
 from bokeh.util.string import encode_utf8
 
-@app.route('/bokeh')pip install bokeh==0.12.6
+@app.route('/bokeh')
 def bokeh():
 
     # init a basic bar chart:
