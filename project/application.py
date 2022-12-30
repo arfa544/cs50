@@ -176,6 +176,10 @@ def update():
             # updating family table
             #db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
 
+        # Insert into records
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+
         flash('Family details updated successfully!')
         return redirect('/family')
 
