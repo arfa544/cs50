@@ -16,21 +16,18 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Test matplotlib
 
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-import numpy as np
-plt.rcParams["figure.figsize"] = [7.50, 3.50]
-plt.rcParams["figure.autolayout"] = True
+from matplotlib import pyplot as plt
+
+
 app = Flask(__name__)
 @app.route('/print-plot')
 def plot_png():
-   fig = Figure()
-   axis = fig.add_subplot(1, 1, 1)
-   xs = np.random.rand(100)
-   ys = np.random.rand(100)
-   axis.plot(xs, ys)
-   output = io.BytesIO()
-   FigureCanvas(fig).print_png(output)
+   fig, ax = plt.subplots(1)
+   x = [1, 2, 3, 4]
+   y = [1, 2, 1, 3]
+   ax.plot(x, y)
+
+   fig.save
    return Response(output.getvalue(), mimetype='image/png')
 
 # End test
