@@ -186,11 +186,11 @@ def update():
         members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family_id'])
 
         # query database for username
-        user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
+        user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
 
         # removing user's name from members list
         for i in range(len(members)):
-            if members[i]['name'] == user[0]['username']:
+            if members[i]['user_name'] == user[0]['user_name']:
                 del members[i]
                 break
 
