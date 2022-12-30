@@ -321,6 +321,8 @@ def remove():
 def family():
     user_ids = db.execute("SELECT user_id FROM family_user_mapping WHERE family_id = ?", session["family_id"])
     print(f'user_ids: {user_ids}')
+
+    details = list()
     for user_id in user_ids:
         user_id = user_id["user_id"]
         user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", user_id)[0]["user_name"]
@@ -339,8 +341,8 @@ def family():
         elif record["bmi"] >= 30:
             record.update(category = 'Obese')
         print(f'record: {record}')
-
-    return render_template('family.html', details=history)
+        details.append(record)
+    return render_template('family.html', details=details)
 
 
 @app.route('/profile', methods=["GET", "POST"])
