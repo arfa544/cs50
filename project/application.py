@@ -56,7 +56,7 @@ def login():
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE user_name = ?", username)
-
+        print(f'rows: {rows}')
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["password"], password):
             flash("Invalid username and/or password!")
