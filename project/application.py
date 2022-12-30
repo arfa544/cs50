@@ -126,8 +126,8 @@ def index():
             history[x].update(category = 'obese')
 
     fig, ax = plt.subplots(1)
-    bmis = list(map(lambda x: x['bmi'], history))
-    record_dates = list(map(lambda x: x['record_date'], history))
+    bmis = list(map(lambda x: x['bmi'], history)).reverse()
+    record_dates = list(map(lambda x: x['record_date'], history)).reverse()
     # print(f"map: {list(map(lambda x: x['bmi'], history))}")
     ax.plot(record_dates, bmis)
     plt.xticks(rotation=30, ha='right')
