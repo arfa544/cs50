@@ -330,7 +330,10 @@ def family():
         user_id = user_id["user_id"]
         user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", user_id)[0]["user_name"]
         print(f'user_name: {user_name}')
-        record = db.execute("SELECT height, weight, bmi, record_date FROM records WHERE user_id = ? ORDER BY record_date DESC", user_id)[0]
+        records = db.execute("SELECT height, weight, bmi, record_date FROM records WHERE user_id = ? ORDER BY record_date DESC", user_id)
+        if not records:
+            continue
+        record = records[0]
         print(f'record: {record}')
         record["user_name"] = user_name
         if record["bmi"] < 18.5:
