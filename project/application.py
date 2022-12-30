@@ -123,8 +123,8 @@ def update():
         if 'updateIm' in request.form:
 
             # checking for name
-            name = request.form.get('Name')
-            if not name:
+            username = request.form.get('Name')
+            if not username:
                 flash("You must enter a name!")
                 return redirect('/update')
 
@@ -153,8 +153,8 @@ def update():
         if 'updateMe' in request.form:
 
             # checking for name
-            name = request.form.get('Name')
-            if not name:
+            username = request.form.get('Name')
+            if not username:
                 flash("You must choose a name!")
                 return redirect('/update')
 
@@ -177,8 +177,8 @@ def update():
             #db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
 
         # Insert into records
-        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-
+        user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)[0]['user_id']
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", user_id, cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
         flash('Family details updated successfully!')
         return redirect('/family')
