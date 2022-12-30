@@ -126,10 +126,12 @@ def index():
             history[x].update(category = 'obese')
 
     fig, ax = plt.subplots(1)
-    bmis = list(map(lambda x: x['bmi'], history)).reverse()
-    record_dates = list(map(lambda x: x['record_date'], history)).reverse()
-    # print(f"map: {list(map(lambda x: x['bmi'], history))}")
+    bmis = list(map(lambda x: x['bmi'], history))
+    record_dates = list(map(lambda x: x['record_date'], history))
+    bmis.reverse()
+    record_dates.reverse()
     ax.plot(record_dates, bmis)
+    ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=30, ha='right')
     fig.tight_layout()
     fig_path = "./static/plots/index_plot1.png"
