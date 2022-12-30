@@ -12,7 +12,7 @@ from helpers import login_required
 
 app = Flask(__name__)
 
-app.config["TEMPLATES_AUTO_RELOAD"] = True
+app.config["TEMPLATES_AUTO_RELOAD"] = Truecc
 
 # Test matplotlib
 
