@@ -183,7 +183,7 @@ def update():
     else:
 
         # finding family members
-        members = db.execute("SELECT name FROM family WHERE user_id = ?", session['user_id'])
+        members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family_id'])
 
         # query database for username
         user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
