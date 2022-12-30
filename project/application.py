@@ -354,9 +354,8 @@ def family():
 
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
-
     fig.tight_layout()
-    fig_path = "./static/plots/index_plot1.png"
+    fig_path = "./static/plots/family_plot1.png"
     fig.savefig(fig_path)
     return render_template('family.html', details=details)
 
