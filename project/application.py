@@ -345,13 +345,13 @@ def family():
             record.update(category = 'Obese')
         print(f'record: {record}')
         details.append(record)
+        bmis = list(map(lambda x: x['bmi'], records))
+        record_dates = list(map(lambda x: x['record_date'], records))
+        bmis.reverse()
+        record_dates.reverse()
+        ax.plot(record_dates, bmis, marker='o', color = 'r')
 
 
-    bmis = list(map(lambda x: x['bmi'], history))
-    record_dates = list(map(lambda x: x['record_date'], history))
-    bmis.reverse()
-    record_dates.reverse()
-    ax.plot(record_dates, bmis, marker='o', color = 'r')
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
 
