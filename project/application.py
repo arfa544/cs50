@@ -130,7 +130,8 @@ def index():
     record_dates = list(map(lambda x: x['record_date'], history))
     # print(f"map: {list(map(lambda x: x['bmi'], history))}")
     ax.plot(record_dates, bmis)
-    ax.xticks(rotation=30, ha='right')
+    plt.xticks(rotation=30, ha='right')
+    fig.tight_layout()
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
     return render_template('index.html', user=rows[0]["user_name"], details=history, fig_path=fig_path)
