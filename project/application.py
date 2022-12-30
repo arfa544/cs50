@@ -210,7 +210,7 @@ def add():
     if request.method =='POST':
 
         # using imperial units
-        if 'addIm' in request.form:
+        if 'add' in request.form:
 
             # checking for name
             name = request.form.get('Name')
