@@ -350,6 +350,7 @@ def family():
         bmis.reverse()
         record_dates.reverse()
         ax.plot(record_dates, bmis, marker='o', color = 'r')
+        plt.legend()
 
 
     ax.set(title="BMI over time", ylabel="BMI")
