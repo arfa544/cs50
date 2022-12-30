@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-from flask import Flask, flash, redirect, request, session, render_template
+from flask import Flask, flash, redirect, request, session, render_template, Response
 from cs50 import SQL
 from flask_session import Session
 from tempfile import mkdtemp
@@ -10,10 +10,32 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import login_required
 
-
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
+
+# Test matplotlib
+
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+app = Flask(__name__)
+@app.route('/print-plot')
+def plot_png():
+   fig = Figure()
+   axis = fig.add_subplot(1, 1, 1)
+   xs = np.random.rand(100)
+   ys = np.random.rand(100)
+   axis.plot(xs, ys)
+   output = io.BytesIO()
+   FigureCanvas(fig).print_png(output)
+   return Response(output.getvalue(), mimetype='image/png')
+
+# End test
+
+
 
 @app.after_request
 def after_request(response):
