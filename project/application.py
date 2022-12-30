@@ -11,17 +11,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 
 
-# TEST BOKEH
-
-from bokeh.embed import components
-from bokeh.plotting import figure
-from bokeh.resources import INLINE
-from bokeh import util
-
-
-## END OF BOKEH TEST
-
-
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
