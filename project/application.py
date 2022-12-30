@@ -240,31 +240,31 @@ def add():
             db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
 
         # using metric units
-        if 'addMe' in request.form:
+        # if 'addMe' in request.form:
 
-            # checking for name
-            name = request.form.get('Name')
-            if not name:
-                flash("You must enter a name!")
-                return redirect('/add')
+        #     # checking for name
+        #     name = request.form.get('Name')
+        #     if not name:
+        #         flash("You must enter a name!")
+        #         return redirect('/add')
 
-            # checking for height
-            cms = request.form.get("cms")
-            if not cms:
-                flash("Height cannot be left blank!")
-                return redirect('/add')
+        #     # checking for height
+        #     cms = request.form.get("cms")
+        #     if not cms:
+        #         flash("Height cannot be left blank!")
+        #         return redirect('/add')
 
-            # checking for weight
-            kgs = request.form.get("kgs")
-            if not kgs:
-                flash("Weight cannot be left blank!")
-                return redirect('/add')
+        #     # checking for weight
+        #     kgs = request.form.get("kgs")
+        #     if not kgs:
+        #         flash("Weight cannot be left blank!")
+        #         return redirect('/add')
 
-            # calculating bmi, height in cms, weight in kgs
-            bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
+        #     # calculating bmi, height in cms, weight in kgs
+        #     bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
 
-            # adding new entry in profile table
-            db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
+        #     # adding new entry in profile table
+        #     db.execute("INSERT INTO profile (user_id, name, weight, height, bmi) VALUES (?, ?, ?, ?, ?)", session["user_id"], name, kgs, cms, bmi)
 
         flash('New family member added successfully!')
         return redirect('/family')
