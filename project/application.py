@@ -213,7 +213,7 @@ def add():
         if 'add' in request.form:
 
             # checking for name
-            name = request.form.get('Name')
+            username = request.form.get('Name')
             if not name:
                 flash("You must enter a name!")
                 return redirect('/add')
@@ -237,7 +237,7 @@ def add():
                 return redirect("/register")
 
             # inserting and hashing new user
-            user_id = db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
+            db.execute("INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)", username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8), email)
 
 
 
