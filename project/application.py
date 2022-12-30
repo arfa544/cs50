@@ -371,9 +371,6 @@ def profile():
             # user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
             # db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
 
-            # Insert into records
-            db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-
         # metric units were chosen
         elif 'updateMe' in request.form:
 
@@ -401,6 +398,9 @@ def profile():
 
         else:
             print("ERRRORRR ERRRORRR ERRRORRR")
+
+        # Insert into records
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
         flash("Profile details updated successfully!")
         return redirect("/")
