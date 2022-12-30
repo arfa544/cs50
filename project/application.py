@@ -125,7 +125,7 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
-    fig, ax = plt.subplots(1)
+    fig, ax = plt.subplots(1, num='ggplot')
     bmis = list(map(lambda x: x['bmi'], history))
     record_dates = list(map(lambda x: x['record_date'], history))
     bmis.reverse()
