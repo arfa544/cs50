@@ -321,6 +321,8 @@ def remove():
 def family():
     user_ids = db.execute("SELECT user_id FROM family_user_mapping WHERE family_id = ?", session["family_id"])
     print(f'user_ids: {user_ids}')
+    for user_id in user_ids:
+        user_id = user_id["user_id"]
     user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])[0]["user_name"]
     print(f'user_name: {user_name}')
     history = db.execute("SELECT user_id, height, weight, bmi FROM records WHERE user_id = ?", session["user_id"])
