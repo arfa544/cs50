@@ -1,4 +1,4 @@
-# ProjectMota2
+# ProjectMota3
 #### Video Demo: [watch here on YouTube](https://youtu.be/VkG5f3NflDc)
 #### Description:
 This is a web application useful for calculating & storing your and your family's height, weight and body mass index or BMI. This project intends to encouraging the user to make healthy decisions and be conscious of their diet to improve their quality of life and health. BMI is one of the important measures of bone, muscle and tissue fitness. The BMI category ranges vary between European and Asian criteria. Since the Asian standard has vaster categories, ProjectMota2 uses it for categorizing the collected data.
