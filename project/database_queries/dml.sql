@@ -15,3 +15,29 @@ INSERT INTO users (user_id, user_name, password, email) VALUES
 INSERT INTO family (family_id, family_name) VALUES
 (1,'Royals'),
 (2,'Kings');
+
+-- Insert values in family_user_mapping table
+INSERT INTO family_user_mapping (family_id, user_id) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(2, 8),
+(2, 9),
+(2, 10);
+
+-- Insert values in records table
+INSERT INTO records (profile_id, user_id, height, weight, bmi, record_date) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(2, 8),
+(2, 9),
+(2, 10);
