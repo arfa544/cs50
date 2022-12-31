@@ -72,4 +72,4 @@ Based on [Mashhood Alam's](https://github.com/MASHOD0) [ProjectMota](https://git
 [Aieshah Nasir's](https://github.com/aie007) [ProjectMota2](https://github.com/aie007/projectmota2)
 
 
-Developed by [Shaik Arfa Ameena](https://github.com/aie007) as CS50 Final Project - CS50x2022
+Developed by [Shaik Arfa Ameena](https://github.com/arfa544) as CS50 Final Project - CS50x2022
