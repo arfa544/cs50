@@ -186,7 +186,7 @@ def update():
 
         # Insert into records
         user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)[0]['user_id']
-        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", user_id, cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", user_id, cms, kgs, bmi, datetime.now().strftime("%Y %m %d %H:%M:%S"))
 
         flash('Family details updated successfully!')
         return redirect('/family')
