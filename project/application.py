@@ -113,6 +113,8 @@ def index():
     record_dates = list(map(lambda x: datetime.strptime(x['record_date'], DATE_TIME_FORMAT), history))
     bmis.reverse()
     record_dates.reverse()
+    if len(record_dates) < 2:
+        
     ax.plot(record_dates, bmis, marker='o', color = 'r')
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
