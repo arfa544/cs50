@@ -32,12 +32,4 @@ INSERT INTO family_user_mapping (family_id, user_id) VALUES
 -- Insert values in records table
 INSERT INTO records (profile_id, user_id, height, weight, bmi, record_date) VALUES
 (1,	1,	180,	80,	24.69,	'2022 Dec 18 12:32:43'),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 5),
-(1, 6),
-(1, 7),
-(2, 8),
-(2, 9),
-(2, 10);
+(1	1	180	94	29.01	2022-12-14)
