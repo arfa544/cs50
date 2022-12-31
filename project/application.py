@@ -1,7 +1,7 @@
 import os
-from datetime import datetime
 
-from flask import Flask, flash, redirect, request, session, render_template, Response
+from datetime import datetime
+from flask import Flask, flash, redirect, request, session, render_template
 from cs50 import SQL
 from flask_session import Session
 from tempfile import mkdtemp
@@ -9,13 +9,11 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from matplotlib import pyplot as plt
 
-
 from helpers import login_required
 
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
 
 @app.after_request
 def after_request(response):
@@ -30,7 +28,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///project.db")
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -348,7 +345,6 @@ def family():
         ax.plot(record_dates, bmis, marker='o', label = user_name)
         plt.legend()
 
-
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
     fig.tight_layout()
@@ -476,10 +472,8 @@ def register():
         print(f"family_id: {family_id}")
         print(f"user_id: {user_id}")
 
+        # Inserting user_id and respective family_id in family_user_mapping
         db.execute(f"INSERT INTO family_user_mapping (family_id, user_id) VALUES ({family_id}, {user_id})")
-        # creating new entry for user in family and profile table
-        # db.execute("INSERT INTO profile (user_id, name, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], username, 0, 0, 0)
-        # db.execute("INSERT INTO profile (user_id, date, height, weight, bmi) VALUES (?, ?, ?, ?, ?)", user[0]["user_id"], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 0, 0, 0)
 
         """ Automatically log in new user """
         # remember new user's session to log in
