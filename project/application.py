@@ -110,7 +110,7 @@ def index():
     plt.style.use('dark_background')
     fig, ax = plt.subplots(1)
     bmis = list(map(lambda x: x['bmi'], history))
-    record_dates = list(map(lambda x: datetime.strptime(x['record_date'],"%Y-%m-%d %H:%M:%S"), history))
+    record_dates = list(map(lambda x: datetime.strptime(x['record_date'],"%Y %m %d %H:%M:%S"), history))
     bmis.reverse()
     record_dates.reverse()
     ax.plot(record_dates, bmis, marker='o', color = 'r')
