@@ -107,6 +107,7 @@ def index():
         elif history[x]["bmi"] >= 30:
             history[x].update(category = 'obese')
 
+    # Plotting graph for personal dashboard
     plt.style.use('dark_background')
     fig, ax = plt.subplots(1)
     bmis = list(map(lambda x: x['bmi'], history))
@@ -116,7 +117,6 @@ def index():
     ax.plot(record_dates, bmis, marker='o', color = 'r')
     ax.set(title="BMI over time", ylabel="BMI")
     plt.xticks(rotation=15, ha='right')
-
     fig.tight_layout()
     fig_path = "./static/plots/index_plot1.png"
     fig.savefig(fig_path)
@@ -163,8 +163,7 @@ def update():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            # updating profile table
-            #db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
+            
 
         # using metric units
         if 'updateMe' in request.form:
