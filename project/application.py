@@ -276,7 +276,6 @@ def remove():
 
         # deleting the reqested entry from family table
         user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", name)[0]['user_id']
-        #print(f'user_id: {user_id}')
         db.execute('DELETE FROM records WHERE user_id = ?', user_id)
 
         flash('Member was removed successfully!')
@@ -287,7 +286,7 @@ def remove():
 
         # finding family members
         members = db.execute("SELECT user_name FROM users LEFT JOIN family_user_mapping USING (user_id) WHERE family_id = ?", session['family_id'])# checking members list
-        print(f'members: {members}')
+
         # query database for username
         user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
 
@@ -309,7 +308,6 @@ def remove():
 @login_required
 def family():
     user_ids = db.execute("SELECT user_id FROM family_user_mapping WHERE family_id = ?", session["family_id"])
-    print(f'user_ids: {user_ids}')
 
     plt.style.use('dark_background')
     fig, ax = plt.subplots(1)
@@ -318,12 +316,12 @@ def family():
     for user_id in user_ids:
         user_id = user_id["user_id"]
         user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", user_id)[0]["user_name"]
-        print(f'user_name: {user_name}')
+
         records = db.execute("SELECT height, weight, bmi, record_date FROM records WHERE user_id = ? ORDER BY record_date DESC", user_id)
         if not records:
             continue
         record = records[0]
-        print(f'record: {record}')
+
         record["user_name"] = user_name
         if record["bmi"] < 18.5:
             record.update(category = 'Underweight')
@@ -335,13 +333,13 @@ def family():
             record.update(category = 'Pre-obese')
         elif record["bmi"] >= 30:
             record.update(category = 'Obese')
-        print(f'record: {record}')
+
         details.append(record)
         bmis = list(map(lambda x: x['bmi'], records))
         record_dates = list(map(lambda x: datetime.strptime(x['record_date'], DATE_TIME_FORMAT), records))
         bmis.reverse()
         record_dates.reverse()
-        print(f'record_dates: {type(record_dates[0])}')
+
         # Plotting graph of each family member
         ax.plot(record_dates, bmis, marker='o', label = user_name)
         plt.legend()
@@ -451,7 +449,7 @@ def register():
 
         # get selected Family Name
         selected_family_name = request.form.get("select_family_name")
-        print(f'selected_family_name: {selected_family_name}')
+
 
         if selected_family_name is None:
             new_family_name = request.form.get("new_family_name")
@@ -464,14 +462,12 @@ def register():
                 flash("Family Name already exists! Please select from drop down.", category="warning")
                 return redirect("/register")
 
-            print(f'new_family_name: {new_family_name}')
+
             family_id = db.execute("INSERT INTO family(family_name) VALUES (?)", new_family_name)
 
         else:
             family_id = db.execute("SELECT family_id from family WHERE family_name = ?", selected_family_name)[0]['family_id']
 
-        print(f"family_id: {family_id}")
-        print(f"user_id: {user_id}")
 
         # Inserting user_id and respective family_id in family_user_mapping
         db.execute(f"INSERT INTO family_user_mapping (family_id, user_id) VALUES ({family_id}, {user_id})")
