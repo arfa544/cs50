@@ -41,6 +41,8 @@ This page tabulates the data of user's family members. Both of the dynamically g
 The BMI or Body Mass Index is defined as the body mass divided by the square of the body height, with the unit of kg per sq. m. This is an interactive page which allows you to check your BMI without making any changes to the database. A colour-coded display then shows your BMI as per the categories: Underweight, Normal, Overweight, Obese with respect to the Asian BMI standard.
 ## Security and Data Privacy
 The session data is stored on the top of cookies and signed by the server cryptographically. Flask has been used to track the session data. The user's password is secured using Werkzeug. Session data is cleared on logging out successfully or once the server is turned off. Any data you entered for storage is completely private and visible only to you when logged in. No data is shared with or sold to any third-party.
+## Future improvements done in this project
+- Updated the database schema for easiar access 
 ## Programming Technologies used
 - Python
 - HTML
