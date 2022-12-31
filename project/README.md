@@ -48,7 +48,7 @@ The session data is stored on the top of cookies and signed by the server crypto
 - Graph analysis of total family
 - every family member has a login credentials generated, and should be able to access their profile, and see the data themselves or their family.
 - To add a family member, you should provide their email address and they have to authorise it before being added to the project mota dB. -->
-## Future improvements done in this project
+## Improvements done in this project
 - Updated the database schema for easiar access and normalisation is done.
 - Created history table(personal dashboard) for user who is logged in.
 - Plotted line graph of the user in personal dashboard, BMI on x-axis and date time on Y-axis.
