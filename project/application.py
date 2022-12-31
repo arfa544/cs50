@@ -344,6 +344,7 @@ def family():
         bmis.reverse()
         record_dates.reverse()
         print(f'record_dates: {type(record_dates[0])}')
+        # Plotting graph of each family member
         ax.plot(record_dates, bmis, marker='o', label = user_name)
         plt.legend()
 
@@ -383,13 +384,6 @@ def profile():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            # # updating profile table
-            # db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
-
-            # # updating family table
-            # user = db.execute("SELECT username FROM users WHERE user_id = ?", session["user_id"])
-            # db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["username"])
-
         # metric units were chosen
         elif 'updateMe' in request.form:
 
@@ -407,13 +401,6 @@ def profile():
 
             # calculating bmi, height in cms, weight in kgs
             bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
-
-            # # updating profile table
-            # db.execute("UPDATE profile SET weight = ?, height = ?, bmi = ? WHERE user_id = ?", kgs, cms, bmi, session["user_id"])
-
-            # # updating family table
-            # user = db.execute("SELECT user_name FROM users WHERE user_id = ?", session["user_id"])
-            # db.execute("UPDATE family SET weight= ?, height = ?, bmi = ? WHERE user_id = ? and name = ?", kgs, cms, bmi, session["user_id"], user[0]["user_name"])
 
         else:
             print("ERRRORRR ERRRORRR ERRRORRR")
