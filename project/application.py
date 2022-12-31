@@ -11,6 +11,8 @@ from matplotlib import pyplot as plt
 
 from helpers import login_required
 
+DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -108,7 +110,7 @@ def index():
     plt.style.use('dark_background')
     fig, ax = plt.subplots(1)
     bmis = list(map(lambda x: x['bmi'], history))
-    record_dates = list(map(lambda x: datetime.strptime(x['record_date'],"%Y %m %d %H:%M:%S"), history))
+    record_dates = list(map(lambda x: datetime.strptime(x['record_date'], DATE_TIME_FORMAT), history))
     bmis.reverse()
     record_dates.reverse()
     ax.plot(record_dates, bmis, marker='o', color = 'r')
@@ -186,7 +188,7 @@ def update():
 
         # Insert into records
         user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)[0]['user_id']
-        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", user_id, cms, kgs, bmi, datetime.now().strftime("%Y %m %d %H:%M:%S"))
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", user_id, cms, kgs, bmi, datetime.now().strftime(DATE_TIME_FORMAT))
 
         flash('Family details updated successfully!')
         return redirect('/family')
@@ -337,7 +339,7 @@ def family():
         print(f'record: {record}')
         details.append(record)
         bmis = list(map(lambda x: x['bmi'], records))
-        record_dates = list(map(lambda x: datetime.strptime(x['record_date'],"%Y %m %d %H:%M:%S"), records))
+        record_dates = list(map(lambda x: datetime.strptime(x['record_date'], DATE_TIME_FORMAT), records))
         bmis.reverse()
         record_dates.reverse()
         print(f'record_dates: {type(record_dates[0])}')
@@ -402,7 +404,7 @@ def profile():
             print("ERRRORRR ERRRORRR ERRRORRR")
 
         # Insert into records
-        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        db.execute("INSERT INTO records(user_id, height, weight, bmi, record_date) VALUES(?,?,?,?,?)", session["user_id"], cms, kgs, bmi, datetime.now().strftime(DATE_TIME_FORMAT))
 
         flash("Profile details updated successfully!")
         return redirect("/")
