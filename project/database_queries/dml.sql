@@ -10,3 +10,8 @@ INSERT INTO users (user_id, user_name, password, email) VALUES
 (8,'Kabir Boone',12,'Kabir@gmail.com'),
 (9,'Mariam Christian',12,'Mariam@gmail.com'),
 (10,'Ledger Estrada',12,'Ledger@gmail.com');
+
+-- Insert values in family table
+INSERT INTO family (family_id, family_name) VALUES
+(1,'Royals'),
+(2,'Kings');
