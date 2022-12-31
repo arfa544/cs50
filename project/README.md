@@ -69,7 +69,7 @@ The session data is stored on the top of cookies and signed by the server crypto
 
 
 Based on [Mashhood Alam's](https://github.com/MASHOD0) [ProjectMota](https://github.com/MASHOD0/ProjectMota) and
-[Aieshah Nasir's](https://github.com/aie007) [ProjectMota2]
+[Aieshah Nasir's](https://github.com/aie007) [ProjectMota2](https://github.com/aie007/projectmota2)
 
 
 Developed by [Aieshah Nasir](https://github.com/aie007) as CS50 Final Project - CS50x2021
