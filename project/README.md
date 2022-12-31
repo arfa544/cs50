@@ -54,7 +54,7 @@ The session data is stored on the top of cookies and signed by the server crypto
 - Plotted line graph of the user in personal dashboard, BMI on x-axis and date time on Y-axis.
 - Plotted multiple line graph for each member in family dashboard to analyse the BMI of all family members taking BMI on x-axis and date time on
   y-axis.
-####Further notes
+#### Further notes
 DML queries are made for demo of the project.
 ## Programming Technologies used
 - Python
