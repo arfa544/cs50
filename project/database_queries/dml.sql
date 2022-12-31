@@ -1,7 +1,7 @@
 -- Insert values in users table
 INSERT INTO users (user_id, user_name, password, email) VALUES
 (1,'Kathryn Castillo',12,'Kathryn@gmail.com'),
-(2,'Kai Alexander',12,'Kai@gmail.com'),
+(2,'Kai Alexander','kai@123','Kai@gmail.com'),
 (3,'Lyla Fleming',12,'Lyla@gmail.com'),
 (4,'Fernando Barrera',12,'Fernando@gmail.com'),
 (5,'Beatrice Nielsen',12,'Beatrice@gmail.com'),
