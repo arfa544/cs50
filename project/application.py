@@ -163,8 +163,6 @@ def update():
             kgs = round(int(lbs) * 0.453592, 2)
             cms = round((int(feet) * 12 + int(inch)) * 2.54, 2)
 
-            
-
         # using metric units
         if 'updateMe' in request.form:
 
@@ -188,9 +186,6 @@ def update():
 
             # calculating bmi, height in cms, weight in kgs
             bmi = round(int(kgs) * 10000 / pow(int(cms), 2), 2)
-
-            # updating family table
-            #db.execute("UPDATE profile SET height = ?, weight = ?, bmi = ? WHERE user_id = ?", cms, kgs, bmi, session["user_id"])
 
         # Insert into records
         user_id = db.execute("SELECT user_id FROM users WHERE user_name = ?", username)[0]['user_id']
