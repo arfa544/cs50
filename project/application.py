@@ -316,7 +316,6 @@ def family():
     fig, ax = plt.subplots(1)
 
     details = list()
-    print(f"user_ids: {user_ids}")
     for user_id in user_ids:
         user_id = user_id["user_id"]
         user_name = db.execute("SELECT user_name FROM users WHERE user_id = ?", user_id)[0]["user_name"]
